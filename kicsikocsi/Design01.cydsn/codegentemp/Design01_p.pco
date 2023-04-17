@@ -1,0 +1,15 @@
+dont_use_io iocell 1 0
+dont_use_io iocell 1 1
+dont_use_io iocell 1 3
+set_location "__ONE__" macrocell 1 3 0 0
+set_io "Right_Motor_Control(0)" iocell 4 2
+set_location "\Right_Motor_PWM:PWMHW\" timercell -1 -1 1
+set_io "IRR(0)" iocell 5 7
+set_location "\Left_Motor_PWM:PWMHW\" timercell -1 -1 0
+set_io "Start(0)" iocell 6 1
+set_io "Left_Motor_Control(0)" iocell 4 1
+set_location "\Reg_PWM_Enable:Sync:ctrl_reg\" controlcell 1 3 6 
+set_io "IRL(0)" iocell 5 6
+set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "Right_Motor_DIR(0)" iocell 4 3
+set_io "Left_Motor_DIR(0)" iocell 4 0

@@ -9,8 +9,17 @@
  *
  * ========================================
 */
+
 #include "project.h"
 
+typedef enum 
+{
+ LineNo,
+ LineOn,
+ LineAtRight,
+ LineAtLeft,
+ idle
+} states; 
 
 typedef enum 
 {
@@ -19,13 +28,12 @@ typedef enum
  turn_right,
  seek_line,
  none
-} states; 
-
-
+ 
+} events; 
 
 
 void setSpeeds(int16 left, int16 right){ 
-//start of function_________________________________________________________________________________________
+/*BEGINNING OF FUNCTION_____________________________________________________________________________________________*/
 int8 killControl=0;    
     
 if (left<0){
@@ -59,11 +67,61 @@ if (right==0){
 
 
 
- // end of function_________________________________________________________________________________________
+ /*END OF FUNCTION_______________________________________________________________________________________________________*/
 };
 
+void calSpeed(int16 speed,int16 turnrad){/*BEGINNING OF FUNCTION_________________________________________________________*/
+    /*======================================================
+     *   !!!!!!!REQUIRES SETSPEEDS FUNCTION TO WORK!!!!!!!!!
+     *======================================================
+    */
+    
+    
+    int16 l=20;     //the width of the car
+    int16 v2=((((2*turnrad-l)/(2*turnrad+l))^2*speed^2)/(((2*turnrad-l)/(2*turnrad+l))^2+1))^(1/2); //speed of left wheels
+    int16 v1=((speed^2)+(v2^2))^(1/2);      //speed of right wheels
+setSpeeds(v1,v2);
+/*END OF FUNCTION_______________________________________________________________________________________________________*/
+};
+
+states setState(int16 left, int16 right){  //BEGINNING OF STATE SETTING FUNCTION___________________________________________
+
+        if ((left==0 && right==0) ){
+             return LineNo;   
+        }
+        if ((left==1 && right==1) ){
+             return LineOn;   
+        }
+        if (left==0 && right==1){
+            return LineAtRight;
+        }
+        if (left==1 && right==0){
+            return LineAtLeft;
+        } 
+else return idle;
+//END OF FUNCTION_________________________________________________________________________________________________________
+};
+
+events setEvent(states curState, states prevState){
+/*BEGINNING OF EVENT SETTING FUNCTION___________________________________________________________________________________*/
+    
+        if (curState==LineNo && (prevState==LineAtLeft || prevState==LineAtRight) ){
+                     return go_straight;   
+                }
+        if (curState==LineAtLeft ){
+                     return turn_right;   
+                }
+        if (curState==LineAtRight ){
+                     return turn_left;   
+                }
+        if (curState==LineOn ){
+                     return turn_right;   
+                }
 
 
+else return none;
+/*END OF FUNCTION_______________________________________________________________________________________________________*/
+};
 
 int main(void)
 {
@@ -73,27 +131,26 @@ int main(void)
     Right_Motor_PWM_Start();
     setSpeeds(0,0);
     
- states state = go_straight;
+    int sensorLeft=IRL_Read();
+    int sensorRight=IRR_Read();
     
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+    states curState=idle;
+    states prevState=idle;
+    
+    events event=none;
+    
     
     for(;;)
     {
-    /* Place your application code here. */
+    /*START OF FOR LOOP_________________________________________________________________________________________________*/
        
-        
-        
-        if ((IRL_Read()==0 && IRR_Read()==0) || (IRL_Read()==1 && IRR_Read()==1)){
-             state=seek_line;   
-        }
-        if (IRL_Read()==0 && IRR_Read()==1){
-            state=turn_left;
-        }
-        if (IRL_Read()==1 && IRR_Read()==0){
-            state=turn_right;
-        } 
-           
-        switch (state) {
+    prevState=curState;                         // *set previous and current states
+    curState=setState(sensorLeft,sensorRight);  // *
+
+    event=setEvent(curState,prevState);         //set event based on current and previous states
+    
+    /*
+        switch (event) {        //old switch thingy for setting the event, used before setEvent function [TO BE REMOVED IF PROGRAM WORKS]
     case go_straight:
         setSpeeds(100,150);
         break;
@@ -108,32 +165,16 @@ int main(void)
         break;
     default:
         setSpeeds(0,0);
-        
-        
-        
-        
-        
-        
-        
-        }
-        
+        };
+      */
     
+    /*END OF FOR LOOP________________________________________________________________________________________________*/
     };
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        
-        
+    /*END OF MAIN FUNCTION*/
     }
 
 

@@ -131,39 +131,6 @@
 <VisibleNodeIds>
 <v>kicsikocsi</v>
 <v>kicsikocsi\Design01</v>
-<v>kicsikocsi\Design01\CortexM3</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_2.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\IRL.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\IRR.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Left_Motor_Control.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Left_Motor_DIR.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Left_Motor_PWM.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Left_Motor_PWM_PM.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Reg_PWM_Enable.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Reg_PWM_Enable_PM.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Right_Motor_Control.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Right_Motor_DIR.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Right_Motor_PWM.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Right_Motor_PWM_PM.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Start.lst</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Design01.elf</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Design01.hex</v>
-<v>kicsikocsi\Design01\CortexM3\ARM_GCC_541\Debug\Design01.map</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -212,6 +179,8 @@
 <OpenDocs>
 <name v=".\Design01.cydsn\main.c" />
 <name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\Left_Motor_PWM.c" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\IRL.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -219,7 +188,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1098, 658" SelectedTabbedMdiWindow="e3f51dba-3a3c-4e4e-ba45-97b88e6fc5f0"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="98e79bb9-3856-4e13-ab4a-69d21dea2761" /><DocumentWindow Key="C:\Users\budai\Documents\github\Beagyazott_rendszerek\kicsikocsi\Design01.cydsn\main.c" Guid="e3f51dba-3a3c-4e4e-ba45-97b88e6fc5f0" /><DocumentWindow Key="C:\Users\budai\Documents\github\Beagyazott_rendszerek\kicsikocsi\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="a2ab8a8d-37b2-4f25-948e-23af4f2ce29d" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1098, 495" SelectedTabbedMdiWindow="e3f51dba-3a3c-4e4e-ba45-97b88e6fc5f0"><DocumentWindow Key="C:\Users\budai\Documents\github\Beagyazott_rendszerek\kicsikocsi\Design01.cydsn\main.c" Guid="e3f51dba-3a3c-4e4e-ba45-97b88e6fc5f0" /><DocumentWindow Key="C:\Users\budai\Documents\github\Beagyazott_rendszerek\kicsikocsi\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="a2ab8a8d-37b2-4f25-948e-23af4f2ce29d" /><DocumentWindow Key="C:\Users\budai\Documents\github\Beagyazott_rendszerek\kicsikocsi\Design01.cydsn\Generated_Source\PSoC5\Left_Motor_PWM.c" Guid="5c86dc72-050b-4170-b89f-0db1e4c39fb2" /><DocumentWindow Key="C:\Users\budai\Documents\github\Beagyazott_rendszerek\kicsikocsi\Design01.cydsn\Generated_Source\PSoC5\IRL.c" Guid="457a41bd-4848-4ddd-b6ca-13a44a18387f" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="98e79bb9-3856-4e13-ab4a-69d21dea2761" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

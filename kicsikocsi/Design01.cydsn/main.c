@@ -77,14 +77,14 @@ void calSpeed(int16 speed,int16 turnrad){/*BEGINNING OF FUNCTION________________
     */
     
     
-    int16 l=20;     //the width of the car
-    int16 v2=((((2*turnrad-l)/(2*turnrad+l))^2*speed^2)/(((2*turnrad-l)/(2*turnrad+l))^2+1))^(1/2); //speed of left wheels
-    int16 v1=((speed^2)+(v2^2))^(1/2);      //speed of right wheels
-setSpeeds(v1,v2);
+    int16 w=20;     //the width of the car
+    int16 vl=speed-turnrad*w/2; //speed of left wheels
+    int16 vr=speed+turnrad*w/2;      //speed of right wheels
+setSpeeds(vl,vr);
 /*END OF FUNCTION_______________________________________________________________________________________________________*/
 };
 
-states setState(int16 left, int16 right){  //BEGINNING OF STATE SETTING FUNCTION___________________________________________
+states setState(int16 left, int16 right){  /*BEGINNING OF STATE SETTING FUNCTION_________________________________________*/
 
         if ((left==0 && right==0) ){
              return LineNo;   
@@ -98,14 +98,14 @@ states setState(int16 left, int16 right){  //BEGINNING OF STATE SETTING FUNCTION
         if (left==1 && right==0){
             return LineAtLeft;
         } 
-else return idle;
-//END OF FUNCTION_________________________________________________________________________________________________________
+else return LineNo;
+/*END OF FUNCTION_______________________________________________________________________________________________________*/
 };
 
 events setEvent(states curState, states prevState){
 /*BEGINNING OF EVENT SETTING FUNCTION___________________________________________________________________________________*/
     
-        if (curState==LineNo && (prevState==LineAtLeft || prevState==LineAtRight) ){
+        if ((curState==LineNo )&& (prevState==LineAtLeft || prevState==LineAtRight)) {
                      return go_straight;   
                 }
         if (curState==LineAtLeft ){
@@ -117,9 +117,11 @@ events setEvent(states curState, states prevState){
         if (curState==LineOn ){
                      return turn_right;   
                 }
+        if ((curState==LineNo )&&!(prevState==LineAtLeft || prevState==LineAtRight)) {
+                     return seek_line;
+                }
 
-
-else return none;
+else return go_straight;
 /*END OF FUNCTION_______________________________________________________________________________________________________*/
 };
 
@@ -131,42 +133,42 @@ int main(void)
     Right_Motor_PWM_Start();
     setSpeeds(0,0);
     
-    int sensorLeft=IRL_Read();
-    int sensorRight=IRR_Read();
-    
+   
     states curState=idle;
     states prevState=idle;
     
     events event=none;
     
+    int speed=100;
     
     for(;;)
     {
     /*START OF FOR LOOP_________________________________________________________________________________________________*/
        
     prevState=curState;                         // *set previous and current states
-    curState=setState(sensorLeft,sensorRight);  // *
+    curState=setState(IRL_Read(),IRR_Read());  // *
 
     event=setEvent(curState,prevState);         //set event based on current and previous states
     
-    /*
-        switch (event) {        //old switch thingy for setting the event, used before setEvent function [TO BE REMOVED IF PROGRAM WORKS]
+    
+
+        switch (event) {       
     case go_straight:
-        setSpeeds(100,150);
+        calSpeed(speed,0); 
         break;
     case turn_left:
-        setSpeeds(30,150);
+        calSpeed(speed,-20);  
         break;
     case turn_right:
-        setSpeeds(150,30);
+        calSpeed(speed,20);        
         break;
     case seek_line:
-       setSpeeds(150,50);
+       calSpeed(speed,30);
         break;
     default:
         setSpeeds(0,0);
+        
         };
-      */
     
     /*END OF FOR LOOP________________________________________________________________________________________________*/
     };

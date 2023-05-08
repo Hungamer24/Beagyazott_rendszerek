@@ -1,78 +1,78 @@
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Clock_2.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyDmac.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyFlash.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyLib.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CySpc.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRL.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRL_aliases.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRR.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRR_aliases.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_Control.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_Control_aliases.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_DIR.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_DIR_aliases.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_PWM.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Reg_PWM_Enable.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_Control.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_Control_aliases.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_DIR.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_DIR_aliases.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_PWM.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Start.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Start_aliases.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_compiler.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/core_cm3.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyPm.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cypins.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/project.h C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/main.c 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Clock_2.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyDmac.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyFlash.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyLib.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CySpc.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRL.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRL_aliases.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRR.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRR_aliases.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_Control.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_Control_aliases.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_DIR.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_DIR_aliases.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_PWM.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Reg_PWM_Enable.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_Control.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_Control_aliases.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_DIR.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_DIR_aliases.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_PWM.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Start.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Start_aliases.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_compiler.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/core_cm3.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyPm.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cypins.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/project.h C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/main.c 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Clock_2.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Clock_2.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyDmac.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyFlash.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyLib.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CyLib.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CySpc.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/CySpc.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRL.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRL.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRL_aliases.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRL_aliases.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRR.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRR.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRR_aliases.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/IRR_aliases.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_Control.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_Control.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_Control_aliases.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_Control_aliases.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_DIR.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_DIR.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_DIR_aliases.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_DIR_aliases.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_PWM.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Left_Motor_PWM.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Reg_PWM_Enable.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Reg_PWM_Enable.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_Control.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_Control.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_Control_aliases.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_Control_aliases.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_DIR.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_DIR.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_DIR_aliases.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_DIR_aliases.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_PWM.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Right_Motor_PWM.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Start.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Start.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Start_aliases.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/Start_aliases.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/core_cm3.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyPm.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyPm.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydevice.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydevice.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyfitter.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cypins.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cypins.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cytypes.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/cytypes.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/project.h : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/Generated_Source/PSoC5/project.h : 
 
-C:/Users/budai/Documents/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/main.c : 
+C:/Users/budai/Documents/github/Beagyazott_rendszerek/kicsikocsi/Design01.cydsn/main.c : 
 

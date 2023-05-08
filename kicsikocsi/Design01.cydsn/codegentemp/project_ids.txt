@@ -1,6 +1,6 @@
-C:\Users\budai\Documents\Beagyazott_rendszerek\kicsikocsi\Design01.cydsn\Design01.cyprj|588ed8f3-24dd-4cad-9d6a-5c0c04af1fea
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|b340dddd-209f-4f44-b624-17532c4b8991
-C:\Users\budai\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|2e11b39c-b82f-42da-a8b6-aac36f3eeec6
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|3a1606b3-8922-4589-8323-9bf7ff55597a
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|fe8fd42b-afeb-4862-8bbc-d4189f8f1378
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|39f7c65f-f894-4ee7-ade4-4053d881b3ab
+C:\Users\budai\Documents\github\Beagyazott_rendszerek\kicsikocsi\Design01.cydsn\Design01.cyprj|5434e5c8-0872-44f8-aa4e-ae8b6e942974
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|df0d95e2-2abf-44a1-8001-a8e1193429a5
+C:\Users\budai\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|b4c127e0-4707-4cfb-9533-448a4113ca93
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|a71c8066-5f55-4bdf-9a6a-c38234798854
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b39b70ae-da31-4bac-8818-9304e513c961
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|ebb53d49-e5a4-43d0-a7e7-d4bfa2dff462

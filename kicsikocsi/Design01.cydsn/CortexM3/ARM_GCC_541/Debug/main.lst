@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 1
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 1
 
 
    1              		.syntax unified
@@ -58,15 +58,27 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 1
   28:main.c        ****  turn_right,
   29:main.c        ****  seek_line,
   30:main.c        ****  none
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 2
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 2
 
 
   31:main.c        ****  
   32:main.c        **** } events; 
   33:main.c        **** 
-  34:main.c        **** 
-  35:main.c        **** void setSpeeds(int16 left, int16 right){ 
-  28              		.loc 1 35 0
+  34:main.c        **** typedef enum 
+  35:main.c        **** {
+  36:main.c        ****  boot,
+  37:main.c        ****  going,
+  38:main.c        **** 
+  39:main.c        **** 
+  40:main.c        **** 
+  41:main.c        ****  
+  42:main.c        **** } stages;
+  43:main.c        **** 
+  44:main.c        **** 
+  45:main.c        **** 
+  46:main.c        **** 
+  47:main.c        **** void setSpeeds(int16 left, int16 right){ /*BEGINNING OF FUNCTION___________________________________
+  28              		.loc 1 47 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -79,112 +91,105 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 1
   38              		.cfi_offset 14, -4
   39 0002 0C46     		mov	r4, r1
   40              	.LVL1:
-  36:main.c        **** /*BEGINNING OF FUNCTION____________________________________________________________________________
-  37:main.c        **** int8 killControl=0;    
-  38:main.c        ****     
-  39:main.c        **** if (left<0){
-  41              		.loc 1 39 0
+  48:main.c        **** int8 killControl=0;    
+  49:main.c        ****     
+  50:main.c        **** if (left<0){
+  41              		.loc 1 50 0
   42 0004 051E     		subs	r5, r0, #0
   43 0006 07DA     		bge	.L2
-  40:main.c        ****     Left_Motor_PWM_WriteCompare(-1*left);
-  44              		.loc 1 40 0
+  51:main.c        ****     Left_Motor_PWM_WriteCompare(-1*left);
+  44              		.loc 1 51 0
   45 0008 6842     		negs	r0, r5
   46              	.LVL2:
   47 000a C0B2     		uxtb	r0, r0
   48 000c FFF7FEFF 		bl	Left_Motor_PWM_WriteCompare
   49              	.LVL3:
-  41:main.c        ****     Left_Motor_DIR_Write(1);
-  50              		.loc 1 41 0
+  52:main.c        ****     Left_Motor_DIR_Write(1);
+  50              		.loc 1 52 0
   51 0010 0120     		movs	r0, #1
   52 0012 FFF7FEFF 		bl	Left_Motor_DIR_Write
   53              	.LVL4:
   54 0016 05E0     		b	.L3
   55              	.LVL5:
   56              	.L2:
-  42:main.c        **** }else{
-  43:main.c        ****     Left_Motor_PWM_WriteCompare(left);
-  57              		.loc 1 43 0
+  53:main.c        **** }else{
+  54:main.c        ****     Left_Motor_PWM_WriteCompare(left);
+  57              		.loc 1 54 0
   58 0018 E8B2     		uxtb	r0, r5
   59              	.LVL6:
   60 001a FFF7FEFF 		bl	Left_Motor_PWM_WriteCompare
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 3
+
+
   61              	.LVL7:
-  44:main.c        ****     Left_Motor_DIR_Write(0);
-  62              		.loc 1 44 0
+  55:main.c        ****     Left_Motor_DIR_Write(0);
+  62              		.loc 1 55 0
   63 001e 0020     		movs	r0, #0
   64 0020 FFF7FEFF 		bl	Left_Motor_DIR_Write
   65              	.LVL8:
   66              	.L3:
-  45:main.c        ****     }
-  46:main.c        **** 
-  47:main.c        **** 
-  48:main.c        **** if (right<0){
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 3
-
-
-  67              		.loc 1 48 0
+  56:main.c        ****     }
+  57:main.c        **** if (right<0){
+  67              		.loc 1 57 0
   68 0024 002C     		cmp	r4, #0
   69 0026 07DA     		bge	.L4
-  49:main.c        ****     Right_Motor_PWM_WriteCompare(-1*right);
-  70              		.loc 1 49 0
+  58:main.c        ****     Right_Motor_PWM_WriteCompare(-1*right);
+  70              		.loc 1 58 0
   71 0028 6042     		negs	r0, r4
   72 002a C0B2     		uxtb	r0, r0
   73 002c FFF7FEFF 		bl	Right_Motor_PWM_WriteCompare
   74              	.LVL9:
-  50:main.c        ****     Right_Motor_DIR_Write(1);
-  75              		.loc 1 50 0
+  59:main.c        ****     Right_Motor_DIR_Write(1);
+  75              		.loc 1 59 0
   76 0030 0120     		movs	r0, #1
   77 0032 FFF7FEFF 		bl	Right_Motor_DIR_Write
   78              	.LVL10:
   79 0036 05E0     		b	.L5
   80              	.L4:
-  51:main.c        **** }else{
-  52:main.c        ****     Right_Motor_PWM_WriteCompare(right);
-  81              		.loc 1 52 0
+  60:main.c        **** }else{
+  61:main.c        ****     Right_Motor_PWM_WriteCompare(right);
+  81              		.loc 1 61 0
   82 0038 E0B2     		uxtb	r0, r4
   83 003a FFF7FEFF 		bl	Right_Motor_PWM_WriteCompare
   84              	.LVL11:
-  53:main.c        ****     Right_Motor_DIR_Write(0);
-  85              		.loc 1 53 0
+  62:main.c        ****     Right_Motor_DIR_Write(0);
+  85              		.loc 1 62 0
   86 003e 0020     		movs	r0, #0
   87 0040 FFF7FEFF 		bl	Right_Motor_DIR_Write
   88              	.LVL12:
   89              	.L5:
-  54:main.c        ****     }
-  55:main.c        **** 
-  56:main.c        **** 
-  57:main.c        **** if (left==0){
-  90              		.loc 1 57 0
+  63:main.c        ****     }
+  64:main.c        **** if (left==0){
+  90              		.loc 1 64 0
   91 0044 0DB1     		cbz	r5, .L8
-  37:main.c        ****     
-  92              		.loc 1 37 0
+  48:main.c        ****     
+  92              		.loc 1 48 0
   93 0046 0020     		movs	r0, #0
   94 0048 00E0     		b	.L6
   95              	.L8:
-  58:main.c        ****     killControl=1;
-  96              		.loc 1 58 0
+  65:main.c        ****     killControl=1;
+  96              		.loc 1 65 0
   97 004a 0120     		movs	r0, #1
   98              	.L6:
   99              	.LVL13:
-  59:main.c        ****     }
-  60:main.c        ****     
-  61:main.c        **** if (right==0){
- 100              		.loc 1 61 0
+  66:main.c        ****     }
+  67:main.c        **** if (right==0){
+ 100              		.loc 1 67 0
  101 004c 0CB9     		cbnz	r4, .L7
-  62:main.c        ****    
-  63:main.c        ****      killControl=killControl+2;
- 102              		.loc 1 63 0
+  68:main.c        ****      killControl=killControl+2;
+ 102              		.loc 1 68 0
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 4
+
+
  103 004e 0230     		adds	r0, r0, #2
  104              	.LVL14:
  105 0050 40B2     		sxtb	r0, r0
  106              	.LVL15:
  107              	.L7:
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 4
-
-
-  64:main.c        ****     }
-  65:main.c        ****     
-  66:main.c        ****     Reg_PWM_Enable_Write(killControl);
- 108              		.loc 1 66 0
+  69:main.c        ****     }
+  70:main.c        ****     
+  71:main.c        ****     Reg_PWM_Enable_Write(killControl);
+ 108              		.loc 1 71 0
  109 0052 C0B2     		uxtb	r0, r0
  110 0054 FFF7FEFF 		bl	Reg_PWM_Enable_Write
  111              	.LVL16:
@@ -200,14 +205,14 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 1
  121              		.type	calSpeed, %function
  122              	calSpeed:
  123              	.LFB64:
-  67:main.c        **** 
-  68:main.c        **** 
-  69:main.c        **** 
-  70:main.c        ****  /*END OF FUNCTION_________________________________________________________________________________
-  71:main.c        **** };
   72:main.c        **** 
-  73:main.c        **** void calSpeed(int16 speed,int16 turnrad){/*BEGINNING OF FUNCTION___________________________________
- 124              		.loc 1 73 0
+  73:main.c        **** 
+  74:main.c        **** 
+  75:main.c        ****  /*END OF FUNCTION_________________________________________________________________________________
+  76:main.c        **** };
+  77:main.c        **** 
+  78:main.c        **** void calSpeed(int16 speed,int16 turnrad){/*BEGINNING OF FUNCTION___________________________________
+ 124              		.loc 1 78 0
  125              		.cfi_startproc
  126              		@ args = 0, pretend = 0, frame = 0
  127              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -217,15 +222,15 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 1
  131              		.cfi_offset 3, -8
  132              		.cfi_offset 14, -4
  133              	.LVL18:
-  74:main.c        ****     /*======================================================
-  75:main.c        ****      *   !!!!!!!REQUIRES SETSPEEDS FUNCTION TO WORK!!!!!!!!!
-  76:main.c        ****      *======================================================
-  77:main.c        ****     */
-  78:main.c        ****     
-  79:main.c        ****     
-  80:main.c        ****     int16 w=20;     //the width of the car
-  81:main.c        ****     int16 vl=speed-turnrad*w/2; //speed of left wheels
- 134              		.loc 1 81 0
+  79:main.c        ****     /*======================================================
+  80:main.c        ****      *   !!!!!!!REQUIRES SETSPEEDS FUNCTION TO WORK!!!!!!!!!
+  81:main.c        ****      *======================================================
+  82:main.c        ****     */
+  83:main.c        ****     
+  84:main.c        ****     
+  85:main.c        ****     int16 w=20;     //the width of the car
+  86:main.c        ****     int16 vl=speed-turnrad*w/2; //speed of left wheels
+ 134              		.loc 1 86 0
  135 0002 80B2     		uxth	r0, r0
  136 0004 01EB8101 		add	r1, r1, r1, lsl #2
  137              	.LVL19:
@@ -233,16 +238,16 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 1
  139 000a 5910     		asrs	r1, r3, #1
  140 000c 89B2     		uxth	r1, r1
  141 000e 431A     		subs	r3, r0, r1
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 5
+
+
  142              	.LVL20:
-  82:main.c        ****     int16 vr=speed+turnrad*w/2;      //speed of right wheels
- 143              		.loc 1 82 0
+  87:main.c        ****     int16 vr=speed+turnrad*w/2;      //speed of right wheels
+ 143              		.loc 1 87 0
  144 0010 0144     		add	r1, r1, r0
  145              	.LVL21:
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 5
-
-
-  83:main.c        **** setSpeeds(vl,vr);
- 146              		.loc 1 83 0
+  88:main.c        **** setSpeeds(vl,vr);
+ 146              		.loc 1 88 0
  147 0012 09B2     		sxth	r1, r1
  148 0014 18B2     		sxth	r0, r3
  149              	.LVL22:
@@ -260,97 +265,104 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 1
  161              		.type	setState, %function
  162              	setState:
  163              	.LFB65:
-  84:main.c        **** /*END OF FUNCTION__________________________________________________________________________________
-  85:main.c        **** };
-  86:main.c        **** 
-  87:main.c        **** states setState(int16 left, int16 right){  /*BEGINNING OF STATE SETTING FUNCTION___________________
- 164              		.loc 1 87 0
+  89:main.c        **** /*END OF FUNCTION__________________________________________________________________________________
+  90:main.c        **** };
+  91:main.c        **** 
+  92:main.c        **** states setState(int16 left, int16 right){  /*BEGINNING OF STATE SETTING FUNCTION___________________
+ 164              		.loc 1 92 0
  165              		.cfi_startproc
  166              		@ args = 0, pretend = 0, frame = 0
  167              		@ frame_needed = 0, uses_anonymous_args = 0
  168              		@ link register save eliminated.
  169              	.LVL24:
-  88:main.c        **** 
-  89:main.c        ****         if ((left==0 && right==0) ){
- 170              		.loc 1 89 0
+  93:main.c        **** 
+  94:main.c        ****         
+  95:main.c        ****         {if ((left==0 && right==0) ){
+ 170              		.loc 1 95 0
  171 0000 0346     		mov	r3, r0
  172 0002 00B9     		cbnz	r0, .L13
- 173              		.loc 1 89 0 is_stmt 0 discriminator 1
+ 173              		.loc 1 95 0 is_stmt 0 discriminator 1
  174 0004 59B1     		cbz	r1, .L17
  175              	.L13:
-  90:main.c        ****              return LineNo;   
-  91:main.c        ****         }
-  92:main.c        ****         if ((left==1 && right==1) ){
- 176              		.loc 1 92 0 is_stmt 1
+  96:main.c        ****              return LineNo;   
+  97:main.c        ****         }
+  98:main.c        ****         if ((left==1 && right==1) ){
+ 176              		.loc 1 98 0 is_stmt 1
  177 0006 012B     		cmp	r3, #1
  178 0008 01D1     		bne	.L15
- 179              		.loc 1 92 0 is_stmt 0 discriminator 1
+ 179              		.loc 1 98 0 is_stmt 0 discriminator 1
  180 000a 0129     		cmp	r1, #1
  181 000c 09D0     		beq	.L18
  182              	.L15:
-  93:main.c        ****              return LineOn;   
-  94:main.c        ****         }
-  95:main.c        ****         if (left==0 && right==1){
- 183              		.loc 1 95 0 is_stmt 1
+  99:main.c        ****              return LineOn;   
+ 100:main.c        ****         }
+ 101:main.c        ****         if (left==0 && right==1){
+ 183              		.loc 1 101 0 is_stmt 1
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 6
+
+
  184 000e 0BB9     		cbnz	r3, .L16
- 185              		.loc 1 95 0 is_stmt 0 discriminator 1
+ 185              		.loc 1 101 0 is_stmt 0 discriminator 1
  186 0010 0129     		cmp	r1, #1
  187 0012 08D0     		beq	.L19
  188              	.L16:
-  96:main.c        ****             return LineAtRight;
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 6
-
-
-  97:main.c        ****         }
-  98:main.c        ****         if (left==1 && right==0){
- 189              		.loc 1 98 0 is_stmt 1
+ 102:main.c        ****             return LineAtRight;
+ 103:main.c        ****         }
+ 104:main.c        ****         if (left==1 && right==0){
+ 189              		.loc 1 104 0 is_stmt 1
  190 0014 012B     		cmp	r3, #1
  191 0016 08D1     		bne	.L20
- 192              		.loc 1 98 0 is_stmt 0 discriminator 1
+ 192              		.loc 1 104 0 is_stmt 0 discriminator 1
  193 0018 49B1     		cbz	r1, .L21
-  99:main.c        ****             return LineAtLeft;
- 100:main.c        ****         } 
- 101:main.c        **** else return LineNo;
- 194              		.loc 1 101 0 is_stmt 1
+ 105:main.c        ****             return LineAtLeft;
+ 106:main.c        ****         }
+ 107:main.c        ****         else return LineNo;
+ 194              		.loc 1 107 0 is_stmt 1
  195 001a 0020     		movs	r0, #0
  196              	.LVL25:
  197 001c 7047     		bx	lr
  198              	.LVL26:
  199              	.L17:
-  90:main.c        ****         }
- 200              		.loc 1 90 0
+  96:main.c        ****         }
+ 200              		.loc 1 96 0
  201 001e 0020     		movs	r0, #0
  202              	.LVL27:
  203 0020 7047     		bx	lr
  204              	.LVL28:
  205              	.L18:
-  93:main.c        ****         }
- 206              		.loc 1 93 0
+  99:main.c        ****         }
+ 206              		.loc 1 99 0
  207 0022 0120     		movs	r0, #1
  208              	.LVL29:
  209 0024 7047     		bx	lr
  210              	.LVL30:
  211              	.L19:
-  96:main.c        ****         }
- 212              		.loc 1 96 0
+ 102:main.c        ****         }
+ 212              		.loc 1 102 0
  213 0026 0220     		movs	r0, #2
  214              	.LVL31:
  215 0028 7047     		bx	lr
  216              	.LVL32:
  217              	.L20:
- 218              		.loc 1 101 0
+ 218              		.loc 1 107 0
  219 002a 0020     		movs	r0, #0
  220              	.LVL33:
  221 002c 7047     		bx	lr
  222              	.LVL34:
  223              	.L21:
-  99:main.c        ****         } 
- 224              		.loc 1 99 0
+ 105:main.c        ****         }
+ 224              		.loc 1 105 0
  225 002e 0320     		movs	r0, #3
  226              	.LVL35:
- 102:main.c        **** /*END OF FUNCTION__________________________________________________________________________________
- 103:main.c        **** };
- 227              		.loc 1 103 0
+ 108:main.c        ****         }
+ 109:main.c        ****         
+ 110:main.c        **** 
+ 111:main.c        **** /*END OF FUNCTION__________________________________________________________________________________
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 7
+
+
+ 112:main.c        **** };
+ 227              		.loc 1 112 0
  228 0030 7047     		bx	lr
  229              		.cfi_endproc
  230              	.LFE65:
@@ -358,1850 +370,2829 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 1
  232 0032 00BF     		.section	.text.setEvent,"ax",%progbits
  233              		.align	2
  234              		.global	setEvent
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 7
-
-
  235              		.thumb
  236              		.thumb_func
  237              		.type	setEvent, %function
  238              	setEvent:
  239              	.LFB66:
- 104:main.c        **** 
- 105:main.c        **** events setEvent(states curState, states prevState){
- 240              		.loc 1 105 0
+ 113:main.c        **** 
+ 114:main.c        **** events setEvent(states curState, states prevState){/*BEGINNING OF EVENT SETTING FUNCTION___________
+ 240              		.loc 1 114 0
  241              		.cfi_startproc
  242              		@ args = 0, pretend = 0, frame = 0
  243              		@ frame_needed = 0, uses_anonymous_args = 0
  244              		@ link register save eliminated.
  245              	.LVL36:
- 106:main.c        **** /*BEGINNING OF EVENT SETTING FUNCTION______________________________________________________________
- 107:main.c        ****     
- 108:main.c        ****         if ((curState==LineNo )&& (prevState==LineAtLeft || prevState==LineAtRight)) {
- 246              		.loc 1 108 0
+ 115:main.c        ****     
+ 116:main.c        ****         if ((curState==LineNo )   &&(prevState==LineAtLeft || prevState==LineAtRight)    ) {
+ 246              		.loc 1 116 0
  247 0000 0346     		mov	r3, r0
  248 0002 18B9     		cbnz	r0, .L23
- 249              		.loc 1 108 0 is_stmt 0 discriminator 1
- 250 0004 8A1E     		subs	r2, r1, #2
- 251 0006 D2B2     		uxtb	r2, r2
- 252 0008 012A     		cmp	r2, #1
- 253 000a 0CD9     		bls	.L25
- 254              	.L23:
- 109:main.c        ****                      return go_straight;   
- 110:main.c        ****                 }
- 111:main.c        ****         if (curState==LineAtLeft ){
- 255              		.loc 1 111 0 is_stmt 1
- 256 000c 032B     		cmp	r3, #3
- 257 000e 0CD0     		beq	.L26
- 112:main.c        ****                      return turn_right;   
- 113:main.c        ****                 }
- 114:main.c        ****         if (curState==LineAtRight ){
- 258              		.loc 1 114 0
- 259 0010 022B     		cmp	r3, #2
- 260 0012 0CD0     		beq	.L27
- 115:main.c        ****                      return turn_left;   
- 116:main.c        ****                 }
- 117:main.c        ****         if (curState==LineOn ){
- 261              		.loc 1 117 0
- 262 0014 012B     		cmp	r3, #1
- 263 0016 0CD0     		beq	.L28
- 118:main.c        ****                      return turn_right;   
- 119:main.c        ****                 }
- 120:main.c        ****         if ((curState==LineNo )&&!(prevState==LineAtLeft || prevState==LineAtRight)) {
- 264              		.loc 1 120 0
- 265 0018 6BB9     		cbnz	r3, .L29
- 266              		.loc 1 120 0 is_stmt 0 discriminator 1
- 267 001a 0239     		subs	r1, r1, #2
- 268              	.LVL37:
- 269 001c C9B2     		uxtb	r1, r1
- 270 001e 0129     		cmp	r1, #1
- 271 0020 0BD8     		bhi	.L30
- 121:main.c        ****                      return seek_line;
- 122:main.c        ****                 }
- 123:main.c        **** 
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 8
-
-
- 124:main.c        **** else return go_straight;
- 272              		.loc 1 124 0 is_stmt 1
- 273 0022 0020     		movs	r0, #0
- 274              	.LVL38:
- 275 0024 7047     		bx	lr
- 276              	.LVL39:
- 277              	.L25:
- 109:main.c        ****                 }
- 278              		.loc 1 109 0
- 279 0026 0020     		movs	r0, #0
- 280              	.LVL40:
- 281 0028 7047     		bx	lr
- 282              	.LVL41:
- 283              	.L26:
- 112:main.c        ****                 }
- 284              		.loc 1 112 0
- 285 002a 0220     		movs	r0, #2
- 286              	.LVL42:
- 287 002c 7047     		bx	lr
- 288              	.LVL43:
- 289              	.L27:
- 115:main.c        ****                 }
- 290              		.loc 1 115 0
- 291 002e 0120     		movs	r0, #1
- 292              	.LVL44:
- 293 0030 7047     		bx	lr
- 294              	.LVL45:
- 295              	.L28:
+ 249              		.loc 1 116 0 is_stmt 0 discriminator 1
+ 250 0004 0239     		subs	r1, r1, #2
+ 251              	.LVL37:
+ 252 0006 C9B2     		uxtb	r1, r1
+ 253 0008 0129     		cmp	r1, #1
+ 254 000a 09D9     		bls	.L25
+ 255              	.L23:
+ 117:main.c        ****                      return go_straight;   
  118:main.c        ****                 }
- 296              		.loc 1 118 0
- 297 0032 0220     		movs	r0, #2
- 298              	.LVL46:
- 299 0034 7047     		bx	lr
- 300              	.LVL47:
- 301              	.L29:
- 302              		.loc 1 124 0
- 303 0036 0020     		movs	r0, #0
- 304              	.LVL48:
- 305 0038 7047     		bx	lr
- 306              	.LVL49:
- 307              	.L30:
+ 119:main.c        ****         if (curState==LineAtLeft ){
+ 256              		.loc 1 119 0 is_stmt 1
+ 257 000c 032B     		cmp	r3, #3
+ 258 000e 09D0     		beq	.L26
+ 120:main.c        ****                      return turn_left;   
  121:main.c        ****                 }
- 308              		.loc 1 121 0
- 309 003a 0320     		movs	r0, #3
- 310              	.LVL50:
- 125:main.c        **** /*END OF FUNCTION__________________________________________________________________________________
- 126:main.c        **** };
- 311              		.loc 1 126 0
- 312 003c 7047     		bx	lr
- 313              		.cfi_endproc
- 314              	.LFE66:
- 315              		.size	setEvent, .-setEvent
- 316 003e 00BF     		.section	.text.main,"ax",%progbits
- 317              		.align	2
- 318              		.global	main
- 319              		.thumb
- 320              		.thumb_func
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 9
+ 122:main.c        ****         if (curState==LineAtRight ){
+ 259              		.loc 1 122 0
+ 260 0010 022B     		cmp	r3, #2
+ 261 0012 09D0     		beq	.L27
+ 123:main.c        ****                      return turn_right;   
+ 124:main.c        ****                 }
+ 125:main.c        ****         if (curState==LineOn ){
+ 262              		.loc 1 125 0
+ 263 0014 012B     		cmp	r3, #1
+ 264 0016 09D0     		beq	.L28
+ 126:main.c        ****                      return turn_right;   
+ 127:main.c        ****                 }
+ 128:main.c        ****         if (curState==idle ){
+ 265              		.loc 1 128 0
+ 266 0018 042B     		cmp	r3, #4
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 8
 
 
- 321              		.type	main, %function
- 322              	main:
- 323              	.LFB67:
- 127:main.c        **** 
- 128:main.c        **** int main(void)
- 129:main.c        **** {
- 324              		.loc 1 129 0
- 325              		.cfi_startproc
- 326              		@ args = 0, pretend = 0, frame = 0
- 327              		@ frame_needed = 0, uses_anonymous_args = 0
- 328 0000 08B5     		push	{r3, lr}
- 329              		.cfi_def_cfa_offset 8
- 330              		.cfi_offset 3, -8
- 331              		.cfi_offset 14, -4
- 130:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
- 332              		.loc 1 130 0
- 333              		.syntax unified
- 334              	@ 130 "main.c" 1
- 335 0002 62B6     		CPSIE   i
- 336              	@ 0 "" 2
- 131:main.c        **** 
- 132:main.c        ****     Left_Motor_PWM_Start();
- 337              		.loc 1 132 0
- 338              		.thumb
- 339              		.syntax unified
- 340 0004 FFF7FEFF 		bl	Left_Motor_PWM_Start
- 341              	.LVL51:
- 133:main.c        ****     Right_Motor_PWM_Start();
- 342              		.loc 1 133 0
- 343 0008 FFF7FEFF 		bl	Right_Motor_PWM_Start
- 344              	.LVL52:
- 134:main.c        ****     setSpeeds(0,0);
- 345              		.loc 1 134 0
- 346 000c 0021     		movs	r1, #0
- 347 000e 0846     		mov	r0, r1
- 348 0010 FFF7FEFF 		bl	setSpeeds
- 349              	.LVL53:
- 350              	.L32:
- 135:main.c        ****     
- 136:main.c        ****    
- 137:main.c        ****     states curState=idle;
- 138:main.c        ****     states prevState=idle;
- 139:main.c        ****     
- 140:main.c        ****     events event=none;
- 141:main.c        ****     
- 142:main.c        ****     int speed=100;
- 143:main.c        ****     
- 144:main.c        ****     for(;;)
- 145:main.c        ****     {
- 146:main.c        ****     /*START OF FOR LOOP____________________________________________________________________________
- 147:main.c        ****        
- 148:main.c        ****     //prevState=curState;                         // *set previous and current states
- 149:main.c        ****     //curState=setState(IRL_Read(),IRR_Read());  // *
- 150:main.c        **** 
- 151:main.c        ****         
- 152:main.c        ****         
- 153:main.c        ****         
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 10
+ 267 001a 09D1     		bne	.L29
+ 129:main.c        ****                      return none;   
+ 268              		.loc 1 129 0
+ 269 001c 0420     		movs	r0, #4
+ 270              	.LVL38:
+ 271 001e 7047     		bx	lr
+ 272              	.LVL39:
+ 273              	.L25:
+ 117:main.c        ****                 }
+ 274              		.loc 1 117 0
+ 275 0020 0020     		movs	r0, #0
+ 276              	.LVL40:
+ 277 0022 7047     		bx	lr
+ 278              	.LVL41:
+ 279              	.L26:
+ 120:main.c        ****                 }
+ 280              		.loc 1 120 0
+ 281 0024 0120     		movs	r0, #1
+ 282              	.LVL42:
+ 283 0026 7047     		bx	lr
+ 284              	.LVL43:
+ 285              	.L27:
+ 123:main.c        ****                 }
+ 286              		.loc 1 123 0
+ 287 0028 0220     		movs	r0, #2
+ 288              	.LVL44:
+ 289 002a 7047     		bx	lr
+ 290              	.LVL45:
+ 291              	.L28:
+ 126:main.c        ****                 }
+ 292              		.loc 1 126 0
+ 293 002c 0220     		movs	r0, #2
+ 294              	.LVL46:
+ 295 002e 7047     		bx	lr
+ 296              	.LVL47:
+ 297              	.L29:
+ 130:main.c        ****                 }
+ 131:main.c        ****         
+ 132:main.c        ****         
+ 133:main.c        ****         
+ 134:main.c        ****         
+ 135:main.c        ****         
+ 136:main.c        ****     /*    if ((curState==LineNo )       &&!(prevState==LineAtLeft || prevState==LineAtRight)       
+ 137:main.c        ****                      return seek_line;
+ 138:main.c        ****         }
+ 139:main.c        ****       */        
+ 140:main.c        **** 
+ 141:main.c        **** else return go_straight;
+ 298              		.loc 1 141 0
+ 299 0030 0020     		movs	r0, #0
+ 300              	.LVL48:
+ 142:main.c        **** /*END OF FUNCTION__________________________________________________________________________________
+ 143:main.c        **** };
+ 301              		.loc 1 143 0
+ 302 0032 7047     		bx	lr
+ 303              		.cfi_endproc
+ 304              	.LFE66:
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 9
 
 
- 154:main.c        ****         
- 155:main.c        ****         
- 156:main.c        ****         
- 157:main.c        ****         
- 158:main.c        ****     prevState=LineAtLeft;   
- 159:main.c        ****     curState=LineNo;    
- 160:main.c        ****     event=setEvent(curState,prevState);         //set event based on current and previous states
- 351              		.loc 1 160 0
- 352 0014 0321     		movs	r1, #3
- 353 0016 0020     		movs	r0, #0
- 354 0018 FFF7FEFF 		bl	setEvent
- 355              	.LVL54:
- 161:main.c        ****     
- 162:main.c        ****     
- 163:main.c        **** 
- 164:main.c        ****         switch (event) {       
- 356              		.loc 1 164 0
- 357 001c 0328     		cmp	r0, #3
- 358 001e 18D8     		bhi	.L33
- 359 0020 DFE800F0 		tbb	[pc, r0]
- 360              	.L35:
- 361 0024 02       		.byte	(.L34-.L35)/2
- 362 0025 07       		.byte	(.L36-.L35)/2
- 363 0026 0D       		.byte	(.L37-.L35)/2
- 364 0027 12       		.byte	(.L38-.L35)/2
- 365              		.p2align 1
- 366              	.L34:
- 165:main.c        ****     case go_straight:
- 166:main.c        ****         calSpeed(speed,0); 
- 367              		.loc 1 166 0
- 368 0028 0021     		movs	r1, #0
- 369 002a 6420     		movs	r0, #100
- 370              	.LVL55:
- 371 002c FFF7FEFF 		bl	calSpeed
- 372              	.LVL56:
- 167:main.c        ****         break;
- 373              		.loc 1 167 0
- 374 0030 F0E7     		b	.L32
- 375              	.LVL57:
- 376              	.L36:
- 168:main.c        ****     case turn_left:
- 169:main.c        ****         calSpeed(speed,-20);  
- 377              		.loc 1 169 0
- 378 0032 6FF01301 		mvn	r1, #19
- 379 0036 6420     		movs	r0, #100
- 380              	.LVL58:
- 381 0038 FFF7FEFF 		bl	calSpeed
- 382              	.LVL59:
- 170:main.c        ****         break;
- 383              		.loc 1 170 0
- 384 003c EAE7     		b	.L32
- 385              	.LVL60:
- 386              	.L37:
- 171:main.c        ****     case turn_right:
- 172:main.c        ****         calSpeed(speed,20);        
- 387              		.loc 1 172 0
- 388 003e 1421     		movs	r1, #20
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 11
+ 305              		.size	setEvent, .-setEvent
+ 306              		.section	.text.execute,"ax",%progbits
+ 307              		.align	2
+ 308              		.global	execute
+ 309              		.thumb
+ 310              		.thumb_func
+ 311              		.type	execute, %function
+ 312              	execute:
+ 313              	.LFB67:
+ 144:main.c        **** 
+ 145:main.c        **** void execute (events event,int16 speed){
+ 314              		.loc 1 145 0
+ 315              		.cfi_startproc
+ 316              		@ args = 0, pretend = 0, frame = 0
+ 317              		@ frame_needed = 0, uses_anonymous_args = 0
+ 318              	.LVL49:
+ 319 0000 08B5     		push	{r3, lr}
+ 320              		.cfi_def_cfa_offset 8
+ 321              		.cfi_offset 3, -8
+ 322              		.cfi_offset 14, -4
+ 323 0002 0B46     		mov	r3, r1
+ 146:main.c        ****   switch (event) {       
+ 324              		.loc 1 146 0
+ 325 0004 0428     		cmp	r0, #4
+ 326 0006 1ED8     		bhi	.L31
+ 327 0008 DFE800F0 		tbb	[pc, r0]
+ 328              	.L33:
+ 329 000c 03       		.byte	(.L32-.L33)/2
+ 330 000d 08       		.byte	(.L34-.L33)/2
+ 331 000e 0E       		.byte	(.L35-.L33)/2
+ 332 000f 13       		.byte	(.L36-.L33)/2
+ 333 0010 18       		.byte	(.L37-.L33)/2
+ 334 0011 00       		.p2align 1
+ 335              	.L32:
+ 147:main.c        ****     case go_straight:
+ 148:main.c        ****         calSpeed(speed,0); 
+ 336              		.loc 1 148 0
+ 337 0012 0021     		movs	r1, #0
+ 338              	.LVL50:
+ 339 0014 1846     		mov	r0, r3
+ 340              	.LVL51:
+ 341 0016 FFF7FEFF 		bl	calSpeed
+ 342              	.LVL52:
+ 149:main.c        ****         break;
+ 343              		.loc 1 149 0
+ 344 001a 08BD     		pop	{r3, pc}
+ 345              	.LVL53:
+ 346              	.L34:
+ 150:main.c        ****     case turn_left:
+ 151:main.c        ****         calSpeed(speed,-20);  
+ 347              		.loc 1 151 0
+ 348 001c 6FF01301 		mvn	r1, #19
+ 349              	.LVL54:
+ 350 0020 1846     		mov	r0, r3
+ 351              	.LVL55:
+ 352 0022 FFF7FEFF 		bl	calSpeed
+ 353              	.LVL56:
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 10
 
 
- 389 0040 6420     		movs	r0, #100
- 390              	.LVL61:
- 391 0042 FFF7FEFF 		bl	calSpeed
- 392              	.LVL62:
- 173:main.c        ****         break;
- 393              		.loc 1 173 0
- 394 0046 E5E7     		b	.L32
- 395              	.LVL63:
- 396              	.L38:
- 174:main.c        ****     case seek_line:
- 175:main.c        ****        calSpeed(speed,30);
- 397              		.loc 1 175 0
- 398 0048 1E21     		movs	r1, #30
- 399 004a 6420     		movs	r0, #100
- 400              	.LVL64:
- 401 004c FFF7FEFF 		bl	calSpeed
- 402              	.LVL65:
- 176:main.c        ****         break;
- 403              		.loc 1 176 0
- 404 0050 E0E7     		b	.L32
- 405              	.LVL66:
- 406              	.L33:
- 177:main.c        ****     default:
- 178:main.c        ****         setSpeeds(0,0);
- 407              		.loc 1 178 0
- 408 0052 0021     		movs	r1, #0
- 409 0054 0846     		mov	r0, r1
- 410              	.LVL67:
- 411 0056 FFF7FEFF 		bl	setSpeeds
- 412              	.LVL68:
- 413 005a DBE7     		b	.L32
- 414              		.cfi_endproc
- 415              	.LFE67:
- 416              		.size	main, .-main
- 417              		.text
- 418              	.Letext0:
- 419              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 420              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
- 421              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 422              		.file 5 "Generated_Source\\PSoC5/Left_Motor_PWM.h"
- 423              		.file 6 "Generated_Source\\PSoC5/Left_Motor_DIR.h"
- 424              		.file 7 "Generated_Source\\PSoC5/Right_Motor_PWM.h"
- 425              		.file 8 "Generated_Source\\PSoC5/Right_Motor_DIR.h"
- 426              		.file 9 "Generated_Source\\PSoC5/Reg_PWM_Enable.h"
- 427              		.file 10 "Generated_Source\\PSoC5/core_cm3.h"
- 428              		.section	.debug_info,"",%progbits
- 429              	.Ldebug_info0:
- 430 0000 46040000 		.4byte	0x446
- 431 0004 0400     		.2byte	0x4
- 432 0006 00000000 		.4byte	.Ldebug_abbrev0
- 433 000a 04       		.byte	0x4
- 434 000b 01       		.uleb128 0x1
- 435 000c D0010000 		.4byte	.LASF49
- 436 0010 0C       		.byte	0xc
- 437 0011 97020000 		.4byte	.LASF50
- 438 0015 8A000000 		.4byte	.LASF51
- 439 0019 00000000 		.4byte	.Ldebug_ranges0+0
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 12
+ 152:main.c        ****         break;
+ 354              		.loc 1 152 0
+ 355 0026 08BD     		pop	{r3, pc}
+ 356              	.LVL57:
+ 357              	.L35:
+ 153:main.c        ****     case turn_right:
+ 154:main.c        ****         calSpeed(speed,20);        
+ 358              		.loc 1 154 0
+ 359 0028 1421     		movs	r1, #20
+ 360              	.LVL58:
+ 361 002a 1846     		mov	r0, r3
+ 362              	.LVL59:
+ 363 002c FFF7FEFF 		bl	calSpeed
+ 364              	.LVL60:
+ 155:main.c        ****         break;
+ 365              		.loc 1 155 0
+ 366 0030 08BD     		pop	{r3, pc}
+ 367              	.LVL61:
+ 368              	.L36:
+ 156:main.c        ****     case seek_line:
+ 157:main.c        ****        calSpeed(speed,30);
+ 369              		.loc 1 157 0
+ 370 0032 1E21     		movs	r1, #30
+ 371              	.LVL62:
+ 372 0034 1846     		mov	r0, r3
+ 373              	.LVL63:
+ 374 0036 FFF7FEFF 		bl	calSpeed
+ 375              	.LVL64:
+ 158:main.c        ****         break;
+ 376              		.loc 1 158 0
+ 377 003a 08BD     		pop	{r3, pc}
+ 378              	.LVL65:
+ 379              	.L37:
+ 159:main.c        ****     case none:
+ 160:main.c        ****        setSpeeds(0,0);
+ 380              		.loc 1 160 0
+ 381 003c 0021     		movs	r1, #0
+ 382              	.LVL66:
+ 383 003e 0846     		mov	r0, r1
+ 384              	.LVL67:
+ 385 0040 FFF7FEFF 		bl	setSpeeds
+ 386              	.LVL68:
+ 161:main.c        ****         break;
+ 387              		.loc 1 161 0
+ 388 0044 08BD     		pop	{r3, pc}
+ 389              	.LVL69:
+ 390              	.L31:
+ 162:main.c        ****     default:
+ 163:main.c        ****         setSpeeds(0,0);
+ 391              		.loc 1 163 0
+ 392 0046 0021     		movs	r1, #0
+ 393              	.LVL70:
+ 394 0048 0846     		mov	r0, r1
+ 395              	.LVL71:
+ 396 004a FFF7FEFF 		bl	setSpeeds
+ 397              	.LVL72:
+ 398 004e 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 11
 
 
- 440 001d 00000000 		.4byte	0
- 441 0021 00000000 		.4byte	.Ldebug_line0
- 442 0025 02       		.uleb128 0x2
- 443 0026 01       		.byte	0x1
- 444 0027 06       		.byte	0x6
- 445 0028 01030000 		.4byte	.LASF0
- 446 002c 02       		.uleb128 0x2
- 447 002d 01       		.byte	0x1
- 448 002e 08       		.byte	0x8
- 449 002f 1F010000 		.4byte	.LASF1
- 450 0033 02       		.uleb128 0x2
- 451 0034 02       		.byte	0x2
- 452 0035 05       		.byte	0x5
- 453 0036 BA020000 		.4byte	.LASF2
- 454 003a 02       		.uleb128 0x2
- 455 003b 02       		.byte	0x2
- 456 003c 07       		.byte	0x7
- 457 003d 3B000000 		.4byte	.LASF3
- 458 0041 03       		.uleb128 0x3
- 459 0042 0F000000 		.4byte	.LASF9
- 460 0046 02       		.byte	0x2
- 461 0047 3F       		.byte	0x3f
- 462 0048 4C000000 		.4byte	0x4c
- 463 004c 02       		.uleb128 0x2
- 464 004d 04       		.byte	0x4
- 465 004e 05       		.byte	0x5
- 466 004f E3020000 		.4byte	.LASF4
- 467 0053 02       		.uleb128 0x2
- 468 0054 04       		.byte	0x4
- 469 0055 07       		.byte	0x7
- 470 0056 2D010000 		.4byte	.LASF5
- 471 005a 02       		.uleb128 0x2
- 472 005b 08       		.byte	0x8
- 473 005c 05       		.byte	0x5
- 474 005d 89020000 		.4byte	.LASF6
- 475 0061 02       		.uleb128 0x2
- 476 0062 08       		.byte	0x8
- 477 0063 07       		.byte	0x7
- 478 0064 73000000 		.4byte	.LASF7
- 479 0068 04       		.uleb128 0x4
- 480 0069 04       		.byte	0x4
- 481 006a 05       		.byte	0x5
- 482 006b 696E7400 		.ascii	"int\000"
- 483 006f 02       		.uleb128 0x2
- 484 0070 04       		.byte	0x4
- 485 0071 07       		.byte	0x7
- 486 0072 A7010000 		.4byte	.LASF8
- 487 0076 03       		.uleb128 0x3
- 488 0077 AA020000 		.4byte	.LASF10
- 489 007b 03       		.byte	0x3
- 490 007c 2C       		.byte	0x2c
- 491 007d 41000000 		.4byte	0x41
- 492 0081 05       		.uleb128 0x5
- 493 0082 1A010000 		.4byte	.LASF11
- 494 0086 04       		.byte	0x4
- 495 0087 E701     		.2byte	0x1e7
- 496 0089 25000000 		.4byte	0x25
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 13
+ 399              		.cfi_endproc
+ 400              	.LFE67:
+ 401              		.size	execute, .-execute
+ 402              		.section	.text.ismytimer,"ax",%progbits
+ 403              		.align	2
+ 404              		.global	ismytimer
+ 405              		.thumb
+ 406              		.thumb_func
+ 407              		.type	ismytimer, %function
+ 408              	ismytimer:
+ 409              	.LFB68:
+ 164:main.c        **** 
+ 165:main.c        **** 
+ 166:main.c        **** 
+ 167:main.c        **** };
+ 168:main.c        **** };
+ 169:main.c        **** 
+ 170:main.c        ****     
+ 171:main.c        ****     
+ 172:main.c        **** 
+ 173:main.c        **** uint32_t lasttime=0; //needed for timer
+ 174:main.c        **** uint8_t ismytimer(){
+ 410              		.loc 1 174 0
+ 411              		.cfi_startproc
+ 412              		@ args = 0, pretend = 0, frame = 0
+ 413              		@ frame_needed = 0, uses_anonymous_args = 0
+ 414 0000 08B5     		push	{r3, lr}
+ 415              		.cfi_def_cfa_offset 8
+ 416              		.cfi_offset 3, -8
+ 417              		.cfi_offset 14, -4
+ 175:main.c        ****     
+ 176:main.c        ****         uint32_t now = CySysTickGetValue();
+ 418              		.loc 1 176 0
+ 419 0002 FFF7FEFF 		bl	CySysTickGetValue
+ 420              	.LVL73:
+ 177:main.c        ****         if(now-lasttime > 100){
+ 421              		.loc 1 177 0
+ 422 0006 044B     		ldr	r3, .L44
+ 423 0008 1B68     		ldr	r3, [r3]
+ 424 000a C01A     		subs	r0, r0, r3
+ 425              	.LVL74:
+ 426 000c 6428     		cmp	r0, #100
+ 427 000e 01D9     		bls	.L42
+ 178:main.c        ****             return 1;
+ 428              		.loc 1 178 0
+ 429 0010 0120     		movs	r0, #1
+ 430 0012 08BD     		pop	{r3, pc}
+ 431              	.L42:
+ 179:main.c        ****         }
+ 180:main.c        ****         return 0;
+ 432              		.loc 1 180 0
+ 433 0014 0020     		movs	r0, #0
+ 181:main.c        ****     
+ 182:main.c        **** }
+ 434              		.loc 1 182 0
+ 435 0016 08BD     		pop	{r3, pc}
+ 436              	.L45:
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 12
 
 
- 497 008d 05       		.uleb128 0x5
- 498 008e 03010000 		.4byte	.LASF12
- 499 0092 04       		.byte	0x4
- 500 0093 E801     		.2byte	0x1e8
- 501 0095 33000000 		.4byte	0x33
- 502 0099 02       		.uleb128 0x2
- 503 009a 04       		.byte	0x4
- 504 009b 04       		.byte	0x4
- 505 009c 6D000000 		.4byte	.LASF13
- 506 00a0 02       		.uleb128 0x2
- 507 00a1 08       		.byte	0x8
- 508 00a2 04       		.byte	0x4
- 509 00a3 C0010000 		.4byte	.LASF14
- 510 00a7 02       		.uleb128 0x2
- 511 00a8 01       		.byte	0x1
- 512 00a9 08       		.byte	0x8
- 513 00aa 9E020000 		.4byte	.LASF15
- 514 00ae 02       		.uleb128 0x2
- 515 00af 08       		.byte	0x8
- 516 00b0 04       		.byte	0x4
- 517 00b1 55010000 		.4byte	.LASF16
- 518 00b5 02       		.uleb128 0x2
- 519 00b6 04       		.byte	0x4
- 520 00b7 07       		.byte	0x7
- 521 00b8 80020000 		.4byte	.LASF17
- 522 00bc 06       		.uleb128 0x6
- 523 00bd 01       		.byte	0x1
- 524 00be 2C000000 		.4byte	0x2c
- 525 00c2 01       		.byte	0x1
- 526 00c3 10       		.byte	0x10
- 527 00c4 E7000000 		.4byte	0xe7
- 528 00c8 07       		.uleb128 0x7
- 529 00c9 53000000 		.4byte	.LASF18
- 530 00cd 00       		.byte	0
- 531 00ce 07       		.uleb128 0x7
- 532 00cf 64020000 		.4byte	.LASF19
- 533 00d3 01       		.byte	0x1
- 534 00d4 07       		.uleb128 0x7
- 535 00d5 22030000 		.4byte	.LASF20
- 536 00d9 02       		.byte	0x2
- 537 00da 07       		.uleb128 0x7
- 538 00db 6D010000 		.4byte	.LASF21
- 539 00df 03       		.byte	0x3
- 540 00e0 07       		.uleb128 0x7
- 541 00e1 00000000 		.4byte	.LASF22
- 542 00e5 04       		.byte	0x4
- 543 00e6 00       		.byte	0
- 544 00e7 03       		.uleb128 0x3
- 545 00e8 A3020000 		.4byte	.LASF23
- 546 00ec 01       		.byte	0x1
- 547 00ed 16       		.byte	0x16
- 548 00ee BC000000 		.4byte	0xbc
- 549 00f2 06       		.uleb128 0x6
- 550 00f3 01       		.byte	0x1
- 551 00f4 2C000000 		.4byte	0x2c
- 552 00f8 01       		.byte	0x1
- 553 00f9 19       		.byte	0x19
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 14
+ 437              		.align	2
+ 438              	.L44:
+ 439 0018 00000000 		.word	.LANCHOR0
+ 440              		.cfi_endproc
+ 441              	.LFE68:
+ 442              		.size	ismytimer, .-ismytimer
+ 443              		.section	.text.ismytimer2,"ax",%progbits
+ 444              		.align	2
+ 445              		.global	ismytimer2
+ 446              		.thumb
+ 447              		.thumb_func
+ 448              		.type	ismytimer2, %function
+ 449              	ismytimer2:
+ 450              	.LFB69:
+ 183:main.c        **** 
+ 184:main.c        **** uint8_t ismytimer2(){
+ 451              		.loc 1 184 0
+ 452              		.cfi_startproc
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 454              		@ frame_needed = 0, uses_anonymous_args = 0
+ 455 0000 08B5     		push	{r3, lr}
+ 456              		.cfi_def_cfa_offset 8
+ 457              		.cfi_offset 3, -8
+ 458              		.cfi_offset 14, -4
+ 185:main.c        ****     
+ 186:main.c        ****         uint32_t now = CySysTickGetValue();
+ 459              		.loc 1 186 0
+ 460 0002 FFF7FEFF 		bl	CySysTickGetValue
+ 461              	.LVL75:
+ 187:main.c        ****         if(now-lasttime > 5000){
+ 462              		.loc 1 187 0
+ 463 0006 054B     		ldr	r3, .L50
+ 464 0008 1B68     		ldr	r3, [r3]
+ 465 000a C01A     		subs	r0, r0, r3
+ 466              	.LVL76:
+ 467 000c 41F28833 		movw	r3, #5000
+ 468 0010 9842     		cmp	r0, r3
+ 469 0012 01D9     		bls	.L48
+ 188:main.c        ****             return 1;
+ 470              		.loc 1 188 0
+ 471 0014 0120     		movs	r0, #1
+ 472 0016 08BD     		pop	{r3, pc}
+ 473              	.L48:
+ 189:main.c        ****         }
+ 190:main.c        ****         return 0;
+ 474              		.loc 1 190 0
+ 475 0018 0020     		movs	r0, #0
+ 191:main.c        ****     
+ 192:main.c        **** }
+ 476              		.loc 1 192 0
+ 477 001a 08BD     		pop	{r3, pc}
+ 478              	.L51:
+ 479              		.align	2
+ 480              	.L50:
+ 481 001c 00000000 		.word	.LANCHOR0
+ 482              		.cfi_endproc
+ 483              	.LFE69:
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 13
 
 
- 554 00fa 1D010000 		.4byte	0x11d
- 555 00fe 07       		.uleb128 0x7
- 556 00ff F5020000 		.4byte	.LASF24
- 557 0103 00       		.byte	0
- 558 0104 07       		.uleb128 0x7
- 559 0105 63000000 		.4byte	.LASF25
- 560 0109 01       		.byte	0x1
- 561 010a 07       		.uleb128 0x7
- 562 010b 0F010000 		.4byte	.LASF26
- 563 010f 02       		.byte	0x2
- 564 0110 07       		.uleb128 0x7
- 565 0111 DA000000 		.4byte	.LASF27
- 566 0115 03       		.byte	0x3
- 567 0116 07       		.uleb128 0x7
- 568 0117 19000000 		.4byte	.LASF28
- 569 011b 04       		.byte	0x4
- 570 011c 00       		.byte	0
- 571 011d 03       		.uleb128 0x3
- 572 011e 61010000 		.4byte	.LASF29
- 573 0122 01       		.byte	0x1
- 574 0123 20       		.byte	0x20
- 575 0124 F2000000 		.4byte	0xf2
- 576 0128 08       		.uleb128 0x8
- 577 0129 05000000 		.4byte	.LASF32
- 578 012d 01       		.byte	0x1
- 579 012e 23       		.byte	0x23
- 580 012f 00000000 		.4byte	.LFB63
- 581 0133 5A000000 		.4byte	.LFE63-.LFB63
- 582 0137 01       		.uleb128 0x1
- 583 0138 9C       		.byte	0x9c
- 584 0139 12020000 		.4byte	0x212
- 585 013d 09       		.uleb128 0x9
- 586 013e 4E000000 		.4byte	.LASF30
- 587 0142 01       		.byte	0x1
- 588 0143 23       		.byte	0x23
- 589 0144 8D000000 		.4byte	0x8d
- 590 0148 00000000 		.4byte	.LLST0
- 591 014c 09       		.uleb128 0x9
- 592 014d 09010000 		.4byte	.LASF31
- 593 0151 01       		.byte	0x1
- 594 0152 23       		.byte	0x23
- 595 0153 8D000000 		.4byte	0x8d
- 596 0157 3A000000 		.4byte	.LLST1
- 597 015b 0A       		.uleb128 0xa
- 598 015c B4010000 		.4byte	.LASF36
- 599 0160 01       		.byte	0x1
- 600 0161 25       		.byte	0x25
- 601 0162 81000000 		.4byte	0x81
- 602 0166 74000000 		.4byte	.LLST2
- 603 016a 0B       		.uleb128 0xb
- 604 016b 10000000 		.4byte	.LVL3
- 605 016f FC030000 		.4byte	0x3fc
- 606 0173 7F010000 		.4byte	0x17f
- 607 0177 0C       		.uleb128 0xc
- 608 0178 01       		.uleb128 0x1
- 609 0179 50       		.byte	0x50
- 610 017a 03       		.uleb128 0x3
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 15
+ 484              		.size	ismytimer2, .-ismytimer2
+ 485              		.section	.text.main,"ax",%progbits
+ 486              		.align	2
+ 487              		.global	main
+ 488              		.thumb
+ 489              		.thumb_func
+ 490              		.type	main, %function
+ 491              	main:
+ 492              	.LFB70:
+ 193:main.c        **** 
+ 194:main.c        **** 
+ 195:main.c        **** 
+ 196:main.c        **** 
+ 197:main.c        **** int main(void)
+ 198:main.c        **** {
+ 493              		.loc 1 198 0
+ 494              		.cfi_startproc
+ 495              		@ args = 0, pretend = 0, frame = 0
+ 496              		@ frame_needed = 0, uses_anonymous_args = 0
+ 497 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 498              		.cfi_def_cfa_offset 24
+ 499              		.cfi_offset 3, -24
+ 500              		.cfi_offset 4, -20
+ 501              		.cfi_offset 5, -16
+ 502              		.cfi_offset 6, -12
+ 503              		.cfi_offset 7, -8
+ 504              		.cfi_offset 14, -4
+ 199:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 505              		.loc 1 199 0
+ 506              		.syntax unified
+ 507              	@ 199 "main.c" 1
+ 508 0002 62B6     		CPSIE   i
+ 509              	@ 0 "" 2
+ 200:main.c        **** 
+ 201:main.c        ****     Left_Motor_PWM_Start();
+ 510              		.loc 1 201 0
+ 511              		.thumb
+ 512              		.syntax unified
+ 513 0004 FFF7FEFF 		bl	Left_Motor_PWM_Start
+ 514              	.LVL77:
+ 202:main.c        ****     Right_Motor_PWM_Start();
+ 515              		.loc 1 202 0
+ 516 0008 FFF7FEFF 		bl	Right_Motor_PWM_Start
+ 517              	.LVL78:
+ 203:main.c        ****     setSpeeds(0,0);
+ 518              		.loc 1 203 0
+ 519 000c 0021     		movs	r1, #0
+ 520 000e 0846     		mov	r0, r1
+ 521 0010 FFF7FEFF 		bl	setSpeeds
+ 522              	.LVL79:
+ 204:main.c        ****     CySysTickStart(); 
+ 523              		.loc 1 204 0
+ 524 0014 FFF7FEFF 		bl	CySysTickStart
+ 525              	.LVL80:
+ 205:main.c        ****     
+ 206:main.c        ****     int16 Is_Going=0;
+ 207:main.c        ****     uint16 result=0;
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 14
 
 
- 611 017b 75       		.byte	0x75
- 612 017c 00       		.sleb128 0
- 613 017d 1F       		.byte	0x1f
- 614 017e 00       		.byte	0
- 615 017f 0B       		.uleb128 0xb
- 616 0180 16000000 		.4byte	.LVL4
- 617 0184 07040000 		.4byte	0x407
- 618 0188 92010000 		.4byte	0x192
- 619 018c 0C       		.uleb128 0xc
- 620 018d 01       		.uleb128 0x1
- 621 018e 50       		.byte	0x50
- 622 018f 01       		.uleb128 0x1
- 623 0190 31       		.byte	0x31
- 624 0191 00       		.byte	0
- 625 0192 0B       		.uleb128 0xb
- 626 0193 1E000000 		.4byte	.LVL7
- 627 0197 FC030000 		.4byte	0x3fc
- 628 019b A6010000 		.4byte	0x1a6
- 629 019f 0C       		.uleb128 0xc
- 630 01a0 01       		.uleb128 0x1
- 631 01a1 50       		.byte	0x50
- 632 01a2 02       		.uleb128 0x2
- 633 01a3 75       		.byte	0x75
- 634 01a4 00       		.sleb128 0
- 635 01a5 00       		.byte	0
- 636 01a6 0B       		.uleb128 0xb
- 637 01a7 24000000 		.4byte	.LVL8
- 638 01ab 07040000 		.4byte	0x407
- 639 01af B9010000 		.4byte	0x1b9
- 640 01b3 0C       		.uleb128 0xc
- 641 01b4 01       		.uleb128 0x1
- 642 01b5 50       		.byte	0x50
- 643 01b6 01       		.uleb128 0x1
- 644 01b7 30       		.byte	0x30
- 645 01b8 00       		.byte	0
- 646 01b9 0B       		.uleb128 0xb
- 647 01ba 30000000 		.4byte	.LVL9
- 648 01be 12040000 		.4byte	0x412
- 649 01c2 CE010000 		.4byte	0x1ce
- 650 01c6 0C       		.uleb128 0xc
- 651 01c7 01       		.uleb128 0x1
- 652 01c8 50       		.byte	0x50
- 653 01c9 03       		.uleb128 0x3
- 654 01ca 74       		.byte	0x74
- 655 01cb 00       		.sleb128 0
- 656 01cc 1F       		.byte	0x1f
- 657 01cd 00       		.byte	0
- 658 01ce 0B       		.uleb128 0xb
- 659 01cf 36000000 		.4byte	.LVL10
- 660 01d3 1D040000 		.4byte	0x41d
- 661 01d7 E1010000 		.4byte	0x1e1
- 662 01db 0C       		.uleb128 0xc
- 663 01dc 01       		.uleb128 0x1
- 664 01dd 50       		.byte	0x50
- 665 01de 01       		.uleb128 0x1
- 666 01df 31       		.byte	0x31
- 667 01e0 00       		.byte	0
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 16
+ 208:main.c        ****     uint16 prev_result=0;
+ 209:main.c        ****     
+ 210:main.c        ****     
+ 211:main.c        ****     
+ 212:main.c        ****     
+ 213:main.c        ****     states curState=idle;
+ 214:main.c        ****     states prevState=idle;
+ 215:main.c        ****     
+ 216:main.c        ****     events event=none;
+ 217:main.c        ****     
+ 218:main.c        ****     int speed=100;
+ 219:main.c        ****     
+ 220:main.c        ****     
+ 221:main.c        ****     ADC_SAR_1_Start();
+ 526              		.loc 1 221 0
+ 527 0018 FFF7FEFF 		bl	ADC_SAR_1_Start
+ 528              	.LVL81:
+ 222:main.c        ****     LCD_Char_1_Start();
+ 529              		.loc 1 222 0
+ 530 001c FFF7FEFF 		bl	LCD_Char_1_Start
+ 531              	.LVL82:
+ 223:main.c        ****     LCD_Char_1_PrintString("Hello");
+ 532              		.loc 1 223 0
+ 533 0020 1D48     		ldr	r0, .L59
+ 534 0022 FFF7FEFF 		bl	LCD_Char_1_PrintString
+ 535              	.LVL83:
+ 218:main.c        ****     
+ 536              		.loc 1 218 0
+ 537 0026 6424     		movs	r4, #100
+ 213:main.c        ****     states prevState=idle;
+ 538              		.loc 1 213 0
+ 539 0028 0427     		movs	r7, #4
+ 207:main.c        ****     uint16 prev_result=0;
+ 540              		.loc 1 207 0
+ 541 002a 0026     		movs	r6, #0
+ 542              	.LVL84:
+ 543              	.L53:
+ 224:main.c        ****     
+ 225:main.c        ****     for(;;)
+ 226:main.c        ****     {
+ 227:main.c        ****      /*START OF FOR LOOP___________________________________________________________________________
+ 228:main.c        ****          if(ismytimer()){
+ 544              		.loc 1 228 0
+ 545 002c FFF7FEFF 		bl	ismytimer
+ 546              	.LVL85:
+ 547 0030 90B1     		cbz	r0, .L54
+ 229:main.c        ****        
+ 230:main.c        ****     if (BTN_Read()) {Is_Going++;};
+ 548              		.loc 1 230 0
+ 549 0032 FFF7FEFF 		bl	BTN_Read
+ 550              	.LVL86:
+ 231:main.c        ****     prevState=curState;                         // *set previous and current states
+ 232:main.c        ****     curState=setState(IRL_Read(),IRR_Read());  // *
+ 551              		.loc 1 232 0
+ 552 0036 FFF7FEFF 		bl	IRL_Read
+ 553              	.LVL87:
+ 554 003a 05B2     		sxth	r5, r0
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 15
 
 
- 668 01e1 0B       		.uleb128 0xb
- 669 01e2 3E000000 		.4byte	.LVL11
- 670 01e6 12040000 		.4byte	0x412
- 671 01ea F5010000 		.4byte	0x1f5
- 672 01ee 0C       		.uleb128 0xc
- 673 01ef 01       		.uleb128 0x1
- 674 01f0 50       		.byte	0x50
- 675 01f1 02       		.uleb128 0x2
- 676 01f2 74       		.byte	0x74
- 677 01f3 00       		.sleb128 0
- 678 01f4 00       		.byte	0
- 679 01f5 0B       		.uleb128 0xb
- 680 01f6 44000000 		.4byte	.LVL12
- 681 01fa 1D040000 		.4byte	0x41d
- 682 01fe 08020000 		.4byte	0x208
- 683 0202 0C       		.uleb128 0xc
- 684 0203 01       		.uleb128 0x1
- 685 0204 50       		.byte	0x50
- 686 0205 01       		.uleb128 0x1
- 687 0206 30       		.byte	0x30
- 688 0207 00       		.byte	0
- 689 0208 0D       		.uleb128 0xd
- 690 0209 58000000 		.4byte	.LVL16
- 691 020d 28040000 		.4byte	0x428
- 692 0211 00       		.byte	0
- 693 0212 08       		.uleb128 0x8
- 694 0213 EC020000 		.4byte	.LASF33
- 695 0217 01       		.byte	0x1
- 696 0218 49       		.byte	0x49
- 697 0219 00000000 		.4byte	.LFB64
- 698 021d 1C000000 		.4byte	.LFE64-.LFB64
- 699 0221 01       		.uleb128 0x1
- 700 0222 9C       		.byte	0x9c
- 701 0223 75020000 		.4byte	0x275
- 702 0227 09       		.uleb128 0x9
- 703 0228 5E020000 		.4byte	.LASF34
- 704 022c 01       		.byte	0x1
- 705 022d 49       		.byte	0x49
- 706 022e 8D000000 		.4byte	0x8d
- 707 0232 9E000000 		.4byte	.LLST3
- 708 0236 09       		.uleb128 0x9
- 709 0237 B2020000 		.4byte	.LASF35
- 710 023b 01       		.byte	0x1
- 711 023c 49       		.byte	0x49
- 712 023d 8D000000 		.4byte	0x8d
- 713 0241 BF000000 		.4byte	.LLST4
- 714 0245 0E       		.uleb128 0xe
- 715 0246 7700     		.ascii	"w\000"
- 716 0248 01       		.byte	0x1
- 717 0249 50       		.byte	0x50
- 718 024a 8D000000 		.4byte	0x8d
- 719 024e 14       		.byte	0x14
- 720 024f 0F       		.uleb128 0xf
- 721 0250 766C00   		.ascii	"vl\000"
- 722 0253 01       		.byte	0x1
- 723 0254 51       		.byte	0x51
- 724 0255 8D000000 		.4byte	0x8d
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 17
+ 555 003c FFF7FEFF 		bl	IRR_Read
+ 556              	.LVL88:
+ 557 0040 01B2     		sxth	r1, r0
+ 558 0042 2846     		mov	r0, r5
+ 559 0044 FFF7FEFF 		bl	setState
+ 560              	.LVL89:
+ 561 0048 0546     		mov	r5, r0
+ 562              	.LVL90:
+ 233:main.c        ****     event=setEvent(curState,prevState);         //set event based on current and previous states
+ 563              		.loc 1 233 0
+ 564 004a 3946     		mov	r1, r7
+ 565 004c FFF7FEFF 		bl	setEvent
+ 566              	.LVL91:
+ 234:main.c        **** 
+ 235:main.c        ****    
+ 236:main.c        ****     
+ 237:main.c        **** execute(event, speed);        
+ 567              		.loc 1 237 0
+ 568 0050 2146     		mov	r1, r4
+ 569 0052 FFF7FEFF 		bl	execute
+ 570              	.LVL92:
+ 232:main.c        ****     event=setEvent(curState,prevState);         //set event based on current and previous states
+ 571              		.loc 1 232 0
+ 572 0056 2F46     		mov	r7, r5
+ 573              	.LVL93:
+ 574              	.L54:
+ 238:main.c        ****  
+ 239:main.c        **** };
+ 240:main.c        **** 
+ 241:main.c        ****          if(ismytimer2()){
+ 575              		.loc 1 241 0
+ 576 0058 FFF7FEFF 		bl	ismytimer2
+ 577              	.LVL94:
+ 578 005c 0028     		cmp	r0, #0
+ 579 005e E5D0     		beq	.L53
+ 580              	.LVL95:
+ 242:main.c        ****     prev_result=result;
+ 243:main.c        ****     ADC_SAR_1_StartConvert();
+ 581              		.loc 1 243 0
+ 582 0060 FFF7FEFF 		bl	ADC_SAR_1_StartConvert
+ 583              	.LVL96:
+ 244:main.c        ****     result=ADC_SAR_1_GetResult16();
+ 584              		.loc 1 244 0
+ 585 0064 FFF7FEFF 		bl	ADC_SAR_1_GetResult16
+ 586              	.LVL97:
+ 587 0068 85B2     		uxth	r5, r0
+ 588              	.LVL98:
+ 245:main.c        ****     ADC_SAR_1_StopConvert();
+ 589              		.loc 1 245 0
+ 590 006a FFF7FEFF 		bl	ADC_SAR_1_StopConvert
+ 591              	.LVL99:
+ 246:main.c        ****     
+ 247:main.c        ****     if((prev_result+1<result) || (prev_result-1>result)){
+ 592              		.loc 1 247 0
+ 593 006e 731C     		adds	r3, r6, #1
+ 594 0070 AB42     		cmp	r3, r5
+ 595 0072 02DB     		blt	.L56
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 16
 
 
- 725 0259 E0000000 		.4byte	.LLST5
- 726 025d 0F       		.uleb128 0xf
- 727 025e 767200   		.ascii	"vr\000"
- 728 0261 01       		.byte	0x1
- 729 0262 52       		.byte	0x52
- 730 0263 8D000000 		.4byte	0x8d
- 731 0267 F3000000 		.4byte	.LLST6
- 732 026b 0D       		.uleb128 0xd
- 733 026c 1A000000 		.4byte	.LVL23
- 734 0270 28010000 		.4byte	0x128
- 735 0274 00       		.byte	0
- 736 0275 10       		.uleb128 0x10
- 737 0276 DA020000 		.4byte	.LASF37
- 738 027a 01       		.byte	0x1
- 739 027b 57       		.byte	0x57
- 740 027c E7000000 		.4byte	0xe7
- 741 0280 00000000 		.4byte	.LFB65
- 742 0284 32000000 		.4byte	.LFE65-.LFB65
- 743 0288 01       		.uleb128 0x1
- 744 0289 9C       		.byte	0x9c
- 745 028a AB020000 		.4byte	0x2ab
- 746 028e 09       		.uleb128 0x9
- 747 028f 4E000000 		.4byte	.LASF30
- 748 0293 01       		.byte	0x1
- 749 0294 57       		.byte	0x57
- 750 0295 8D000000 		.4byte	0x8d
- 751 0299 06010000 		.4byte	.LLST7
- 752 029d 11       		.uleb128 0x11
- 753 029e 09010000 		.4byte	.LASF31
- 754 02a2 01       		.byte	0x1
- 755 02a3 57       		.byte	0x57
- 756 02a4 8D000000 		.4byte	0x8d
- 757 02a8 01       		.uleb128 0x1
- 758 02a9 51       		.byte	0x51
- 759 02aa 00       		.byte	0
- 760 02ab 10       		.uleb128 0x10
- 761 02ac 5A000000 		.4byte	.LASF38
- 762 02b0 01       		.byte	0x1
- 763 02b1 69       		.byte	0x69
- 764 02b2 1D010000 		.4byte	0x11d
- 765 02b6 00000000 		.4byte	.LFB66
- 766 02ba 3E000000 		.4byte	.LFE66-.LFB66
- 767 02be 01       		.uleb128 0x1
- 768 02bf 9C       		.byte	0x9c
- 769 02c0 E3020000 		.4byte	0x2e3
- 770 02c4 09       		.uleb128 0x9
- 771 02c5 C7010000 		.4byte	.LASF39
- 772 02c9 01       		.byte	0x1
- 773 02ca 69       		.byte	0x69
- 774 02cb E7000000 		.4byte	0xe7
- 775 02cf A4010000 		.4byte	.LLST8
- 776 02d3 09       		.uleb128 0x9
- 777 02d4 F9000000 		.4byte	.LASF40
- 778 02d8 01       		.byte	0x1
- 779 02d9 69       		.byte	0x69
- 780 02da E7000000 		.4byte	0xe7
- 781 02de 5B020000 		.4byte	.LLST9
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 18
+ 596              		.loc 1 247 0 is_stmt 0 discriminator 1
+ 597 0074 013E     		subs	r6, r6, #1
+ 598              	.LVL100:
+ 599 0076 B542     		cmp	r5, r6
+ 600 0078 08DA     		bge	.L57
+ 601              	.L56:
+ 248:main.c        ****     
+ 249:main.c        ****         LCD_Char_1_ClearDisplay();
+ 602              		.loc 1 249 0 is_stmt 1
+ 603 007a 0120     		movs	r0, #1
+ 604 007c FFF7FEFF 		bl	LCD_Char_1_WriteControl
+ 605              	.LVL101:
+ 250:main.c        ****     LCD_Char_1_PrintString("ADC result: ");
+ 606              		.loc 1 250 0
+ 607 0080 0648     		ldr	r0, .L59+4
+ 608 0082 FFF7FEFF 		bl	LCD_Char_1_PrintString
+ 609              	.LVL102:
+ 251:main.c        ****     LCD_Char_1_PrintNumber(result);}
+ 610              		.loc 1 251 0
+ 611 0086 2846     		mov	r0, r5
+ 612 0088 FFF7FEFF 		bl	LCD_Char_1_PrintU32Number
+ 613              	.LVL103:
+ 614              	.L57:
+ 252:main.c        ****     
+ 253:main.c        ****     speed=result/20;
+ 615              		.loc 1 253 0
+ 616 008c 0449     		ldr	r1, .L59+8
+ 617 008e A1FB0531 		umull	r3, r1, r1, r5
+ 618 0092 0C09     		lsrs	r4, r1, #4
+ 619              	.LVL104:
+ 244:main.c        ****     ADC_SAR_1_StopConvert();
+ 620              		.loc 1 244 0
+ 621 0094 2E46     		mov	r6, r5
+ 622 0096 C9E7     		b	.L53
+ 623              	.L60:
+ 624              		.align	2
+ 625              	.L59:
+ 626 0098 00000000 		.word	.LC0
+ 627 009c 08000000 		.word	.LC1
+ 628 00a0 CDCCCCCC 		.word	-858993459
+ 629              		.cfi_endproc
+ 630              	.LFE70:
+ 631              		.size	main, .-main
+ 632              		.global	lasttime
+ 633              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 634              		.align	2
+ 635              	.LC0:
+ 636 0000 48656C6C 		.ascii	"Hello\000"
+ 636      6F00
+ 637 0006 0000     		.space	2
+ 638              	.LC1:
+ 639 0008 41444320 		.ascii	"ADC result: \000"
+ 639      72657375 
+ 639      6C743A20 
+ 639      00
+ 640              		.bss
+ 641              		.align	2
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 17
 
 
- 782 02e2 00       		.byte	0
- 783 02e3 12       		.uleb128 0x12
- 784 02e4 68010000 		.4byte	.LASF52
- 785 02e8 01       		.byte	0x1
- 786 02e9 80       		.byte	0x80
- 787 02ea 68000000 		.4byte	0x68
- 788 02ee 00000000 		.4byte	.LFB67
- 789 02f2 5C000000 		.4byte	.LFE67-.LFB67
- 790 02f6 01       		.uleb128 0x1
- 791 02f7 9C       		.byte	0x9c
- 792 02f8 EB030000 		.4byte	0x3eb
- 793 02fc 13       		.uleb128 0x13
- 794 02fd C7010000 		.4byte	.LASF39
- 795 0301 01       		.byte	0x1
- 796 0302 89       		.byte	0x89
- 797 0303 E7000000 		.4byte	0xe7
- 798 0307 00       		.byte	0
- 799 0308 13       		.uleb128 0x13
- 800 0309 F9000000 		.4byte	.LASF40
- 801 030d 01       		.byte	0x1
- 802 030e 8A       		.byte	0x8a
- 803 030f E7000000 		.4byte	0xe7
- 804 0313 03       		.byte	0x3
- 805 0314 0A       		.uleb128 0xa
- 806 0315 85010000 		.4byte	.LASF41
- 807 0319 01       		.byte	0x1
- 808 031a 8C       		.byte	0x8c
- 809 031b 1D010000 		.4byte	0x11d
- 810 031f 95020000 		.4byte	.LLST10
- 811 0323 13       		.uleb128 0x13
- 812 0324 5E020000 		.4byte	.LASF34
- 813 0328 01       		.byte	0x1
- 814 0329 8E       		.byte	0x8e
- 815 032a 68000000 		.4byte	0x68
- 816 032e 64       		.byte	0x64
- 817 032f 0D       		.uleb128 0xd
- 818 0330 08000000 		.4byte	.LVL51
- 819 0334 33040000 		.4byte	0x433
- 820 0338 0D       		.uleb128 0xd
- 821 0339 0C000000 		.4byte	.LVL52
- 822 033d 3E040000 		.4byte	0x43e
- 823 0341 0B       		.uleb128 0xb
- 824 0342 14000000 		.4byte	.LVL53
- 825 0346 28010000 		.4byte	0x128
- 826 034a 59030000 		.4byte	0x359
- 827 034e 0C       		.uleb128 0xc
- 828 034f 01       		.uleb128 0x1
- 829 0350 50       		.byte	0x50
- 830 0351 01       		.uleb128 0x1
- 831 0352 30       		.byte	0x30
- 832 0353 0C       		.uleb128 0xc
- 833 0354 01       		.uleb128 0x1
- 834 0355 51       		.byte	0x51
- 835 0356 01       		.uleb128 0x1
- 836 0357 30       		.byte	0x30
- 837 0358 00       		.byte	0
- 838 0359 0B       		.uleb128 0xb
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 19
+ 642              		.set	.LANCHOR0,. + 0
+ 643              		.type	lasttime, %object
+ 644              		.size	lasttime, 4
+ 645              	lasttime:
+ 646 0000 00000000 		.space	4
+ 647              		.text
+ 648              	.Letext0:
+ 649              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 650              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 651              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 652              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 653              		.file 6 "Generated_Source\\PSoC5/Left_Motor_PWM.h"
+ 654              		.file 7 "Generated_Source\\PSoC5/Left_Motor_DIR.h"
+ 655              		.file 8 "Generated_Source\\PSoC5/Right_Motor_PWM.h"
+ 656              		.file 9 "Generated_Source\\PSoC5/Right_Motor_DIR.h"
+ 657              		.file 10 "Generated_Source\\PSoC5/Reg_PWM_Enable.h"
+ 658              		.file 11 "Generated_Source\\PSoC5/CyLib.h"
+ 659              		.file 12 "Generated_Source\\PSoC5/ADC_SAR_1.h"
+ 660              		.file 13 "Generated_Source\\PSoC5/LCD_Char_1.h"
+ 661              		.file 14 "Generated_Source\\PSoC5/BTN.h"
+ 662              		.file 15 "Generated_Source\\PSoC5/IRL.h"
+ 663              		.file 16 "Generated_Source\\PSoC5/IRR.h"
+ 664              		.section	.debug_info,"",%progbits
+ 665              	.Ldebug_info0:
+ 666 0000 CA060000 		.4byte	0x6ca
+ 667 0004 0400     		.2byte	0x4
+ 668 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 669 000a 04       		.byte	0x4
+ 670 000b 01       		.uleb128 0x1
+ 671 000c CB030000 		.4byte	.LASF75
+ 672 0010 0C       		.byte	0xc
+ 673 0011 25030000 		.4byte	.LASF76
+ 674 0015 64020000 		.4byte	.LASF77
+ 675 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 676 001d 00000000 		.4byte	0
+ 677 0021 00000000 		.4byte	.Ldebug_line0
+ 678 0025 02       		.uleb128 0x2
+ 679 0026 01       		.byte	0x1
+ 680 0027 06       		.byte	0x6
+ 681 0028 06010000 		.4byte	.LASF0
+ 682 002c 03       		.uleb128 0x3
+ 683 002d 7C040000 		.4byte	.LASF4
+ 684 0031 02       		.byte	0x2
+ 685 0032 1D       		.byte	0x1d
+ 686 0033 37000000 		.4byte	0x37
+ 687 0037 02       		.uleb128 0x2
+ 688 0038 01       		.byte	0x1
+ 689 0039 08       		.byte	0x8
+ 690 003a A9010000 		.4byte	.LASF1
+ 691 003e 02       		.uleb128 0x2
+ 692 003f 02       		.byte	0x2
+ 693 0040 05       		.byte	0x5
+ 694 0041 98000000 		.4byte	.LASF2
+ 695 0045 02       		.uleb128 0x2
+ 696 0046 02       		.byte	0x2
+ 697 0047 07       		.byte	0x7
+ 698 0048 51020000 		.4byte	.LASF3
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 18
 
 
- 839 035a 1C000000 		.4byte	.LVL54
- 840 035e AB020000 		.4byte	0x2ab
- 841 0362 71030000 		.4byte	0x371
- 842 0366 0C       		.uleb128 0xc
- 843 0367 01       		.uleb128 0x1
- 844 0368 50       		.byte	0x50
- 845 0369 01       		.uleb128 0x1
- 846 036a 30       		.byte	0x30
- 847 036b 0C       		.uleb128 0xc
- 848 036c 01       		.uleb128 0x1
- 849 036d 51       		.byte	0x51
- 850 036e 01       		.uleb128 0x1
- 851 036f 33       		.byte	0x33
- 852 0370 00       		.byte	0
- 853 0371 0B       		.uleb128 0xb
- 854 0372 30000000 		.4byte	.LVL56
- 855 0376 12020000 		.4byte	0x212
- 856 037a 8A030000 		.4byte	0x38a
- 857 037e 0C       		.uleb128 0xc
- 858 037f 01       		.uleb128 0x1
- 859 0380 50       		.byte	0x50
- 860 0381 02       		.uleb128 0x2
- 861 0382 08       		.byte	0x8
- 862 0383 64       		.byte	0x64
- 863 0384 0C       		.uleb128 0xc
- 864 0385 01       		.uleb128 0x1
- 865 0386 51       		.byte	0x51
- 866 0387 01       		.uleb128 0x1
- 867 0388 30       		.byte	0x30
- 868 0389 00       		.byte	0
- 869 038a 0B       		.uleb128 0xb
- 870 038b 3C000000 		.4byte	.LVL59
- 871 038f 12020000 		.4byte	0x212
- 872 0393 A4030000 		.4byte	0x3a4
- 873 0397 0C       		.uleb128 0xc
- 874 0398 01       		.uleb128 0x1
- 875 0399 50       		.byte	0x50
- 876 039a 02       		.uleb128 0x2
- 877 039b 08       		.byte	0x8
- 878 039c 64       		.byte	0x64
- 879 039d 0C       		.uleb128 0xc
- 880 039e 01       		.uleb128 0x1
- 881 039f 51       		.byte	0x51
- 882 03a0 02       		.uleb128 0x2
- 883 03a1 09       		.byte	0x9
- 884 03a2 EC       		.byte	0xec
- 885 03a3 00       		.byte	0
- 886 03a4 0B       		.uleb128 0xb
- 887 03a5 46000000 		.4byte	.LVL62
- 888 03a9 12020000 		.4byte	0x212
- 889 03ad BD030000 		.4byte	0x3bd
- 890 03b1 0C       		.uleb128 0xc
- 891 03b2 01       		.uleb128 0x1
- 892 03b3 50       		.byte	0x50
- 893 03b4 02       		.uleb128 0x2
- 894 03b5 08       		.byte	0x8
- 895 03b6 64       		.byte	0x64
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 20
+ 699 004c 03       		.uleb128 0x3
+ 700 004d 5E030000 		.4byte	.LASF5
+ 701 0051 02       		.byte	0x2
+ 702 0052 3F       		.byte	0x3f
+ 703 0053 57000000 		.4byte	0x57
+ 704 0057 02       		.uleb128 0x2
+ 705 0058 04       		.byte	0x4
+ 706 0059 05       		.byte	0x5
+ 707 005a 46010000 		.4byte	.LASF6
+ 708 005e 03       		.uleb128 0x3
+ 709 005f 7F000000 		.4byte	.LASF7
+ 710 0063 02       		.byte	0x2
+ 711 0064 41       		.byte	0x41
+ 712 0065 69000000 		.4byte	0x69
+ 713 0069 02       		.uleb128 0x2
+ 714 006a 04       		.byte	0x4
+ 715 006b 07       		.byte	0x7
+ 716 006c 18020000 		.4byte	.LASF8
+ 717 0070 02       		.uleb128 0x2
+ 718 0071 08       		.byte	0x8
+ 719 0072 05       		.byte	0x5
+ 720 0073 18010000 		.4byte	.LASF9
+ 721 0077 02       		.uleb128 0x2
+ 722 0078 08       		.byte	0x8
+ 723 0079 07       		.byte	0x7
+ 724 007a E0010000 		.4byte	.LASF10
+ 725 007e 04       		.uleb128 0x4
+ 726 007f 04       		.byte	0x4
+ 727 0080 05       		.byte	0x5
+ 728 0081 696E7400 		.ascii	"int\000"
+ 729 0085 02       		.uleb128 0x2
+ 730 0086 04       		.byte	0x4
+ 731 0087 07       		.byte	0x7
+ 732 0088 00020000 		.4byte	.LASF11
+ 733 008c 03       		.uleb128 0x3
+ 734 008d C5000000 		.4byte	.LASF12
+ 735 0091 03       		.byte	0x3
+ 736 0092 18       		.byte	0x18
+ 737 0093 2C000000 		.4byte	0x2c
+ 738 0097 03       		.uleb128 0x3
+ 739 0098 D8010000 		.4byte	.LASF13
+ 740 009c 03       		.byte	0x3
+ 741 009d 2C       		.byte	0x2c
+ 742 009e 4C000000 		.4byte	0x4c
+ 743 00a2 03       		.uleb128 0x3
+ 744 00a3 F7010000 		.4byte	.LASF14
+ 745 00a7 03       		.byte	0x3
+ 746 00a8 30       		.byte	0x30
+ 747 00a9 5E000000 		.4byte	0x5e
+ 748 00ad 05       		.uleb128 0x5
+ 749 00ae B3000000 		.4byte	.LASF15
+ 750 00b2 04       		.byte	0x4
+ 751 00b3 E501     		.2byte	0x1e5
+ 752 00b5 45000000 		.4byte	0x45
+ 753 00b9 05       		.uleb128 0x5
+ 754 00ba 6A010000 		.4byte	.LASF16
+ 755 00be 04       		.byte	0x4
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 19
 
 
- 896 03b7 0C       		.uleb128 0xc
- 897 03b8 01       		.uleb128 0x1
- 898 03b9 51       		.byte	0x51
- 899 03ba 01       		.uleb128 0x1
- 900 03bb 44       		.byte	0x44
- 901 03bc 00       		.byte	0
- 902 03bd 0B       		.uleb128 0xb
- 903 03be 50000000 		.4byte	.LVL65
- 904 03c2 12020000 		.4byte	0x212
- 905 03c6 D6030000 		.4byte	0x3d6
- 906 03ca 0C       		.uleb128 0xc
- 907 03cb 01       		.uleb128 0x1
- 908 03cc 50       		.byte	0x50
- 909 03cd 02       		.uleb128 0x2
- 910 03ce 08       		.byte	0x8
- 911 03cf 64       		.byte	0x64
- 912 03d0 0C       		.uleb128 0xc
- 913 03d1 01       		.uleb128 0x1
- 914 03d2 51       		.byte	0x51
- 915 03d3 01       		.uleb128 0x1
- 916 03d4 4E       		.byte	0x4e
- 917 03d5 00       		.byte	0
- 918 03d6 14       		.uleb128 0x14
- 919 03d7 5A000000 		.4byte	.LVL68
- 920 03db 28010000 		.4byte	0x128
- 921 03df 0C       		.uleb128 0xc
- 922 03e0 01       		.uleb128 0x1
- 923 03e1 50       		.byte	0x50
- 924 03e2 01       		.uleb128 0x1
- 925 03e3 30       		.byte	0x30
- 926 03e4 0C       		.uleb128 0xc
- 927 03e5 01       		.uleb128 0x1
- 928 03e6 51       		.byte	0x51
- 929 03e7 01       		.uleb128 0x1
- 930 03e8 30       		.byte	0x30
- 931 03e9 00       		.byte	0
- 932 03ea 00       		.byte	0
- 933 03eb 15       		.uleb128 0x15
- 934 03ec 78010000 		.4byte	.LASF53
- 935 03f0 0A       		.byte	0xa
- 936 03f1 1207     		.2byte	0x712
- 937 03f3 F7030000 		.4byte	0x3f7
- 938 03f7 16       		.uleb128 0x16
- 939 03f8 76000000 		.4byte	0x76
- 940 03fc 17       		.uleb128 0x17
- 941 03fd 8B010000 		.4byte	.LASF42
- 942 0401 8B010000 		.4byte	.LASF42
- 943 0405 05       		.byte	0x5
- 944 0406 C3       		.byte	0xc3
- 945 0407 17       		.uleb128 0x17
- 946 0408 6B020000 		.4byte	.LASF43
- 947 040c 6B020000 		.4byte	.LASF43
- 948 0410 06       		.byte	0x6
- 949 0411 26       		.byte	0x26
- 950 0412 17       		.uleb128 0x17
- 951 0413 1E000000 		.4byte	.LASF44
- 952 0417 1E000000 		.4byte	.LASF44
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 21
+ 756 00bf E701     		.2byte	0x1e7
+ 757 00c1 25000000 		.4byte	0x25
+ 758 00c5 05       		.uleb128 0x5
+ 759 00c6 CD000000 		.4byte	.LASF17
+ 760 00ca 04       		.byte	0x4
+ 761 00cb E801     		.2byte	0x1e8
+ 762 00cd 3E000000 		.4byte	0x3e
+ 763 00d1 02       		.uleb128 0x2
+ 764 00d2 04       		.byte	0x4
+ 765 00d3 04       		.byte	0x4
+ 766 00d4 12010000 		.4byte	.LASF18
+ 767 00d8 02       		.uleb128 0x2
+ 768 00d9 08       		.byte	0x8
+ 769 00da 04       		.byte	0x4
+ 770 00db 42030000 		.4byte	.LASF19
+ 771 00df 02       		.uleb128 0x2
+ 772 00e0 01       		.byte	0x1
+ 773 00e1 08       		.byte	0x8
+ 774 00e2 BB020000 		.4byte	.LASF20
+ 775 00e6 02       		.uleb128 0x2
+ 776 00e7 08       		.byte	0x8
+ 777 00e8 04       		.byte	0x4
+ 778 00e9 9D010000 		.4byte	.LASF21
+ 779 00ed 02       		.uleb128 0x2
+ 780 00ee 04       		.byte	0x4
+ 781 00ef 07       		.byte	0x7
+ 782 00f0 55000000 		.4byte	.LASF22
+ 783 00f4 06       		.uleb128 0x6
+ 784 00f5 01       		.byte	0x1
+ 785 00f6 37000000 		.4byte	0x37
+ 786 00fa 01       		.byte	0x1
+ 787 00fb 10       		.byte	0x10
+ 788 00fc 1F010000 		.4byte	0x11f
+ 789 0100 07       		.uleb128 0x7
+ 790 0101 59040000 		.4byte	.LASF23
+ 791 0105 00       		.byte	0
+ 792 0106 07       		.uleb128 0x7
+ 793 0107 B4020000 		.4byte	.LASF24
+ 794 010b 01       		.byte	0x1
+ 795 010c 07       		.uleb128 0x7
+ 796 010d 7E030000 		.4byte	.LASF25
+ 797 0111 02       		.byte	0x2
+ 798 0112 07       		.uleb128 0x7
+ 799 0113 0D020000 		.4byte	.LASF26
+ 800 0117 03       		.byte	0x3
+ 801 0118 07       		.uleb128 0x7
+ 802 0119 2D010000 		.4byte	.LASF27
+ 803 011d 04       		.byte	0x4
+ 804 011e 00       		.byte	0
+ 805 011f 03       		.uleb128 0x3
+ 806 0120 26010000 		.4byte	.LASF28
+ 807 0124 01       		.byte	0x1
+ 808 0125 16       		.byte	0x16
+ 809 0126 F4000000 		.4byte	0xf4
+ 810 012a 06       		.uleb128 0x6
+ 811 012b 01       		.byte	0x1
+ 812 012c 37000000 		.4byte	0x37
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 20
 
 
- 953 041b 07       		.byte	0x7
- 954 041c C3       		.byte	0xc3
- 955 041d 17       		.uleb128 0x17
- 956 041e 3F010000 		.4byte	.LASF45
- 957 0422 3F010000 		.4byte	.LASF45
- 958 0426 08       		.byte	0x8
- 959 0427 26       		.byte	0x26
- 960 0428 17       		.uleb128 0x17
- 961 0429 0D030000 		.4byte	.LASF46
- 962 042d 0D030000 		.4byte	.LASF46
- 963 0431 09       		.byte	0x9
- 964 0432 2F       		.byte	0x2f
- 965 0433 17       		.uleb128 0x17
- 966 0434 E4000000 		.4byte	.LASF47
- 967 0438 E4000000 		.4byte	.LASF47
- 968 043c 05       		.byte	0x5
- 969 043d 92       		.byte	0x92
- 970 043e 17       		.uleb128 0x17
- 971 043f C4020000 		.4byte	.LASF48
- 972 0443 C4020000 		.4byte	.LASF48
- 973 0447 07       		.byte	0x7
- 974 0448 92       		.byte	0x92
- 975 0449 00       		.byte	0
- 976              		.section	.debug_abbrev,"",%progbits
- 977              	.Ldebug_abbrev0:
- 978 0000 01       		.uleb128 0x1
- 979 0001 11       		.uleb128 0x11
- 980 0002 01       		.byte	0x1
- 981 0003 25       		.uleb128 0x25
- 982 0004 0E       		.uleb128 0xe
- 983 0005 13       		.uleb128 0x13
- 984 0006 0B       		.uleb128 0xb
- 985 0007 03       		.uleb128 0x3
- 986 0008 0E       		.uleb128 0xe
- 987 0009 1B       		.uleb128 0x1b
- 988 000a 0E       		.uleb128 0xe
- 989 000b 55       		.uleb128 0x55
- 990 000c 17       		.uleb128 0x17
- 991 000d 11       		.uleb128 0x11
- 992 000e 01       		.uleb128 0x1
- 993 000f 10       		.uleb128 0x10
- 994 0010 17       		.uleb128 0x17
- 995 0011 00       		.byte	0
- 996 0012 00       		.byte	0
- 997 0013 02       		.uleb128 0x2
- 998 0014 24       		.uleb128 0x24
- 999 0015 00       		.byte	0
- 1000 0016 0B       		.uleb128 0xb
- 1001 0017 0B       		.uleb128 0xb
- 1002 0018 3E       		.uleb128 0x3e
- 1003 0019 0B       		.uleb128 0xb
- 1004 001a 03       		.uleb128 0x3
- 1005 001b 0E       		.uleb128 0xe
- 1006 001c 00       		.byte	0
- 1007 001d 00       		.byte	0
- 1008 001e 03       		.uleb128 0x3
- 1009 001f 16       		.uleb128 0x16
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 22
+ 813 0130 01       		.byte	0x1
+ 814 0131 19       		.byte	0x19
+ 815 0132 55010000 		.4byte	0x155
+ 816 0136 07       		.uleb128 0x7
+ 817 0137 B2030000 		.4byte	.LASF29
+ 818 013b 00       		.byte	0
+ 819 013c 07       		.uleb128 0x7
+ 820 013d A8030000 		.4byte	.LASF30
+ 821 0141 01       		.byte	0x1
+ 822 0142 07       		.uleb128 0x7
+ 823 0143 BA000000 		.4byte	.LASF31
+ 824 0147 02       		.byte	0x2
+ 825 0148 07       		.uleb128 0x7
+ 826 0149 93010000 		.4byte	.LASF32
+ 827 014d 03       		.byte	0x3
+ 828 014e 07       		.uleb128 0x7
+ 829 014f 50000000 		.4byte	.LASF33
+ 830 0153 04       		.byte	0x4
+ 831 0154 00       		.byte	0
+ 832 0155 03       		.uleb128 0x3
+ 833 0156 77030000 		.4byte	.LASF34
+ 834 015a 01       		.byte	0x1
+ 835 015b 20       		.byte	0x20
+ 836 015c 2A010000 		.4byte	0x12a
+ 837 0160 08       		.uleb128 0x8
+ 838 0161 1B030000 		.4byte	.LASF37
+ 839 0165 01       		.byte	0x1
+ 840 0166 2F       		.byte	0x2f
+ 841 0167 00000000 		.4byte	.LFB63
+ 842 016b 5A000000 		.4byte	.LFE63-.LFB63
+ 843 016f 01       		.uleb128 0x1
+ 844 0170 9C       		.byte	0x9c
+ 845 0171 4A020000 		.4byte	0x24a
+ 846 0175 09       		.uleb128 0x9
+ 847 0176 EE020000 		.4byte	.LASF35
+ 848 017a 01       		.byte	0x1
+ 849 017b 2F       		.byte	0x2f
+ 850 017c C5000000 		.4byte	0xc5
+ 851 0180 00000000 		.4byte	.LLST0
+ 852 0184 09       		.uleb128 0x9
+ 853 0185 23000000 		.4byte	.LASF36
+ 854 0189 01       		.byte	0x1
+ 855 018a 2F       		.byte	0x2f
+ 856 018b C5000000 		.4byte	0xc5
+ 857 018f 3A000000 		.4byte	.LLST1
+ 858 0193 0A       		.uleb128 0xa
+ 859 0194 30020000 		.4byte	.LASF41
+ 860 0198 01       		.byte	0x1
+ 861 0199 30       		.byte	0x30
+ 862 019a B9000000 		.4byte	0xb9
+ 863 019e 74000000 		.4byte	.LLST2
+ 864 01a2 0B       		.uleb128 0xb
+ 865 01a3 10000000 		.4byte	.LVL3
+ 866 01a7 F1050000 		.4byte	0x5f1
+ 867 01ab B7010000 		.4byte	0x1b7
+ 868 01af 0C       		.uleb128 0xc
+ 869 01b0 01       		.uleb128 0x1
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 21
 
 
- 1010 0020 00       		.byte	0
- 1011 0021 03       		.uleb128 0x3
- 1012 0022 0E       		.uleb128 0xe
- 1013 0023 3A       		.uleb128 0x3a
- 1014 0024 0B       		.uleb128 0xb
- 1015 0025 3B       		.uleb128 0x3b
- 1016 0026 0B       		.uleb128 0xb
- 1017 0027 49       		.uleb128 0x49
- 1018 0028 13       		.uleb128 0x13
- 1019 0029 00       		.byte	0
- 1020 002a 00       		.byte	0
- 1021 002b 04       		.uleb128 0x4
- 1022 002c 24       		.uleb128 0x24
- 1023 002d 00       		.byte	0
- 1024 002e 0B       		.uleb128 0xb
- 1025 002f 0B       		.uleb128 0xb
- 1026 0030 3E       		.uleb128 0x3e
- 1027 0031 0B       		.uleb128 0xb
- 1028 0032 03       		.uleb128 0x3
- 1029 0033 08       		.uleb128 0x8
- 1030 0034 00       		.byte	0
- 1031 0035 00       		.byte	0
- 1032 0036 05       		.uleb128 0x5
- 1033 0037 16       		.uleb128 0x16
- 1034 0038 00       		.byte	0
- 1035 0039 03       		.uleb128 0x3
- 1036 003a 0E       		.uleb128 0xe
- 1037 003b 3A       		.uleb128 0x3a
- 1038 003c 0B       		.uleb128 0xb
- 1039 003d 3B       		.uleb128 0x3b
- 1040 003e 05       		.uleb128 0x5
- 1041 003f 49       		.uleb128 0x49
- 1042 0040 13       		.uleb128 0x13
- 1043 0041 00       		.byte	0
- 1044 0042 00       		.byte	0
- 1045 0043 06       		.uleb128 0x6
- 1046 0044 04       		.uleb128 0x4
- 1047 0045 01       		.byte	0x1
- 1048 0046 0B       		.uleb128 0xb
- 1049 0047 0B       		.uleb128 0xb
- 1050 0048 49       		.uleb128 0x49
- 1051 0049 13       		.uleb128 0x13
- 1052 004a 3A       		.uleb128 0x3a
- 1053 004b 0B       		.uleb128 0xb
- 1054 004c 3B       		.uleb128 0x3b
- 1055 004d 0B       		.uleb128 0xb
- 1056 004e 01       		.uleb128 0x1
- 1057 004f 13       		.uleb128 0x13
- 1058 0050 00       		.byte	0
- 1059 0051 00       		.byte	0
- 1060 0052 07       		.uleb128 0x7
- 1061 0053 28       		.uleb128 0x28
- 1062 0054 00       		.byte	0
- 1063 0055 03       		.uleb128 0x3
- 1064 0056 0E       		.uleb128 0xe
- 1065 0057 1C       		.uleb128 0x1c
- 1066 0058 0B       		.uleb128 0xb
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 23
+ 870 01b1 50       		.byte	0x50
+ 871 01b2 03       		.uleb128 0x3
+ 872 01b3 75       		.byte	0x75
+ 873 01b4 00       		.sleb128 0
+ 874 01b5 1F       		.byte	0x1f
+ 875 01b6 00       		.byte	0
+ 876 01b7 0B       		.uleb128 0xb
+ 877 01b8 16000000 		.4byte	.LVL4
+ 878 01bc FC050000 		.4byte	0x5fc
+ 879 01c0 CA010000 		.4byte	0x1ca
+ 880 01c4 0C       		.uleb128 0xc
+ 881 01c5 01       		.uleb128 0x1
+ 882 01c6 50       		.byte	0x50
+ 883 01c7 01       		.uleb128 0x1
+ 884 01c8 31       		.byte	0x31
+ 885 01c9 00       		.byte	0
+ 886 01ca 0B       		.uleb128 0xb
+ 887 01cb 1E000000 		.4byte	.LVL7
+ 888 01cf F1050000 		.4byte	0x5f1
+ 889 01d3 DE010000 		.4byte	0x1de
+ 890 01d7 0C       		.uleb128 0xc
+ 891 01d8 01       		.uleb128 0x1
+ 892 01d9 50       		.byte	0x50
+ 893 01da 02       		.uleb128 0x2
+ 894 01db 75       		.byte	0x75
+ 895 01dc 00       		.sleb128 0
+ 896 01dd 00       		.byte	0
+ 897 01de 0B       		.uleb128 0xb
+ 898 01df 24000000 		.4byte	.LVL8
+ 899 01e3 FC050000 		.4byte	0x5fc
+ 900 01e7 F1010000 		.4byte	0x1f1
+ 901 01eb 0C       		.uleb128 0xc
+ 902 01ec 01       		.uleb128 0x1
+ 903 01ed 50       		.byte	0x50
+ 904 01ee 01       		.uleb128 0x1
+ 905 01ef 30       		.byte	0x30
+ 906 01f0 00       		.byte	0
+ 907 01f1 0B       		.uleb128 0xb
+ 908 01f2 30000000 		.4byte	.LVL9
+ 909 01f6 07060000 		.4byte	0x607
+ 910 01fa 06020000 		.4byte	0x206
+ 911 01fe 0C       		.uleb128 0xc
+ 912 01ff 01       		.uleb128 0x1
+ 913 0200 50       		.byte	0x50
+ 914 0201 03       		.uleb128 0x3
+ 915 0202 74       		.byte	0x74
+ 916 0203 00       		.sleb128 0
+ 917 0204 1F       		.byte	0x1f
+ 918 0205 00       		.byte	0
+ 919 0206 0B       		.uleb128 0xb
+ 920 0207 36000000 		.4byte	.LVL10
+ 921 020b 12060000 		.4byte	0x612
+ 922 020f 19020000 		.4byte	0x219
+ 923 0213 0C       		.uleb128 0xc
+ 924 0214 01       		.uleb128 0x1
+ 925 0215 50       		.byte	0x50
+ 926 0216 01       		.uleb128 0x1
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 22
 
 
- 1067 0059 00       		.byte	0
- 1068 005a 00       		.byte	0
- 1069 005b 08       		.uleb128 0x8
- 1070 005c 2E       		.uleb128 0x2e
- 1071 005d 01       		.byte	0x1
- 1072 005e 3F       		.uleb128 0x3f
- 1073 005f 19       		.uleb128 0x19
- 1074 0060 03       		.uleb128 0x3
- 1075 0061 0E       		.uleb128 0xe
- 1076 0062 3A       		.uleb128 0x3a
- 1077 0063 0B       		.uleb128 0xb
- 1078 0064 3B       		.uleb128 0x3b
- 1079 0065 0B       		.uleb128 0xb
- 1080 0066 27       		.uleb128 0x27
- 1081 0067 19       		.uleb128 0x19
- 1082 0068 11       		.uleb128 0x11
- 1083 0069 01       		.uleb128 0x1
- 1084 006a 12       		.uleb128 0x12
- 1085 006b 06       		.uleb128 0x6
- 1086 006c 40       		.uleb128 0x40
- 1087 006d 18       		.uleb128 0x18
- 1088 006e 9742     		.uleb128 0x2117
- 1089 0070 19       		.uleb128 0x19
- 1090 0071 01       		.uleb128 0x1
- 1091 0072 13       		.uleb128 0x13
- 1092 0073 00       		.byte	0
- 1093 0074 00       		.byte	0
- 1094 0075 09       		.uleb128 0x9
- 1095 0076 05       		.uleb128 0x5
- 1096 0077 00       		.byte	0
- 1097 0078 03       		.uleb128 0x3
- 1098 0079 0E       		.uleb128 0xe
- 1099 007a 3A       		.uleb128 0x3a
- 1100 007b 0B       		.uleb128 0xb
- 1101 007c 3B       		.uleb128 0x3b
- 1102 007d 0B       		.uleb128 0xb
- 1103 007e 49       		.uleb128 0x49
- 1104 007f 13       		.uleb128 0x13
- 1105 0080 02       		.uleb128 0x2
- 1106 0081 17       		.uleb128 0x17
- 1107 0082 00       		.byte	0
- 1108 0083 00       		.byte	0
- 1109 0084 0A       		.uleb128 0xa
- 1110 0085 34       		.uleb128 0x34
- 1111 0086 00       		.byte	0
- 1112 0087 03       		.uleb128 0x3
- 1113 0088 0E       		.uleb128 0xe
- 1114 0089 3A       		.uleb128 0x3a
- 1115 008a 0B       		.uleb128 0xb
- 1116 008b 3B       		.uleb128 0x3b
- 1117 008c 0B       		.uleb128 0xb
- 1118 008d 49       		.uleb128 0x49
- 1119 008e 13       		.uleb128 0x13
- 1120 008f 02       		.uleb128 0x2
- 1121 0090 17       		.uleb128 0x17
- 1122 0091 00       		.byte	0
- 1123 0092 00       		.byte	0
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 24
+ 927 0217 31       		.byte	0x31
+ 928 0218 00       		.byte	0
+ 929 0219 0B       		.uleb128 0xb
+ 930 021a 3E000000 		.4byte	.LVL11
+ 931 021e 07060000 		.4byte	0x607
+ 932 0222 2D020000 		.4byte	0x22d
+ 933 0226 0C       		.uleb128 0xc
+ 934 0227 01       		.uleb128 0x1
+ 935 0228 50       		.byte	0x50
+ 936 0229 02       		.uleb128 0x2
+ 937 022a 74       		.byte	0x74
+ 938 022b 00       		.sleb128 0
+ 939 022c 00       		.byte	0
+ 940 022d 0B       		.uleb128 0xb
+ 941 022e 44000000 		.4byte	.LVL12
+ 942 0232 12060000 		.4byte	0x612
+ 943 0236 40020000 		.4byte	0x240
+ 944 023a 0C       		.uleb128 0xc
+ 945 023b 01       		.uleb128 0x1
+ 946 023c 50       		.byte	0x50
+ 947 023d 01       		.uleb128 0x1
+ 948 023e 30       		.byte	0x30
+ 949 023f 00       		.byte	0
+ 950 0240 0D       		.uleb128 0xd
+ 951 0241 58000000 		.4byte	.LVL16
+ 952 0245 1D060000 		.4byte	0x61d
+ 953 0249 00       		.byte	0
+ 954 024a 08       		.uleb128 0x8
+ 955 024b 8A030000 		.4byte	.LASF38
+ 956 024f 01       		.byte	0x1
+ 957 0250 4E       		.byte	0x4e
+ 958 0251 00000000 		.4byte	.LFB64
+ 959 0255 1C000000 		.4byte	.LFE64-.LFB64
+ 960 0259 01       		.uleb128 0x1
+ 961 025a 9C       		.byte	0x9c
+ 962 025b AD020000 		.4byte	0x2ad
+ 963 025f 09       		.uleb128 0x9
+ 964 0260 2A020000 		.4byte	.LASF39
+ 965 0264 01       		.byte	0x1
+ 966 0265 4E       		.byte	0x4e
+ 967 0266 C5000000 		.4byte	0xc5
+ 968 026a 9E000000 		.4byte	.LLST3
+ 969 026e 09       		.uleb128 0x9
+ 970 026f 90000000 		.4byte	.LASF40
+ 971 0273 01       		.byte	0x1
+ 972 0274 4E       		.byte	0x4e
+ 973 0275 C5000000 		.4byte	0xc5
+ 974 0279 BF000000 		.4byte	.LLST4
+ 975 027d 0E       		.uleb128 0xe
+ 976 027e 7700     		.ascii	"w\000"
+ 977 0280 01       		.byte	0x1
+ 978 0281 55       		.byte	0x55
+ 979 0282 C5000000 		.4byte	0xc5
+ 980 0286 14       		.byte	0x14
+ 981 0287 0F       		.uleb128 0xf
+ 982 0288 766C00   		.ascii	"vl\000"
+ 983 028b 01       		.byte	0x1
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 23
 
 
- 1124 0093 0B       		.uleb128 0xb
- 1125 0094 898201   		.uleb128 0x4109
- 1126 0097 01       		.byte	0x1
- 1127 0098 11       		.uleb128 0x11
- 1128 0099 01       		.uleb128 0x1
- 1129 009a 31       		.uleb128 0x31
- 1130 009b 13       		.uleb128 0x13
- 1131 009c 01       		.uleb128 0x1
- 1132 009d 13       		.uleb128 0x13
- 1133 009e 00       		.byte	0
- 1134 009f 00       		.byte	0
- 1135 00a0 0C       		.uleb128 0xc
- 1136 00a1 8A8201   		.uleb128 0x410a
- 1137 00a4 00       		.byte	0
- 1138 00a5 02       		.uleb128 0x2
- 1139 00a6 18       		.uleb128 0x18
- 1140 00a7 9142     		.uleb128 0x2111
- 1141 00a9 18       		.uleb128 0x18
- 1142 00aa 00       		.byte	0
- 1143 00ab 00       		.byte	0
- 1144 00ac 0D       		.uleb128 0xd
- 1145 00ad 898201   		.uleb128 0x4109
- 1146 00b0 00       		.byte	0
- 1147 00b1 11       		.uleb128 0x11
- 1148 00b2 01       		.uleb128 0x1
- 1149 00b3 31       		.uleb128 0x31
- 1150 00b4 13       		.uleb128 0x13
- 1151 00b5 00       		.byte	0
- 1152 00b6 00       		.byte	0
- 1153 00b7 0E       		.uleb128 0xe
- 1154 00b8 34       		.uleb128 0x34
- 1155 00b9 00       		.byte	0
- 1156 00ba 03       		.uleb128 0x3
- 1157 00bb 08       		.uleb128 0x8
- 1158 00bc 3A       		.uleb128 0x3a
- 1159 00bd 0B       		.uleb128 0xb
- 1160 00be 3B       		.uleb128 0x3b
- 1161 00bf 0B       		.uleb128 0xb
- 1162 00c0 49       		.uleb128 0x49
- 1163 00c1 13       		.uleb128 0x13
- 1164 00c2 1C       		.uleb128 0x1c
- 1165 00c3 0B       		.uleb128 0xb
- 1166 00c4 00       		.byte	0
- 1167 00c5 00       		.byte	0
- 1168 00c6 0F       		.uleb128 0xf
- 1169 00c7 34       		.uleb128 0x34
- 1170 00c8 00       		.byte	0
- 1171 00c9 03       		.uleb128 0x3
- 1172 00ca 08       		.uleb128 0x8
- 1173 00cb 3A       		.uleb128 0x3a
- 1174 00cc 0B       		.uleb128 0xb
- 1175 00cd 3B       		.uleb128 0x3b
- 1176 00ce 0B       		.uleb128 0xb
- 1177 00cf 49       		.uleb128 0x49
- 1178 00d0 13       		.uleb128 0x13
- 1179 00d1 02       		.uleb128 0x2
- 1180 00d2 17       		.uleb128 0x17
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 25
+ 984 028c 56       		.byte	0x56
+ 985 028d C5000000 		.4byte	0xc5
+ 986 0291 E0000000 		.4byte	.LLST5
+ 987 0295 0F       		.uleb128 0xf
+ 988 0296 767200   		.ascii	"vr\000"
+ 989 0299 01       		.byte	0x1
+ 990 029a 57       		.byte	0x57
+ 991 029b C5000000 		.4byte	0xc5
+ 992 029f F3000000 		.4byte	.LLST6
+ 993 02a3 0D       		.uleb128 0xd
+ 994 02a4 1A000000 		.4byte	.LVL23
+ 995 02a8 60010000 		.4byte	0x160
+ 996 02ac 00       		.byte	0
+ 997 02ad 10       		.uleb128 0x10
+ 998 02ae B7010000 		.4byte	.LASF42
+ 999 02b2 01       		.byte	0x1
+ 1000 02b3 5C       		.byte	0x5c
+ 1001 02b4 1F010000 		.4byte	0x11f
+ 1002 02b8 00000000 		.4byte	.LFB65
+ 1003 02bc 32000000 		.4byte	.LFE65-.LFB65
+ 1004 02c0 01       		.uleb128 0x1
+ 1005 02c1 9C       		.byte	0x9c
+ 1006 02c2 E3020000 		.4byte	0x2e3
+ 1007 02c6 09       		.uleb128 0x9
+ 1008 02c7 EE020000 		.4byte	.LASF35
+ 1009 02cb 01       		.byte	0x1
+ 1010 02cc 5C       		.byte	0x5c
+ 1011 02cd C5000000 		.4byte	0xc5
+ 1012 02d1 06010000 		.4byte	.LLST7
+ 1013 02d5 11       		.uleb128 0x11
+ 1014 02d6 23000000 		.4byte	.LASF36
+ 1015 02da 01       		.byte	0x1
+ 1016 02db 5C       		.byte	0x5c
+ 1017 02dc C5000000 		.4byte	0xc5
+ 1018 02e0 01       		.uleb128 0x1
+ 1019 02e1 51       		.byte	0x51
+ 1020 02e2 00       		.byte	0
+ 1021 02e3 10       		.uleb128 0x10
+ 1022 02e4 68000000 		.4byte	.LASF43
+ 1023 02e8 01       		.byte	0x1
+ 1024 02e9 72       		.byte	0x72
+ 1025 02ea 55010000 		.4byte	0x155
+ 1026 02ee 00000000 		.4byte	.LFB66
+ 1027 02f2 34000000 		.4byte	.LFE66-.LFB66
+ 1028 02f6 01       		.uleb128 0x1
+ 1029 02f7 9C       		.byte	0x9c
+ 1030 02f8 1B030000 		.4byte	0x31b
+ 1031 02fc 09       		.uleb128 0x9
+ 1032 02fd 09030000 		.4byte	.LASF44
+ 1033 0301 01       		.byte	0x1
+ 1034 0302 72       		.byte	0x72
+ 1035 0303 1F010000 		.4byte	0x11f
+ 1036 0307 A4010000 		.4byte	.LLST8
+ 1037 030b 09       		.uleb128 0x9
+ 1038 030c 5E000000 		.4byte	.LASF45
+ 1039 0310 01       		.byte	0x1
+ 1040 0311 72       		.byte	0x72
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 24
 
 
- 1181 00d3 00       		.byte	0
- 1182 00d4 00       		.byte	0
- 1183 00d5 10       		.uleb128 0x10
- 1184 00d6 2E       		.uleb128 0x2e
- 1185 00d7 01       		.byte	0x1
- 1186 00d8 3F       		.uleb128 0x3f
- 1187 00d9 19       		.uleb128 0x19
- 1188 00da 03       		.uleb128 0x3
- 1189 00db 0E       		.uleb128 0xe
- 1190 00dc 3A       		.uleb128 0x3a
- 1191 00dd 0B       		.uleb128 0xb
- 1192 00de 3B       		.uleb128 0x3b
- 1193 00df 0B       		.uleb128 0xb
- 1194 00e0 27       		.uleb128 0x27
- 1195 00e1 19       		.uleb128 0x19
- 1196 00e2 49       		.uleb128 0x49
- 1197 00e3 13       		.uleb128 0x13
- 1198 00e4 11       		.uleb128 0x11
- 1199 00e5 01       		.uleb128 0x1
- 1200 00e6 12       		.uleb128 0x12
- 1201 00e7 06       		.uleb128 0x6
- 1202 00e8 40       		.uleb128 0x40
- 1203 00e9 18       		.uleb128 0x18
- 1204 00ea 9742     		.uleb128 0x2117
- 1205 00ec 19       		.uleb128 0x19
- 1206 00ed 01       		.uleb128 0x1
- 1207 00ee 13       		.uleb128 0x13
- 1208 00ef 00       		.byte	0
- 1209 00f0 00       		.byte	0
- 1210 00f1 11       		.uleb128 0x11
- 1211 00f2 05       		.uleb128 0x5
- 1212 00f3 00       		.byte	0
- 1213 00f4 03       		.uleb128 0x3
- 1214 00f5 0E       		.uleb128 0xe
- 1215 00f6 3A       		.uleb128 0x3a
- 1216 00f7 0B       		.uleb128 0xb
- 1217 00f8 3B       		.uleb128 0x3b
- 1218 00f9 0B       		.uleb128 0xb
- 1219 00fa 49       		.uleb128 0x49
- 1220 00fb 13       		.uleb128 0x13
- 1221 00fc 02       		.uleb128 0x2
- 1222 00fd 18       		.uleb128 0x18
- 1223 00fe 00       		.byte	0
- 1224 00ff 00       		.byte	0
- 1225 0100 12       		.uleb128 0x12
- 1226 0101 2E       		.uleb128 0x2e
- 1227 0102 01       		.byte	0x1
- 1228 0103 3F       		.uleb128 0x3f
- 1229 0104 19       		.uleb128 0x19
- 1230 0105 03       		.uleb128 0x3
- 1231 0106 0E       		.uleb128 0xe
- 1232 0107 3A       		.uleb128 0x3a
- 1233 0108 0B       		.uleb128 0xb
- 1234 0109 3B       		.uleb128 0x3b
- 1235 010a 0B       		.uleb128 0xb
- 1236 010b 27       		.uleb128 0x27
- 1237 010c 19       		.uleb128 0x19
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 26
+ 1041 0312 1F010000 		.4byte	0x11f
+ 1042 0316 42020000 		.4byte	.LLST9
+ 1043 031a 00       		.byte	0
+ 1044 031b 08       		.uleb128 0x8
+ 1045 031c 48000000 		.4byte	.LASF46
+ 1046 0320 01       		.byte	0x1
+ 1047 0321 91       		.byte	0x91
+ 1048 0322 00000000 		.4byte	.LFB67
+ 1049 0326 50000000 		.4byte	.LFE67-.LFB67
+ 1050 032a 01       		.uleb128 0x1
+ 1051 032b 9C       		.byte	0x9c
+ 1052 032c C8030000 		.4byte	0x3c8
+ 1053 0330 09       		.uleb128 0x9
+ 1054 0331 8A000000 		.4byte	.LASF47
+ 1055 0335 01       		.byte	0x1
+ 1056 0336 91       		.byte	0x91
+ 1057 0337 55010000 		.4byte	0x155
+ 1058 033b 63020000 		.4byte	.LLST10
+ 1059 033f 09       		.uleb128 0x9
+ 1060 0340 2A020000 		.4byte	.LASF39
+ 1061 0344 01       		.byte	0x1
+ 1062 0345 91       		.byte	0x91
+ 1063 0346 C5000000 		.4byte	0xc5
+ 1064 034a 01030000 		.4byte	.LLST11
+ 1065 034e 0B       		.uleb128 0xb
+ 1066 034f 1A000000 		.4byte	.LVL52
+ 1067 0353 4A020000 		.4byte	0x24a
+ 1068 0357 61030000 		.4byte	0x361
+ 1069 035b 0C       		.uleb128 0xc
+ 1070 035c 01       		.uleb128 0x1
+ 1071 035d 51       		.byte	0x51
+ 1072 035e 01       		.uleb128 0x1
+ 1073 035f 30       		.byte	0x30
+ 1074 0360 00       		.byte	0
+ 1075 0361 0B       		.uleb128 0xb
+ 1076 0362 26000000 		.4byte	.LVL56
+ 1077 0366 4A020000 		.4byte	0x24a
+ 1078 036a 75030000 		.4byte	0x375
+ 1079 036e 0C       		.uleb128 0xc
+ 1080 036f 01       		.uleb128 0x1
+ 1081 0370 51       		.byte	0x51
+ 1082 0371 02       		.uleb128 0x2
+ 1083 0372 09       		.byte	0x9
+ 1084 0373 EC       		.byte	0xec
+ 1085 0374 00       		.byte	0
+ 1086 0375 0B       		.uleb128 0xb
+ 1087 0376 30000000 		.4byte	.LVL60
+ 1088 037a 4A020000 		.4byte	0x24a
+ 1089 037e 88030000 		.4byte	0x388
+ 1090 0382 0C       		.uleb128 0xc
+ 1091 0383 01       		.uleb128 0x1
+ 1092 0384 51       		.byte	0x51
+ 1093 0385 01       		.uleb128 0x1
+ 1094 0386 44       		.byte	0x44
+ 1095 0387 00       		.byte	0
+ 1096 0388 0B       		.uleb128 0xb
+ 1097 0389 3A000000 		.4byte	.LVL64
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 25
 
 
- 1238 010d 49       		.uleb128 0x49
- 1239 010e 13       		.uleb128 0x13
- 1240 010f 8701     		.uleb128 0x87
- 1241 0111 19       		.uleb128 0x19
- 1242 0112 11       		.uleb128 0x11
- 1243 0113 01       		.uleb128 0x1
- 1244 0114 12       		.uleb128 0x12
- 1245 0115 06       		.uleb128 0x6
- 1246 0116 40       		.uleb128 0x40
- 1247 0117 18       		.uleb128 0x18
- 1248 0118 9742     		.uleb128 0x2117
- 1249 011a 19       		.uleb128 0x19
- 1250 011b 01       		.uleb128 0x1
- 1251 011c 13       		.uleb128 0x13
- 1252 011d 00       		.byte	0
- 1253 011e 00       		.byte	0
- 1254 011f 13       		.uleb128 0x13
- 1255 0120 34       		.uleb128 0x34
- 1256 0121 00       		.byte	0
- 1257 0122 03       		.uleb128 0x3
- 1258 0123 0E       		.uleb128 0xe
- 1259 0124 3A       		.uleb128 0x3a
- 1260 0125 0B       		.uleb128 0xb
- 1261 0126 3B       		.uleb128 0x3b
- 1262 0127 0B       		.uleb128 0xb
- 1263 0128 49       		.uleb128 0x49
- 1264 0129 13       		.uleb128 0x13
- 1265 012a 1C       		.uleb128 0x1c
- 1266 012b 0B       		.uleb128 0xb
- 1267 012c 00       		.byte	0
- 1268 012d 00       		.byte	0
- 1269 012e 14       		.uleb128 0x14
- 1270 012f 898201   		.uleb128 0x4109
- 1271 0132 01       		.byte	0x1
- 1272 0133 11       		.uleb128 0x11
- 1273 0134 01       		.uleb128 0x1
- 1274 0135 31       		.uleb128 0x31
- 1275 0136 13       		.uleb128 0x13
- 1276 0137 00       		.byte	0
- 1277 0138 00       		.byte	0
- 1278 0139 15       		.uleb128 0x15
- 1279 013a 34       		.uleb128 0x34
- 1280 013b 00       		.byte	0
- 1281 013c 03       		.uleb128 0x3
- 1282 013d 0E       		.uleb128 0xe
- 1283 013e 3A       		.uleb128 0x3a
- 1284 013f 0B       		.uleb128 0xb
- 1285 0140 3B       		.uleb128 0x3b
- 1286 0141 05       		.uleb128 0x5
- 1287 0142 49       		.uleb128 0x49
- 1288 0143 13       		.uleb128 0x13
- 1289 0144 3F       		.uleb128 0x3f
- 1290 0145 19       		.uleb128 0x19
- 1291 0146 3C       		.uleb128 0x3c
- 1292 0147 19       		.uleb128 0x19
- 1293 0148 00       		.byte	0
- 1294 0149 00       		.byte	0
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 27
+ 1098 038d 4A020000 		.4byte	0x24a
+ 1099 0391 9B030000 		.4byte	0x39b
+ 1100 0395 0C       		.uleb128 0xc
+ 1101 0396 01       		.uleb128 0x1
+ 1102 0397 51       		.byte	0x51
+ 1103 0398 01       		.uleb128 0x1
+ 1104 0399 4E       		.byte	0x4e
+ 1105 039a 00       		.byte	0
+ 1106 039b 0B       		.uleb128 0xb
+ 1107 039c 44000000 		.4byte	.LVL68
+ 1108 03a0 60010000 		.4byte	0x160
+ 1109 03a4 B3030000 		.4byte	0x3b3
+ 1110 03a8 0C       		.uleb128 0xc
+ 1111 03a9 01       		.uleb128 0x1
+ 1112 03aa 50       		.byte	0x50
+ 1113 03ab 01       		.uleb128 0x1
+ 1114 03ac 30       		.byte	0x30
+ 1115 03ad 0C       		.uleb128 0xc
+ 1116 03ae 01       		.uleb128 0x1
+ 1117 03af 51       		.byte	0x51
+ 1118 03b0 01       		.uleb128 0x1
+ 1119 03b1 30       		.byte	0x30
+ 1120 03b2 00       		.byte	0
+ 1121 03b3 12       		.uleb128 0x12
+ 1122 03b4 4E000000 		.4byte	.LVL72
+ 1123 03b8 60010000 		.4byte	0x160
+ 1124 03bc 0C       		.uleb128 0xc
+ 1125 03bd 01       		.uleb128 0x1
+ 1126 03be 50       		.byte	0x50
+ 1127 03bf 01       		.uleb128 0x1
+ 1128 03c0 30       		.byte	0x30
+ 1129 03c1 0C       		.uleb128 0xc
+ 1130 03c2 01       		.uleb128 0x1
+ 1131 03c3 51       		.byte	0x51
+ 1132 03c4 01       		.uleb128 0x1
+ 1133 03c5 30       		.byte	0x30
+ 1134 03c6 00       		.byte	0
+ 1135 03c7 00       		.byte	0
+ 1136 03c8 13       		.uleb128 0x13
+ 1137 03c9 6F010000 		.4byte	.LASF48
+ 1138 03cd 01       		.byte	0x1
+ 1139 03ce AE       		.byte	0xae
+ 1140 03cf 8C000000 		.4byte	0x8c
+ 1141 03d3 00000000 		.4byte	.LFB68
+ 1142 03d7 1C000000 		.4byte	.LFE68-.LFB68
+ 1143 03db 01       		.uleb128 0x1
+ 1144 03dc 9C       		.byte	0x9c
+ 1145 03dd FA030000 		.4byte	0x3fa
+ 1146 03e1 0F       		.uleb128 0xf
+ 1147 03e2 6E6F7700 		.ascii	"now\000"
+ 1148 03e6 01       		.byte	0x1
+ 1149 03e7 B0       		.byte	0xb0
+ 1150 03e8 A2000000 		.4byte	0xa2
+ 1151 03ec 9F030000 		.4byte	.LLST12
+ 1152 03f0 0D       		.uleb128 0xd
+ 1153 03f1 06000000 		.4byte	.LVL73
+ 1154 03f5 28060000 		.4byte	0x628
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 26
 
 
- 1295 014a 16       		.uleb128 0x16
- 1296 014b 35       		.uleb128 0x35
- 1297 014c 00       		.byte	0
- 1298 014d 49       		.uleb128 0x49
- 1299 014e 13       		.uleb128 0x13
- 1300 014f 00       		.byte	0
- 1301 0150 00       		.byte	0
- 1302 0151 17       		.uleb128 0x17
- 1303 0152 2E       		.uleb128 0x2e
- 1304 0153 00       		.byte	0
- 1305 0154 3F       		.uleb128 0x3f
- 1306 0155 19       		.uleb128 0x19
- 1307 0156 3C       		.uleb128 0x3c
- 1308 0157 19       		.uleb128 0x19
- 1309 0158 6E       		.uleb128 0x6e
- 1310 0159 0E       		.uleb128 0xe
- 1311 015a 03       		.uleb128 0x3
- 1312 015b 0E       		.uleb128 0xe
- 1313 015c 3A       		.uleb128 0x3a
- 1314 015d 0B       		.uleb128 0xb
- 1315 015e 3B       		.uleb128 0x3b
- 1316 015f 0B       		.uleb128 0xb
- 1317 0160 00       		.byte	0
- 1318 0161 00       		.byte	0
- 1319 0162 00       		.byte	0
- 1320              		.section	.debug_loc,"",%progbits
- 1321              	.Ldebug_loc0:
- 1322              	.LLST0:
- 1323 0000 00000000 		.4byte	.LVL0
- 1324 0004 0A000000 		.4byte	.LVL2
- 1325 0008 0100     		.2byte	0x1
- 1326 000a 50       		.byte	0x50
- 1327 000b 0A000000 		.4byte	.LVL2
- 1328 000f 18000000 		.4byte	.LVL5
- 1329 0013 0400     		.2byte	0x4
- 1330 0015 F3       		.byte	0xf3
- 1331 0016 01       		.uleb128 0x1
- 1332 0017 50       		.byte	0x50
- 1333 0018 9F       		.byte	0x9f
- 1334 0019 18000000 		.4byte	.LVL5
- 1335 001d 1A000000 		.4byte	.LVL6
- 1336 0021 0100     		.2byte	0x1
- 1337 0023 50       		.byte	0x50
- 1338 0024 1A000000 		.4byte	.LVL6
- 1339 0028 5A000000 		.4byte	.LFE63
- 1340 002c 0400     		.2byte	0x4
- 1341 002e F3       		.byte	0xf3
- 1342 002f 01       		.uleb128 0x1
- 1343 0030 50       		.byte	0x50
- 1344 0031 9F       		.byte	0x9f
- 1345 0032 00000000 		.4byte	0
- 1346 0036 00000000 		.4byte	0
- 1347              	.LLST1:
- 1348 003a 00000000 		.4byte	.LVL0
- 1349 003e 0F000000 		.4byte	.LVL3-1
- 1350 0042 0100     		.2byte	0x1
- 1351 0044 51       		.byte	0x51
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 28
+ 1155 03f9 00       		.byte	0
+ 1156 03fa 13       		.uleb128 0x13
+ 1157 03fb 32010000 		.4byte	.LASF49
+ 1158 03ff 01       		.byte	0x1
+ 1159 0400 B8       		.byte	0xb8
+ 1160 0401 8C000000 		.4byte	0x8c
+ 1161 0405 00000000 		.4byte	.LFB69
+ 1162 0409 20000000 		.4byte	.LFE69-.LFB69
+ 1163 040d 01       		.uleb128 0x1
+ 1164 040e 9C       		.byte	0x9c
+ 1165 040f 2C040000 		.4byte	0x42c
+ 1166 0413 0F       		.uleb128 0xf
+ 1167 0414 6E6F7700 		.ascii	"now\000"
+ 1168 0418 01       		.byte	0x1
+ 1169 0419 BA       		.byte	0xba
+ 1170 041a A2000000 		.4byte	0xa2
+ 1171 041e B2030000 		.4byte	.LLST13
+ 1172 0422 0D       		.uleb128 0xd
+ 1173 0423 06000000 		.4byte	.LVL75
+ 1174 0427 28060000 		.4byte	0x628
+ 1175 042b 00       		.byte	0
+ 1176 042c 14       		.uleb128 0x14
+ 1177 042d 7A000000 		.4byte	.LASF78
+ 1178 0431 01       		.byte	0x1
+ 1179 0432 C5       		.byte	0xc5
+ 1180 0433 7E000000 		.4byte	0x7e
+ 1181 0437 00000000 		.4byte	.LFB70
+ 1182 043b A4000000 		.4byte	.LFE70-.LFB70
+ 1183 043f 01       		.uleb128 0x1
+ 1184 0440 9C       		.byte	0x9c
+ 1185 0441 CF050000 		.4byte	0x5cf
+ 1186 0445 0A       		.uleb128 0xa
+ 1187 0446 71000000 		.4byte	.LASF50
+ 1188 044a 01       		.byte	0x1
+ 1189 044b CE       		.byte	0xce
+ 1190 044c C5000000 		.4byte	0xc5
+ 1191 0450 C5030000 		.4byte	.LLST14
+ 1192 0454 0A       		.uleb128 0xa
+ 1193 0455 00000000 		.4byte	.LASF51
+ 1194 0459 01       		.byte	0x1
+ 1195 045a CF       		.byte	0xcf
+ 1196 045b AD000000 		.4byte	0xad
+ 1197 045f D9030000 		.4byte	.LLST15
+ 1198 0463 0A       		.uleb128 0xa
+ 1199 0464 07000000 		.4byte	.LASF52
+ 1200 0468 01       		.byte	0x1
+ 1201 0469 D0       		.byte	0xd0
+ 1202 046a AD000000 		.4byte	0xad
+ 1203 046e 03040000 		.4byte	.LLST16
+ 1204 0472 0A       		.uleb128 0xa
+ 1205 0473 09030000 		.4byte	.LASF44
+ 1206 0477 01       		.byte	0x1
+ 1207 0478 D5       		.byte	0xd5
+ 1208 0479 1F010000 		.4byte	0x11f
+ 1209 047d 22040000 		.4byte	.LLST17
+ 1210 0481 0A       		.uleb128 0xa
+ 1211 0482 5E000000 		.4byte	.LASF45
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 27
 
 
- 1352 0045 0F000000 		.4byte	.LVL3-1
- 1353 0049 18000000 		.4byte	.LVL5
- 1354 004d 0400     		.2byte	0x4
- 1355 004f F3       		.byte	0xf3
- 1356 0050 01       		.uleb128 0x1
- 1357 0051 51       		.byte	0x51
- 1358 0052 9F       		.byte	0x9f
- 1359 0053 18000000 		.4byte	.LVL5
- 1360 0057 1D000000 		.4byte	.LVL7-1
- 1361 005b 0100     		.2byte	0x1
- 1362 005d 51       		.byte	0x51
- 1363 005e 1D000000 		.4byte	.LVL7-1
- 1364 0062 5A000000 		.4byte	.LFE63
- 1365 0066 0400     		.2byte	0x4
- 1366 0068 F3       		.byte	0xf3
- 1367 0069 01       		.uleb128 0x1
- 1368 006a 51       		.byte	0x51
- 1369 006b 9F       		.byte	0x9f
- 1370 006c 00000000 		.4byte	0
- 1371 0070 00000000 		.4byte	0
- 1372              	.LLST2:
- 1373 0074 04000000 		.4byte	.LVL1
- 1374 0078 4C000000 		.4byte	.LVL13
- 1375 007c 0200     		.2byte	0x2
- 1376 007e 30       		.byte	0x30
- 1377 007f 9F       		.byte	0x9f
- 1378 0080 4C000000 		.4byte	.LVL13
- 1379 0084 50000000 		.4byte	.LVL14
- 1380 0088 0100     		.2byte	0x1
- 1381 008a 50       		.byte	0x50
- 1382 008b 52000000 		.4byte	.LVL15
- 1383 008f 57000000 		.4byte	.LVL16-1
- 1384 0093 0100     		.2byte	0x1
- 1385 0095 50       		.byte	0x50
- 1386 0096 00000000 		.4byte	0
- 1387 009a 00000000 		.4byte	0
- 1388              	.LLST3:
- 1389 009e 00000000 		.4byte	.LVL17
- 1390 00a2 16000000 		.4byte	.LVL22
- 1391 00a6 0100     		.2byte	0x1
- 1392 00a8 50       		.byte	0x50
- 1393 00a9 16000000 		.4byte	.LVL22
- 1394 00ad 1C000000 		.4byte	.LFE64
- 1395 00b1 0400     		.2byte	0x4
- 1396 00b3 F3       		.byte	0xf3
- 1397 00b4 01       		.uleb128 0x1
- 1398 00b5 50       		.byte	0x50
- 1399 00b6 9F       		.byte	0x9f
- 1400 00b7 00000000 		.4byte	0
- 1401 00bb 00000000 		.4byte	0
- 1402              	.LLST4:
- 1403 00bf 00000000 		.4byte	.LVL17
- 1404 00c3 08000000 		.4byte	.LVL19
- 1405 00c7 0100     		.2byte	0x1
- 1406 00c9 51       		.byte	0x51
- 1407 00ca 08000000 		.4byte	.LVL19
- 1408 00ce 1C000000 		.4byte	.LFE64
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 29
+ 1212 0486 01       		.byte	0x1
+ 1213 0487 D6       		.byte	0xd6
+ 1214 0488 1F010000 		.4byte	0x11f
+ 1215 048c 57040000 		.4byte	.LLST18
+ 1216 0490 0A       		.uleb128 0xa
+ 1217 0491 8A000000 		.4byte	.LASF47
+ 1218 0495 01       		.byte	0x1
+ 1219 0496 D8       		.byte	0xd8
+ 1220 0497 55010000 		.4byte	0x155
+ 1221 049b 76040000 		.4byte	.LLST19
+ 1222 049f 0A       		.uleb128 0xa
+ 1223 04a0 2A020000 		.4byte	.LASF39
+ 1224 04a4 01       		.byte	0x1
+ 1225 04a5 DA       		.byte	0xda
+ 1226 04a6 7E000000 		.4byte	0x7e
+ 1227 04aa 95040000 		.4byte	.LLST20
+ 1228 04ae 0D       		.uleb128 0xd
+ 1229 04af 08000000 		.4byte	.LVL77
+ 1230 04b3 33060000 		.4byte	0x633
+ 1231 04b7 0D       		.uleb128 0xd
+ 1232 04b8 0C000000 		.4byte	.LVL78
+ 1233 04bc 3E060000 		.4byte	0x63e
+ 1234 04c0 0B       		.uleb128 0xb
+ 1235 04c1 14000000 		.4byte	.LVL79
+ 1236 04c5 60010000 		.4byte	0x160
+ 1237 04c9 D8040000 		.4byte	0x4d8
+ 1238 04cd 0C       		.uleb128 0xc
+ 1239 04ce 01       		.uleb128 0x1
+ 1240 04cf 50       		.byte	0x50
+ 1241 04d0 01       		.uleb128 0x1
+ 1242 04d1 30       		.byte	0x30
+ 1243 04d2 0C       		.uleb128 0xc
+ 1244 04d3 01       		.uleb128 0x1
+ 1245 04d4 51       		.byte	0x51
+ 1246 04d5 01       		.uleb128 0x1
+ 1247 04d6 30       		.byte	0x30
+ 1248 04d7 00       		.byte	0
+ 1249 04d8 0D       		.uleb128 0xd
+ 1250 04d9 18000000 		.4byte	.LVL80
+ 1251 04dd 49060000 		.4byte	0x649
+ 1252 04e1 0D       		.uleb128 0xd
+ 1253 04e2 1C000000 		.4byte	.LVL81
+ 1254 04e6 54060000 		.4byte	0x654
+ 1255 04ea 0D       		.uleb128 0xd
+ 1256 04eb 20000000 		.4byte	.LVL82
+ 1257 04ef 5F060000 		.4byte	0x65f
+ 1258 04f3 0B       		.uleb128 0xb
+ 1259 04f4 26000000 		.4byte	.LVL83
+ 1260 04f8 6A060000 		.4byte	0x66a
+ 1261 04fc 0A050000 		.4byte	0x50a
+ 1262 0500 0C       		.uleb128 0xc
+ 1263 0501 01       		.uleb128 0x1
+ 1264 0502 50       		.byte	0x50
+ 1265 0503 05       		.uleb128 0x5
+ 1266 0504 03       		.byte	0x3
+ 1267 0505 00000000 		.4byte	.LC0
+ 1268 0509 00       		.byte	0
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 28
 
 
- 1409 00d2 0400     		.2byte	0x4
- 1410 00d4 F3       		.byte	0xf3
- 1411 00d5 01       		.uleb128 0x1
- 1412 00d6 51       		.byte	0x51
- 1413 00d7 9F       		.byte	0x9f
- 1414 00d8 00000000 		.4byte	0
- 1415 00dc 00000000 		.4byte	0
- 1416              	.LLST5:
- 1417 00e0 10000000 		.4byte	.LVL20
- 1418 00e4 19000000 		.4byte	.LVL23-1
- 1419 00e8 0100     		.2byte	0x1
- 1420 00ea 53       		.byte	0x53
- 1421 00eb 00000000 		.4byte	0
- 1422 00ef 00000000 		.4byte	0
- 1423              	.LLST6:
- 1424 00f3 12000000 		.4byte	.LVL21
- 1425 00f7 19000000 		.4byte	.LVL23-1
- 1426 00fb 0100     		.2byte	0x1
- 1427 00fd 51       		.byte	0x51
- 1428 00fe 00000000 		.4byte	0
- 1429 0102 00000000 		.4byte	0
- 1430              	.LLST7:
- 1431 0106 00000000 		.4byte	.LVL24
- 1432 010a 1C000000 		.4byte	.LVL25
- 1433 010e 0100     		.2byte	0x1
- 1434 0110 50       		.byte	0x50
- 1435 0111 1C000000 		.4byte	.LVL25
- 1436 0115 1E000000 		.4byte	.LVL26
- 1437 0119 0400     		.2byte	0x4
- 1438 011b F3       		.byte	0xf3
- 1439 011c 01       		.uleb128 0x1
- 1440 011d 50       		.byte	0x50
- 1441 011e 9F       		.byte	0x9f
- 1442 011f 1E000000 		.4byte	.LVL26
- 1443 0123 20000000 		.4byte	.LVL27
- 1444 0127 0100     		.2byte	0x1
- 1445 0129 50       		.byte	0x50
- 1446 012a 20000000 		.4byte	.LVL27
- 1447 012e 22000000 		.4byte	.LVL28
- 1448 0132 0400     		.2byte	0x4
- 1449 0134 F3       		.byte	0xf3
- 1450 0135 01       		.uleb128 0x1
- 1451 0136 50       		.byte	0x50
- 1452 0137 9F       		.byte	0x9f
- 1453 0138 22000000 		.4byte	.LVL28
- 1454 013c 24000000 		.4byte	.LVL29
- 1455 0140 0100     		.2byte	0x1
- 1456 0142 50       		.byte	0x50
- 1457 0143 24000000 		.4byte	.LVL29
- 1458 0147 26000000 		.4byte	.LVL30
- 1459 014b 0400     		.2byte	0x4
- 1460 014d F3       		.byte	0xf3
- 1461 014e 01       		.uleb128 0x1
- 1462 014f 50       		.byte	0x50
- 1463 0150 9F       		.byte	0x9f
- 1464 0151 26000000 		.4byte	.LVL30
- 1465 0155 28000000 		.4byte	.LVL31
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 30
+ 1269 050a 0D       		.uleb128 0xd
+ 1270 050b 30000000 		.4byte	.LVL85
+ 1271 050f C8030000 		.4byte	0x3c8
+ 1272 0513 0D       		.uleb128 0xd
+ 1273 0514 36000000 		.4byte	.LVL86
+ 1274 0518 75060000 		.4byte	0x675
+ 1275 051c 0D       		.uleb128 0xd
+ 1276 051d 3A000000 		.4byte	.LVL87
+ 1277 0521 80060000 		.4byte	0x680
+ 1278 0525 0D       		.uleb128 0xd
+ 1279 0526 40000000 		.4byte	.LVL88
+ 1280 052a 8B060000 		.4byte	0x68b
+ 1281 052e 0B       		.uleb128 0xb
+ 1282 052f 48000000 		.4byte	.LVL89
+ 1283 0533 AD020000 		.4byte	0x2ad
+ 1284 0537 42050000 		.4byte	0x542
+ 1285 053b 0C       		.uleb128 0xc
+ 1286 053c 01       		.uleb128 0x1
+ 1287 053d 50       		.byte	0x50
+ 1288 053e 02       		.uleb128 0x2
+ 1289 053f 75       		.byte	0x75
+ 1290 0540 00       		.sleb128 0
+ 1291 0541 00       		.byte	0
+ 1292 0542 0B       		.uleb128 0xb
+ 1293 0543 50000000 		.4byte	.LVL91
+ 1294 0547 E3020000 		.4byte	0x2e3
+ 1295 054b 5C050000 		.4byte	0x55c
+ 1296 054f 0C       		.uleb128 0xc
+ 1297 0550 01       		.uleb128 0x1
+ 1298 0551 50       		.byte	0x50
+ 1299 0552 02       		.uleb128 0x2
+ 1300 0553 75       		.byte	0x75
+ 1301 0554 00       		.sleb128 0
+ 1302 0555 0C       		.uleb128 0xc
+ 1303 0556 01       		.uleb128 0x1
+ 1304 0557 51       		.byte	0x51
+ 1305 0558 02       		.uleb128 0x2
+ 1306 0559 77       		.byte	0x77
+ 1307 055a 00       		.sleb128 0
+ 1308 055b 00       		.byte	0
+ 1309 055c 0B       		.uleb128 0xb
+ 1310 055d 56000000 		.4byte	.LVL92
+ 1311 0561 1B030000 		.4byte	0x31b
+ 1312 0565 70050000 		.4byte	0x570
+ 1313 0569 0C       		.uleb128 0xc
+ 1314 056a 01       		.uleb128 0x1
+ 1315 056b 51       		.byte	0x51
+ 1316 056c 02       		.uleb128 0x2
+ 1317 056d 74       		.byte	0x74
+ 1318 056e 00       		.sleb128 0
+ 1319 056f 00       		.byte	0
+ 1320 0570 0D       		.uleb128 0xd
+ 1321 0571 5C000000 		.4byte	.LVL94
+ 1322 0575 FA030000 		.4byte	0x3fa
+ 1323 0579 0D       		.uleb128 0xd
+ 1324 057a 64000000 		.4byte	.LVL96
+ 1325 057e 96060000 		.4byte	0x696
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 29
 
 
- 1466 0159 0100     		.2byte	0x1
- 1467 015b 50       		.byte	0x50
- 1468 015c 28000000 		.4byte	.LVL31
- 1469 0160 2A000000 		.4byte	.LVL32
- 1470 0164 0400     		.2byte	0x4
- 1471 0166 F3       		.byte	0xf3
- 1472 0167 01       		.uleb128 0x1
- 1473 0168 50       		.byte	0x50
- 1474 0169 9F       		.byte	0x9f
- 1475 016a 2A000000 		.4byte	.LVL32
- 1476 016e 2C000000 		.4byte	.LVL33
- 1477 0172 0100     		.2byte	0x1
- 1478 0174 50       		.byte	0x50
- 1479 0175 2C000000 		.4byte	.LVL33
- 1480 0179 2E000000 		.4byte	.LVL34
- 1481 017d 0400     		.2byte	0x4
- 1482 017f F3       		.byte	0xf3
- 1483 0180 01       		.uleb128 0x1
- 1484 0181 50       		.byte	0x50
- 1485 0182 9F       		.byte	0x9f
- 1486 0183 2E000000 		.4byte	.LVL34
- 1487 0187 30000000 		.4byte	.LVL35
- 1488 018b 0100     		.2byte	0x1
- 1489 018d 50       		.byte	0x50
- 1490 018e 30000000 		.4byte	.LVL35
- 1491 0192 32000000 		.4byte	.LFE65
- 1492 0196 0400     		.2byte	0x4
- 1493 0198 F3       		.byte	0xf3
- 1494 0199 01       		.uleb128 0x1
- 1495 019a 50       		.byte	0x50
- 1496 019b 9F       		.byte	0x9f
- 1497 019c 00000000 		.4byte	0
- 1498 01a0 00000000 		.4byte	0
- 1499              	.LLST8:
- 1500 01a4 00000000 		.4byte	.LVL36
- 1501 01a8 24000000 		.4byte	.LVL38
- 1502 01ac 0100     		.2byte	0x1
- 1503 01ae 50       		.byte	0x50
- 1504 01af 24000000 		.4byte	.LVL38
- 1505 01b3 26000000 		.4byte	.LVL39
- 1506 01b7 0400     		.2byte	0x4
- 1507 01b9 F3       		.byte	0xf3
- 1508 01ba 01       		.uleb128 0x1
- 1509 01bb 50       		.byte	0x50
- 1510 01bc 9F       		.byte	0x9f
- 1511 01bd 26000000 		.4byte	.LVL39
- 1512 01c1 28000000 		.4byte	.LVL40
- 1513 01c5 0100     		.2byte	0x1
- 1514 01c7 50       		.byte	0x50
- 1515 01c8 28000000 		.4byte	.LVL40
- 1516 01cc 2A000000 		.4byte	.LVL41
- 1517 01d0 0400     		.2byte	0x4
- 1518 01d2 F3       		.byte	0xf3
- 1519 01d3 01       		.uleb128 0x1
- 1520 01d4 50       		.byte	0x50
- 1521 01d5 9F       		.byte	0x9f
- 1522 01d6 2A000000 		.4byte	.LVL41
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 31
+ 1326 0582 0D       		.uleb128 0xd
+ 1327 0583 68000000 		.4byte	.LVL97
+ 1328 0587 A1060000 		.4byte	0x6a1
+ 1329 058b 0D       		.uleb128 0xd
+ 1330 058c 6E000000 		.4byte	.LVL99
+ 1331 0590 AC060000 		.4byte	0x6ac
+ 1332 0594 0B       		.uleb128 0xb
+ 1333 0595 80000000 		.4byte	.LVL101
+ 1334 0599 B7060000 		.4byte	0x6b7
+ 1335 059d A7050000 		.4byte	0x5a7
+ 1336 05a1 0C       		.uleb128 0xc
+ 1337 05a2 01       		.uleb128 0x1
+ 1338 05a3 50       		.byte	0x50
+ 1339 05a4 01       		.uleb128 0x1
+ 1340 05a5 31       		.byte	0x31
+ 1341 05a6 00       		.byte	0
+ 1342 05a7 0B       		.uleb128 0xb
+ 1343 05a8 86000000 		.4byte	.LVL102
+ 1344 05ac 6A060000 		.4byte	0x66a
+ 1345 05b0 BE050000 		.4byte	0x5be
+ 1346 05b4 0C       		.uleb128 0xc
+ 1347 05b5 01       		.uleb128 0x1
+ 1348 05b6 50       		.byte	0x50
+ 1349 05b7 05       		.uleb128 0x5
+ 1350 05b8 03       		.byte	0x3
+ 1351 05b9 08000000 		.4byte	.LC1
+ 1352 05bd 00       		.byte	0
+ 1353 05be 12       		.uleb128 0x12
+ 1354 05bf 8C000000 		.4byte	.LVL103
+ 1355 05c3 C2060000 		.4byte	0x6c2
+ 1356 05c7 0C       		.uleb128 0xc
+ 1357 05c8 01       		.uleb128 0x1
+ 1358 05c9 50       		.byte	0x50
+ 1359 05ca 02       		.uleb128 0x2
+ 1360 05cb 75       		.byte	0x75
+ 1361 05cc 00       		.sleb128 0
+ 1362 05cd 00       		.byte	0
+ 1363 05ce 00       		.byte	0
+ 1364 05cf 15       		.uleb128 0x15
+ 1365 05d0 BE030000 		.4byte	.LASF53
+ 1366 05d4 05       		.byte	0x5
+ 1367 05d5 1207     		.2byte	0x712
+ 1368 05d7 DB050000 		.4byte	0x5db
+ 1369 05db 16       		.uleb128 0x16
+ 1370 05dc 97000000 		.4byte	0x97
+ 1371 05e0 17       		.uleb128 0x17
+ 1372 05e1 12030000 		.4byte	.LASF54
+ 1373 05e5 01       		.byte	0x1
+ 1374 05e6 AD       		.byte	0xad
+ 1375 05e7 A2000000 		.4byte	0xa2
+ 1376 05eb 05       		.uleb128 0x5
+ 1377 05ec 03       		.byte	0x3
+ 1378 05ed 00000000 		.4byte	lasttime
+ 1379 05f1 18       		.uleb128 0x18
+ 1380 05f2 60040000 		.4byte	.LASF55
+ 1381 05f6 60040000 		.4byte	.LASF55
+ 1382 05fa 06       		.byte	0x6
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 30
 
 
- 1523 01da 2C000000 		.4byte	.LVL42
- 1524 01de 0100     		.2byte	0x1
- 1525 01e0 50       		.byte	0x50
- 1526 01e1 2C000000 		.4byte	.LVL42
- 1527 01e5 2E000000 		.4byte	.LVL43
- 1528 01e9 0400     		.2byte	0x4
- 1529 01eb F3       		.byte	0xf3
- 1530 01ec 01       		.uleb128 0x1
- 1531 01ed 50       		.byte	0x50
- 1532 01ee 9F       		.byte	0x9f
- 1533 01ef 2E000000 		.4byte	.LVL43
- 1534 01f3 30000000 		.4byte	.LVL44
- 1535 01f7 0100     		.2byte	0x1
- 1536 01f9 50       		.byte	0x50
- 1537 01fa 30000000 		.4byte	.LVL44
- 1538 01fe 32000000 		.4byte	.LVL45
- 1539 0202 0400     		.2byte	0x4
- 1540 0204 F3       		.byte	0xf3
- 1541 0205 01       		.uleb128 0x1
- 1542 0206 50       		.byte	0x50
- 1543 0207 9F       		.byte	0x9f
- 1544 0208 32000000 		.4byte	.LVL45
- 1545 020c 34000000 		.4byte	.LVL46
- 1546 0210 0100     		.2byte	0x1
- 1547 0212 50       		.byte	0x50
- 1548 0213 34000000 		.4byte	.LVL46
- 1549 0217 36000000 		.4byte	.LVL47
- 1550 021b 0400     		.2byte	0x4
- 1551 021d F3       		.byte	0xf3
- 1552 021e 01       		.uleb128 0x1
- 1553 021f 50       		.byte	0x50
- 1554 0220 9F       		.byte	0x9f
- 1555 0221 36000000 		.4byte	.LVL47
- 1556 0225 38000000 		.4byte	.LVL48
- 1557 0229 0100     		.2byte	0x1
- 1558 022b 50       		.byte	0x50
- 1559 022c 38000000 		.4byte	.LVL48
- 1560 0230 3A000000 		.4byte	.LVL49
- 1561 0234 0400     		.2byte	0x4
- 1562 0236 F3       		.byte	0xf3
- 1563 0237 01       		.uleb128 0x1
- 1564 0238 50       		.byte	0x50
- 1565 0239 9F       		.byte	0x9f
- 1566 023a 3A000000 		.4byte	.LVL49
- 1567 023e 3C000000 		.4byte	.LVL50
- 1568 0242 0100     		.2byte	0x1
- 1569 0244 50       		.byte	0x50
- 1570 0245 3C000000 		.4byte	.LVL50
- 1571 0249 3E000000 		.4byte	.LFE66
- 1572 024d 0400     		.2byte	0x4
- 1573 024f F3       		.byte	0xf3
- 1574 0250 01       		.uleb128 0x1
- 1575 0251 50       		.byte	0x50
- 1576 0252 9F       		.byte	0x9f
- 1577 0253 00000000 		.4byte	0
- 1578 0257 00000000 		.4byte	0
- 1579              	.LLST9:
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 32
+ 1383 05fb C3       		.byte	0xc3
+ 1384 05fc 18       		.uleb128 0x18
+ 1385 05fd 49030000 		.4byte	.LASF56
+ 1386 0601 49030000 		.4byte	.LASF56
+ 1387 0605 07       		.byte	0x7
+ 1388 0606 26       		.byte	0x26
+ 1389 0607 18       		.uleb128 0x18
+ 1390 0608 D3000000 		.4byte	.LASF57
+ 1391 060c D3000000 		.4byte	.LASF57
+ 1392 0610 08       		.byte	0x8
+ 1393 0611 C3       		.byte	0xc3
+ 1394 0612 18       		.uleb128 0x18
+ 1395 0613 32000000 		.4byte	.LASF58
+ 1396 0617 32000000 		.4byte	.LASF58
+ 1397 061b 09       		.byte	0x9
+ 1398 061c 26       		.byte	0x26
+ 1399 061d 18       		.uleb128 0x18
+ 1400 061e 3C020000 		.4byte	.LASF59
+ 1401 0622 3C020000 		.4byte	.LASF59
+ 1402 0626 0A       		.byte	0xa
+ 1403 0627 2F       		.byte	0x2f
+ 1404 0628 18       		.uleb128 0x18
+ 1405 0629 4F010000 		.4byte	.LASF60
+ 1406 062d 4F010000 		.4byte	.LASF60
+ 1407 0631 0B       		.byte	0xb
+ 1408 0632 B6       		.byte	0xb6
+ 1409 0633 18       		.uleb128 0x18
+ 1410 0634 93030000 		.4byte	.LASF61
+ 1411 0638 93030000 		.4byte	.LASF61
+ 1412 063c 06       		.byte	0x6
+ 1413 063d 92       		.byte	0x92
+ 1414 063e 18       		.uleb128 0x18
+ 1415 063f F3020000 		.4byte	.LASF62
+ 1416 0643 F3020000 		.4byte	.LASF62
+ 1417 0647 08       		.byte	0x8
+ 1418 0648 92       		.byte	0x92
+ 1419 0649 18       		.uleb128 0x18
+ 1420 064a 68030000 		.4byte	.LASF63
+ 1421 064e 68030000 		.4byte	.LASF63
+ 1422 0652 0B       		.byte	0xb
+ 1423 0653 AE       		.byte	0xae
+ 1424 0654 18       		.uleb128 0x18
+ 1425 0655 13000000 		.4byte	.LASF64
+ 1426 0659 13000000 		.4byte	.LASF64
+ 1427 065d 0C       		.byte	0xc
+ 1428 065e 34       		.byte	0x34
+ 1429 065f 18       		.uleb128 0x18
+ 1430 0660 A2000000 		.4byte	.LASF65
+ 1431 0664 A2000000 		.4byte	.LASF65
+ 1432 0668 0D       		.byte	0xd
+ 1433 0669 38       		.byte	0x38
+ 1434 066a 18       		.uleb128 0x18
+ 1435 066b C0020000 		.4byte	.LASF66
+ 1436 066f C0020000 		.4byte	.LASF66
+ 1437 0673 0D       		.byte	0xd
+ 1438 0674 3C       		.byte	0x3c
+ 1439 0675 18       		.uleb128 0x18
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 31
 
 
- 1580 025b 00000000 		.4byte	.LVL36
- 1581 025f 1C000000 		.4byte	.LVL37
- 1582 0263 0100     		.2byte	0x1
- 1583 0265 51       		.byte	0x51
- 1584 0266 1C000000 		.4byte	.LVL37
- 1585 026a 26000000 		.4byte	.LVL39
- 1586 026e 0400     		.2byte	0x4
- 1587 0270 F3       		.byte	0xf3
- 1588 0271 01       		.uleb128 0x1
- 1589 0272 51       		.byte	0x51
- 1590 0273 9F       		.byte	0x9f
- 1591 0274 26000000 		.4byte	.LVL39
- 1592 0278 3A000000 		.4byte	.LVL49
- 1593 027c 0100     		.2byte	0x1
- 1594 027e 51       		.byte	0x51
- 1595 027f 3A000000 		.4byte	.LVL49
- 1596 0283 3E000000 		.4byte	.LFE66
- 1597 0287 0400     		.2byte	0x4
- 1598 0289 F3       		.byte	0xf3
- 1599 028a 01       		.uleb128 0x1
- 1600 028b 51       		.byte	0x51
- 1601 028c 9F       		.byte	0x9f
- 1602 028d 00000000 		.4byte	0
- 1603 0291 00000000 		.4byte	0
- 1604              	.LLST10:
- 1605 0295 1C000000 		.4byte	.LVL54
- 1606 0299 2C000000 		.4byte	.LVL55
- 1607 029d 0100     		.2byte	0x1
- 1608 029f 50       		.byte	0x50
- 1609 02a0 32000000 		.4byte	.LVL57
- 1610 02a4 38000000 		.4byte	.LVL58
- 1611 02a8 0100     		.2byte	0x1
- 1612 02aa 50       		.byte	0x50
- 1613 02ab 3E000000 		.4byte	.LVL60
- 1614 02af 42000000 		.4byte	.LVL61
- 1615 02b3 0100     		.2byte	0x1
- 1616 02b5 50       		.byte	0x50
- 1617 02b6 48000000 		.4byte	.LVL63
- 1618 02ba 4C000000 		.4byte	.LVL64
- 1619 02be 0100     		.2byte	0x1
- 1620 02c0 50       		.byte	0x50
- 1621 02c1 52000000 		.4byte	.LVL66
- 1622 02c5 56000000 		.4byte	.LVL67
- 1623 02c9 0100     		.2byte	0x1
- 1624 02cb 50       		.byte	0x50
- 1625 02cc 00000000 		.4byte	0
- 1626 02d0 00000000 		.4byte	0
- 1627              		.section	.debug_aranges,"",%progbits
- 1628 0000 3C000000 		.4byte	0x3c
- 1629 0004 0200     		.2byte	0x2
- 1630 0006 00000000 		.4byte	.Ldebug_info0
- 1631 000a 04       		.byte	0x4
- 1632 000b 00       		.byte	0
- 1633 000c 0000     		.2byte	0
- 1634 000e 0000     		.2byte	0
- 1635 0010 00000000 		.4byte	.LFB63
- 1636 0014 5A000000 		.4byte	.LFE63-.LFB63
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 33
+ 1440 0676 29000000 		.4byte	.LASF67
+ 1441 067a 29000000 		.4byte	.LASF67
+ 1442 067e 0E       		.byte	0xe
+ 1443 067f 29       		.byte	0x29
+ 1444 0680 18       		.uleb128 0x18
+ 1445 0681 61010000 		.4byte	.LASF68
+ 1446 0685 61010000 		.4byte	.LASF68
+ 1447 0689 0F       		.byte	0xf
+ 1448 068a 29       		.byte	0x29
+ 1449 068b 18       		.uleb128 0x18
+ 1450 068c 3D010000 		.4byte	.LASF69
+ 1451 0690 3D010000 		.4byte	.LASF69
+ 1452 0694 10       		.byte	0x10
+ 1453 0695 29       		.byte	0x29
+ 1454 0696 18       		.uleb128 0x18
+ 1455 0697 D7020000 		.4byte	.LASF70
+ 1456 069b D7020000 		.4byte	.LASF70
+ 1457 069f 0C       		.byte	0xc
+ 1458 06a0 D1       		.byte	0xd1
+ 1459 06a1 18       		.uleb128 0x18
+ 1460 06a2 F0000000 		.4byte	.LASF71
+ 1461 06a6 F0000000 		.4byte	.LASF71
+ 1462 06aa 0C       		.byte	0xc
+ 1463 06ab 3B       		.byte	0x3b
+ 1464 06ac 18       		.uleb128 0x18
+ 1465 06ad 2C030000 		.4byte	.LASF72
+ 1466 06b1 2C030000 		.4byte	.LASF72
+ 1467 06b5 0C       		.byte	0xc
+ 1468 06b6 D2       		.byte	0xd2
+ 1469 06b7 18       		.uleb128 0x18
+ 1470 06b8 C0010000 		.4byte	.LASF73
+ 1471 06bc C0010000 		.4byte	.LASF73
+ 1472 06c0 0D       		.byte	0xd
+ 1473 06c1 3A       		.byte	0x3a
+ 1474 06c2 18       		.uleb128 0x18
+ 1475 06c3 79010000 		.4byte	.LASF74
+ 1476 06c7 79010000 		.4byte	.LASF74
+ 1477 06cb 0D       		.byte	0xd
+ 1478 06cc 61       		.byte	0x61
+ 1479 06cd 00       		.byte	0
+ 1480              		.section	.debug_abbrev,"",%progbits
+ 1481              	.Ldebug_abbrev0:
+ 1482 0000 01       		.uleb128 0x1
+ 1483 0001 11       		.uleb128 0x11
+ 1484 0002 01       		.byte	0x1
+ 1485 0003 25       		.uleb128 0x25
+ 1486 0004 0E       		.uleb128 0xe
+ 1487 0005 13       		.uleb128 0x13
+ 1488 0006 0B       		.uleb128 0xb
+ 1489 0007 03       		.uleb128 0x3
+ 1490 0008 0E       		.uleb128 0xe
+ 1491 0009 1B       		.uleb128 0x1b
+ 1492 000a 0E       		.uleb128 0xe
+ 1493 000b 55       		.uleb128 0x55
+ 1494 000c 17       		.uleb128 0x17
+ 1495 000d 11       		.uleb128 0x11
+ 1496 000e 01       		.uleb128 0x1
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 32
 
 
- 1637 0018 00000000 		.4byte	.LFB64
- 1638 001c 1C000000 		.4byte	.LFE64-.LFB64
- 1639 0020 00000000 		.4byte	.LFB65
- 1640 0024 32000000 		.4byte	.LFE65-.LFB65
- 1641 0028 00000000 		.4byte	.LFB66
- 1642 002c 3E000000 		.4byte	.LFE66-.LFB66
- 1643 0030 00000000 		.4byte	.LFB67
- 1644 0034 5C000000 		.4byte	.LFE67-.LFB67
- 1645 0038 00000000 		.4byte	0
- 1646 003c 00000000 		.4byte	0
- 1647              		.section	.debug_ranges,"",%progbits
- 1648              	.Ldebug_ranges0:
- 1649 0000 00000000 		.4byte	.LFB63
- 1650 0004 5A000000 		.4byte	.LFE63
- 1651 0008 00000000 		.4byte	.LFB64
- 1652 000c 1C000000 		.4byte	.LFE64
- 1653 0010 00000000 		.4byte	.LFB65
- 1654 0014 32000000 		.4byte	.LFE65
- 1655 0018 00000000 		.4byte	.LFB66
- 1656 001c 3E000000 		.4byte	.LFE66
- 1657 0020 00000000 		.4byte	.LFB67
- 1658 0024 5C000000 		.4byte	.LFE67
- 1659 0028 00000000 		.4byte	0
- 1660 002c 00000000 		.4byte	0
- 1661              		.section	.debug_line,"",%progbits
- 1662              	.Ldebug_line0:
- 1663 0000 75020000 		.section	.debug_str,"MS",%progbits,1
- 1663      0200B201 
- 1663      00000201 
- 1663      FB0E0D00 
- 1663      01010101 
- 1664              	.LASF22:
- 1665 0000 69646C65 		.ascii	"idle\000"
- 1665      00
- 1666              	.LASF32:
- 1667 0005 73657453 		.ascii	"setSpeeds\000"
- 1667      70656564 
- 1667      7300
- 1668              	.LASF9:
- 1669 000f 5F5F696E 		.ascii	"__int32_t\000"
- 1669      7433325F 
- 1669      7400
- 1670              	.LASF28:
- 1671 0019 6E6F6E65 		.ascii	"none\000"
- 1671      00
- 1672              	.LASF44:
- 1673 001e 52696768 		.ascii	"Right_Motor_PWM_WriteCompare\000"
- 1673      745F4D6F 
- 1673      746F725F 
- 1673      50574D5F 
- 1673      57726974 
- 1674              	.LASF3:
- 1675 003b 73686F72 		.ascii	"short unsigned int\000"
- 1675      7420756E 
- 1675      7369676E 
- 1675      65642069 
- 1675      6E7400
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 34
+ 1497 000f 10       		.uleb128 0x10
+ 1498 0010 17       		.uleb128 0x17
+ 1499 0011 00       		.byte	0
+ 1500 0012 00       		.byte	0
+ 1501 0013 02       		.uleb128 0x2
+ 1502 0014 24       		.uleb128 0x24
+ 1503 0015 00       		.byte	0
+ 1504 0016 0B       		.uleb128 0xb
+ 1505 0017 0B       		.uleb128 0xb
+ 1506 0018 3E       		.uleb128 0x3e
+ 1507 0019 0B       		.uleb128 0xb
+ 1508 001a 03       		.uleb128 0x3
+ 1509 001b 0E       		.uleb128 0xe
+ 1510 001c 00       		.byte	0
+ 1511 001d 00       		.byte	0
+ 1512 001e 03       		.uleb128 0x3
+ 1513 001f 16       		.uleb128 0x16
+ 1514 0020 00       		.byte	0
+ 1515 0021 03       		.uleb128 0x3
+ 1516 0022 0E       		.uleb128 0xe
+ 1517 0023 3A       		.uleb128 0x3a
+ 1518 0024 0B       		.uleb128 0xb
+ 1519 0025 3B       		.uleb128 0x3b
+ 1520 0026 0B       		.uleb128 0xb
+ 1521 0027 49       		.uleb128 0x49
+ 1522 0028 13       		.uleb128 0x13
+ 1523 0029 00       		.byte	0
+ 1524 002a 00       		.byte	0
+ 1525 002b 04       		.uleb128 0x4
+ 1526 002c 24       		.uleb128 0x24
+ 1527 002d 00       		.byte	0
+ 1528 002e 0B       		.uleb128 0xb
+ 1529 002f 0B       		.uleb128 0xb
+ 1530 0030 3E       		.uleb128 0x3e
+ 1531 0031 0B       		.uleb128 0xb
+ 1532 0032 03       		.uleb128 0x3
+ 1533 0033 08       		.uleb128 0x8
+ 1534 0034 00       		.byte	0
+ 1535 0035 00       		.byte	0
+ 1536 0036 05       		.uleb128 0x5
+ 1537 0037 16       		.uleb128 0x16
+ 1538 0038 00       		.byte	0
+ 1539 0039 03       		.uleb128 0x3
+ 1540 003a 0E       		.uleb128 0xe
+ 1541 003b 3A       		.uleb128 0x3a
+ 1542 003c 0B       		.uleb128 0xb
+ 1543 003d 3B       		.uleb128 0x3b
+ 1544 003e 05       		.uleb128 0x5
+ 1545 003f 49       		.uleb128 0x49
+ 1546 0040 13       		.uleb128 0x13
+ 1547 0041 00       		.byte	0
+ 1548 0042 00       		.byte	0
+ 1549 0043 06       		.uleb128 0x6
+ 1550 0044 04       		.uleb128 0x4
+ 1551 0045 01       		.byte	0x1
+ 1552 0046 0B       		.uleb128 0xb
+ 1553 0047 0B       		.uleb128 0xb
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 33
 
 
- 1676              	.LASF30:
- 1677 004e 6C656674 		.ascii	"left\000"
- 1677      00
- 1678              	.LASF18:
- 1679 0053 4C696E65 		.ascii	"LineNo\000"
- 1679      4E6F00
- 1680              	.LASF38:
- 1681 005a 73657445 		.ascii	"setEvent\000"
- 1681      76656E74 
- 1681      00
- 1682              	.LASF25:
- 1683 0063 7475726E 		.ascii	"turn_left\000"
- 1683      5F6C6566 
- 1683      7400
- 1684              	.LASF13:
- 1685 006d 666C6F61 		.ascii	"float\000"
- 1685      7400
- 1686              	.LASF7:
- 1687 0073 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1687      206C6F6E 
- 1687      6720756E 
- 1687      7369676E 
- 1687      65642069 
- 1688              	.LASF51:
- 1689 008a 433A5C55 		.ascii	"C:\\Users\\budai\\Documents\\github\\Beagyazott_ren"
- 1689      73657273 
- 1689      5C627564 
- 1689      61695C44 
- 1689      6F63756D 
- 1690 00b8 64737A65 		.ascii	"dszerek\\kicsikocsi\\Design01.cydsn\000"
- 1690      72656B5C 
- 1690      6B696373 
- 1690      696B6F63 
- 1690      73695C44 
- 1691              	.LASF27:
- 1692 00da 7365656B 		.ascii	"seek_line\000"
- 1692      5F6C696E 
- 1692      6500
- 1693              	.LASF47:
- 1694 00e4 4C656674 		.ascii	"Left_Motor_PWM_Start\000"
- 1694      5F4D6F74 
- 1694      6F725F50 
- 1694      574D5F53 
- 1694      74617274 
- 1695              	.LASF40:
- 1696 00f9 70726576 		.ascii	"prevState\000"
- 1696      53746174 
- 1696      6500
- 1697              	.LASF12:
- 1698 0103 696E7431 		.ascii	"int16\000"
- 1698      3600
- 1699              	.LASF31:
- 1700 0109 72696768 		.ascii	"right\000"
- 1700      7400
- 1701              	.LASF26:
- 1702 010f 7475726E 		.ascii	"turn_right\000"
- 1702      5F726967 
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 35
+ 1554 0048 49       		.uleb128 0x49
+ 1555 0049 13       		.uleb128 0x13
+ 1556 004a 3A       		.uleb128 0x3a
+ 1557 004b 0B       		.uleb128 0xb
+ 1558 004c 3B       		.uleb128 0x3b
+ 1559 004d 0B       		.uleb128 0xb
+ 1560 004e 01       		.uleb128 0x1
+ 1561 004f 13       		.uleb128 0x13
+ 1562 0050 00       		.byte	0
+ 1563 0051 00       		.byte	0
+ 1564 0052 07       		.uleb128 0x7
+ 1565 0053 28       		.uleb128 0x28
+ 1566 0054 00       		.byte	0
+ 1567 0055 03       		.uleb128 0x3
+ 1568 0056 0E       		.uleb128 0xe
+ 1569 0057 1C       		.uleb128 0x1c
+ 1570 0058 0B       		.uleb128 0xb
+ 1571 0059 00       		.byte	0
+ 1572 005a 00       		.byte	0
+ 1573 005b 08       		.uleb128 0x8
+ 1574 005c 2E       		.uleb128 0x2e
+ 1575 005d 01       		.byte	0x1
+ 1576 005e 3F       		.uleb128 0x3f
+ 1577 005f 19       		.uleb128 0x19
+ 1578 0060 03       		.uleb128 0x3
+ 1579 0061 0E       		.uleb128 0xe
+ 1580 0062 3A       		.uleb128 0x3a
+ 1581 0063 0B       		.uleb128 0xb
+ 1582 0064 3B       		.uleb128 0x3b
+ 1583 0065 0B       		.uleb128 0xb
+ 1584 0066 27       		.uleb128 0x27
+ 1585 0067 19       		.uleb128 0x19
+ 1586 0068 11       		.uleb128 0x11
+ 1587 0069 01       		.uleb128 0x1
+ 1588 006a 12       		.uleb128 0x12
+ 1589 006b 06       		.uleb128 0x6
+ 1590 006c 40       		.uleb128 0x40
+ 1591 006d 18       		.uleb128 0x18
+ 1592 006e 9742     		.uleb128 0x2117
+ 1593 0070 19       		.uleb128 0x19
+ 1594 0071 01       		.uleb128 0x1
+ 1595 0072 13       		.uleb128 0x13
+ 1596 0073 00       		.byte	0
+ 1597 0074 00       		.byte	0
+ 1598 0075 09       		.uleb128 0x9
+ 1599 0076 05       		.uleb128 0x5
+ 1600 0077 00       		.byte	0
+ 1601 0078 03       		.uleb128 0x3
+ 1602 0079 0E       		.uleb128 0xe
+ 1603 007a 3A       		.uleb128 0x3a
+ 1604 007b 0B       		.uleb128 0xb
+ 1605 007c 3B       		.uleb128 0x3b
+ 1606 007d 0B       		.uleb128 0xb
+ 1607 007e 49       		.uleb128 0x49
+ 1608 007f 13       		.uleb128 0x13
+ 1609 0080 02       		.uleb128 0x2
+ 1610 0081 17       		.uleb128 0x17
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 34
 
 
- 1702      687400
- 1703              	.LASF11:
- 1704 011a 696E7438 		.ascii	"int8\000"
- 1704      00
- 1705              	.LASF1:
- 1706 011f 756E7369 		.ascii	"unsigned char\000"
- 1706      676E6564 
- 1706      20636861 
- 1706      7200
- 1707              	.LASF5:
- 1708 012d 6C6F6E67 		.ascii	"long unsigned int\000"
- 1708      20756E73 
- 1708      69676E65 
- 1708      6420696E 
- 1708      7400
- 1709              	.LASF45:
- 1710 013f 52696768 		.ascii	"Right_Motor_DIR_Write\000"
- 1710      745F4D6F 
- 1710      746F725F 
- 1710      4449525F 
- 1710      57726974 
- 1711              	.LASF16:
- 1712 0155 6C6F6E67 		.ascii	"long double\000"
- 1712      20646F75 
- 1712      626C6500 
- 1713              	.LASF29:
- 1714 0161 6576656E 		.ascii	"events\000"
- 1714      747300
- 1715              	.LASF52:
- 1716 0168 6D61696E 		.ascii	"main\000"
- 1716      00
- 1717              	.LASF21:
- 1718 016d 4C696E65 		.ascii	"LineAtLeft\000"
- 1718      41744C65 
- 1718      667400
- 1719              	.LASF53:
- 1720 0178 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1720      52784275 
- 1720      66666572 
- 1720      00
- 1721              	.LASF41:
- 1722 0185 6576656E 		.ascii	"event\000"
- 1722      7400
- 1723              	.LASF42:
- 1724 018b 4C656674 		.ascii	"Left_Motor_PWM_WriteCompare\000"
- 1724      5F4D6F74 
- 1724      6F725F50 
- 1724      574D5F57 
- 1724      72697465 
- 1725              	.LASF8:
- 1726 01a7 756E7369 		.ascii	"unsigned int\000"
- 1726      676E6564 
- 1726      20696E74 
- 1726      00
- 1727              	.LASF36:
- 1728 01b4 6B696C6C 		.ascii	"killControl\000"
- 1728      436F6E74 
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 36
+ 1611 0082 00       		.byte	0
+ 1612 0083 00       		.byte	0
+ 1613 0084 0A       		.uleb128 0xa
+ 1614 0085 34       		.uleb128 0x34
+ 1615 0086 00       		.byte	0
+ 1616 0087 03       		.uleb128 0x3
+ 1617 0088 0E       		.uleb128 0xe
+ 1618 0089 3A       		.uleb128 0x3a
+ 1619 008a 0B       		.uleb128 0xb
+ 1620 008b 3B       		.uleb128 0x3b
+ 1621 008c 0B       		.uleb128 0xb
+ 1622 008d 49       		.uleb128 0x49
+ 1623 008e 13       		.uleb128 0x13
+ 1624 008f 02       		.uleb128 0x2
+ 1625 0090 17       		.uleb128 0x17
+ 1626 0091 00       		.byte	0
+ 1627 0092 00       		.byte	0
+ 1628 0093 0B       		.uleb128 0xb
+ 1629 0094 898201   		.uleb128 0x4109
+ 1630 0097 01       		.byte	0x1
+ 1631 0098 11       		.uleb128 0x11
+ 1632 0099 01       		.uleb128 0x1
+ 1633 009a 31       		.uleb128 0x31
+ 1634 009b 13       		.uleb128 0x13
+ 1635 009c 01       		.uleb128 0x1
+ 1636 009d 13       		.uleb128 0x13
+ 1637 009e 00       		.byte	0
+ 1638 009f 00       		.byte	0
+ 1639 00a0 0C       		.uleb128 0xc
+ 1640 00a1 8A8201   		.uleb128 0x410a
+ 1641 00a4 00       		.byte	0
+ 1642 00a5 02       		.uleb128 0x2
+ 1643 00a6 18       		.uleb128 0x18
+ 1644 00a7 9142     		.uleb128 0x2111
+ 1645 00a9 18       		.uleb128 0x18
+ 1646 00aa 00       		.byte	0
+ 1647 00ab 00       		.byte	0
+ 1648 00ac 0D       		.uleb128 0xd
+ 1649 00ad 898201   		.uleb128 0x4109
+ 1650 00b0 00       		.byte	0
+ 1651 00b1 11       		.uleb128 0x11
+ 1652 00b2 01       		.uleb128 0x1
+ 1653 00b3 31       		.uleb128 0x31
+ 1654 00b4 13       		.uleb128 0x13
+ 1655 00b5 00       		.byte	0
+ 1656 00b6 00       		.byte	0
+ 1657 00b7 0E       		.uleb128 0xe
+ 1658 00b8 34       		.uleb128 0x34
+ 1659 00b9 00       		.byte	0
+ 1660 00ba 03       		.uleb128 0x3
+ 1661 00bb 08       		.uleb128 0x8
+ 1662 00bc 3A       		.uleb128 0x3a
+ 1663 00bd 0B       		.uleb128 0xb
+ 1664 00be 3B       		.uleb128 0x3b
+ 1665 00bf 0B       		.uleb128 0xb
+ 1666 00c0 49       		.uleb128 0x49
+ 1667 00c1 13       		.uleb128 0x13
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 35
 
 
- 1728      726F6C00 
- 1729              	.LASF14:
- 1730 01c0 646F7562 		.ascii	"double\000"
- 1730      6C6500
- 1731              	.LASF39:
- 1732 01c7 63757253 		.ascii	"curState\000"
- 1732      74617465 
- 1732      00
- 1733              	.LASF49:
- 1734 01d0 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1734      43313120 
- 1734      352E342E 
- 1734      31203230 
- 1734      31363036 
- 1735 0203 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1735      20726576 
- 1735      6973696F 
- 1735      6E203233 
- 1735      37373135 
- 1736 0236 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1736      66756E63 
- 1736      74696F6E 
- 1736      2D736563 
- 1736      74696F6E 
- 1737              	.LASF34:
- 1738 025e 73706565 		.ascii	"speed\000"
- 1738      6400
- 1739              	.LASF19:
- 1740 0264 4C696E65 		.ascii	"LineOn\000"
- 1740      4F6E00
- 1741              	.LASF43:
- 1742 026b 4C656674 		.ascii	"Left_Motor_DIR_Write\000"
- 1742      5F4D6F74 
- 1742      6F725F44 
- 1742      49525F57 
- 1742      72697465 
- 1743              	.LASF17:
- 1744 0280 73697A65 		.ascii	"sizetype\000"
- 1744      74797065 
- 1744      00
- 1745              	.LASF6:
- 1746 0289 6C6F6E67 		.ascii	"long long int\000"
- 1746      206C6F6E 
- 1746      6720696E 
- 1746      7400
- 1747              	.LASF50:
- 1748 0297 6D61696E 		.ascii	"main.c\000"
- 1748      2E6300
- 1749              	.LASF15:
- 1750 029e 63686172 		.ascii	"char\000"
- 1750      00
- 1751              	.LASF23:
- 1752 02a3 73746174 		.ascii	"states\000"
- 1752      657300
- 1753              	.LASF10:
- 1754 02aa 696E7433 		.ascii	"int32_t\000"
- 1754      325F7400 
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccauxMqi.s 			page 37
+ 1668 00c2 1C       		.uleb128 0x1c
+ 1669 00c3 0B       		.uleb128 0xb
+ 1670 00c4 00       		.byte	0
+ 1671 00c5 00       		.byte	0
+ 1672 00c6 0F       		.uleb128 0xf
+ 1673 00c7 34       		.uleb128 0x34
+ 1674 00c8 00       		.byte	0
+ 1675 00c9 03       		.uleb128 0x3
+ 1676 00ca 08       		.uleb128 0x8
+ 1677 00cb 3A       		.uleb128 0x3a
+ 1678 00cc 0B       		.uleb128 0xb
+ 1679 00cd 3B       		.uleb128 0x3b
+ 1680 00ce 0B       		.uleb128 0xb
+ 1681 00cf 49       		.uleb128 0x49
+ 1682 00d0 13       		.uleb128 0x13
+ 1683 00d1 02       		.uleb128 0x2
+ 1684 00d2 17       		.uleb128 0x17
+ 1685 00d3 00       		.byte	0
+ 1686 00d4 00       		.byte	0
+ 1687 00d5 10       		.uleb128 0x10
+ 1688 00d6 2E       		.uleb128 0x2e
+ 1689 00d7 01       		.byte	0x1
+ 1690 00d8 3F       		.uleb128 0x3f
+ 1691 00d9 19       		.uleb128 0x19
+ 1692 00da 03       		.uleb128 0x3
+ 1693 00db 0E       		.uleb128 0xe
+ 1694 00dc 3A       		.uleb128 0x3a
+ 1695 00dd 0B       		.uleb128 0xb
+ 1696 00de 3B       		.uleb128 0x3b
+ 1697 00df 0B       		.uleb128 0xb
+ 1698 00e0 27       		.uleb128 0x27
+ 1699 00e1 19       		.uleb128 0x19
+ 1700 00e2 49       		.uleb128 0x49
+ 1701 00e3 13       		.uleb128 0x13
+ 1702 00e4 11       		.uleb128 0x11
+ 1703 00e5 01       		.uleb128 0x1
+ 1704 00e6 12       		.uleb128 0x12
+ 1705 00e7 06       		.uleb128 0x6
+ 1706 00e8 40       		.uleb128 0x40
+ 1707 00e9 18       		.uleb128 0x18
+ 1708 00ea 9742     		.uleb128 0x2117
+ 1709 00ec 19       		.uleb128 0x19
+ 1710 00ed 01       		.uleb128 0x1
+ 1711 00ee 13       		.uleb128 0x13
+ 1712 00ef 00       		.byte	0
+ 1713 00f0 00       		.byte	0
+ 1714 00f1 11       		.uleb128 0x11
+ 1715 00f2 05       		.uleb128 0x5
+ 1716 00f3 00       		.byte	0
+ 1717 00f4 03       		.uleb128 0x3
+ 1718 00f5 0E       		.uleb128 0xe
+ 1719 00f6 3A       		.uleb128 0x3a
+ 1720 00f7 0B       		.uleb128 0xb
+ 1721 00f8 3B       		.uleb128 0x3b
+ 1722 00f9 0B       		.uleb128 0xb
+ 1723 00fa 49       		.uleb128 0x49
+ 1724 00fb 13       		.uleb128 0x13
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 36
 
 
- 1755              	.LASF35:
- 1756 02b2 7475726E 		.ascii	"turnrad\000"
- 1756      72616400 
- 1757              	.LASF2:
- 1758 02ba 73686F72 		.ascii	"short int\000"
- 1758      7420696E 
- 1758      7400
- 1759              	.LASF48:
- 1760 02c4 52696768 		.ascii	"Right_Motor_PWM_Start\000"
- 1760      745F4D6F 
- 1760      746F725F 
- 1760      50574D5F 
- 1760      53746172 
- 1761              	.LASF37:
- 1762 02da 73657453 		.ascii	"setState\000"
- 1762      74617465 
- 1762      00
- 1763              	.LASF4:
- 1764 02e3 6C6F6E67 		.ascii	"long int\000"
- 1764      20696E74 
- 1764      00
- 1765              	.LASF33:
- 1766 02ec 63616C53 		.ascii	"calSpeed\000"
- 1766      70656564 
- 1766      00
- 1767              	.LASF24:
- 1768 02f5 676F5F73 		.ascii	"go_straight\000"
- 1768      74726169 
- 1768      67687400 
- 1769              	.LASF0:
- 1770 0301 7369676E 		.ascii	"signed char\000"
- 1770      65642063 
- 1770      68617200 
- 1771              	.LASF46:
- 1772 030d 5265675F 		.ascii	"Reg_PWM_Enable_Write\000"
- 1772      50574D5F 
- 1772      456E6162 
- 1772      6C655F57 
- 1772      72697465 
- 1773              	.LASF20:
- 1774 0322 4C696E65 		.ascii	"LineAtRight\000"
- 1774      41745269 
- 1774      67687400 
- 1775              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1725 00fc 02       		.uleb128 0x2
+ 1726 00fd 18       		.uleb128 0x18
+ 1727 00fe 00       		.byte	0
+ 1728 00ff 00       		.byte	0
+ 1729 0100 12       		.uleb128 0x12
+ 1730 0101 898201   		.uleb128 0x4109
+ 1731 0104 01       		.byte	0x1
+ 1732 0105 11       		.uleb128 0x11
+ 1733 0106 01       		.uleb128 0x1
+ 1734 0107 31       		.uleb128 0x31
+ 1735 0108 13       		.uleb128 0x13
+ 1736 0109 00       		.byte	0
+ 1737 010a 00       		.byte	0
+ 1738 010b 13       		.uleb128 0x13
+ 1739 010c 2E       		.uleb128 0x2e
+ 1740 010d 01       		.byte	0x1
+ 1741 010e 3F       		.uleb128 0x3f
+ 1742 010f 19       		.uleb128 0x19
+ 1743 0110 03       		.uleb128 0x3
+ 1744 0111 0E       		.uleb128 0xe
+ 1745 0112 3A       		.uleb128 0x3a
+ 1746 0113 0B       		.uleb128 0xb
+ 1747 0114 3B       		.uleb128 0x3b
+ 1748 0115 0B       		.uleb128 0xb
+ 1749 0116 49       		.uleb128 0x49
+ 1750 0117 13       		.uleb128 0x13
+ 1751 0118 11       		.uleb128 0x11
+ 1752 0119 01       		.uleb128 0x1
+ 1753 011a 12       		.uleb128 0x12
+ 1754 011b 06       		.uleb128 0x6
+ 1755 011c 40       		.uleb128 0x40
+ 1756 011d 18       		.uleb128 0x18
+ 1757 011e 9742     		.uleb128 0x2117
+ 1758 0120 19       		.uleb128 0x19
+ 1759 0121 01       		.uleb128 0x1
+ 1760 0122 13       		.uleb128 0x13
+ 1761 0123 00       		.byte	0
+ 1762 0124 00       		.byte	0
+ 1763 0125 14       		.uleb128 0x14
+ 1764 0126 2E       		.uleb128 0x2e
+ 1765 0127 01       		.byte	0x1
+ 1766 0128 3F       		.uleb128 0x3f
+ 1767 0129 19       		.uleb128 0x19
+ 1768 012a 03       		.uleb128 0x3
+ 1769 012b 0E       		.uleb128 0xe
+ 1770 012c 3A       		.uleb128 0x3a
+ 1771 012d 0B       		.uleb128 0xb
+ 1772 012e 3B       		.uleb128 0x3b
+ 1773 012f 0B       		.uleb128 0xb
+ 1774 0130 27       		.uleb128 0x27
+ 1775 0131 19       		.uleb128 0x19
+ 1776 0132 49       		.uleb128 0x49
+ 1777 0133 13       		.uleb128 0x13
+ 1778 0134 8701     		.uleb128 0x87
+ 1779 0136 19       		.uleb128 0x19
+ 1780 0137 11       		.uleb128 0x11
+ 1781 0138 01       		.uleb128 0x1
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 37
+
+
+ 1782 0139 12       		.uleb128 0x12
+ 1783 013a 06       		.uleb128 0x6
+ 1784 013b 40       		.uleb128 0x40
+ 1785 013c 18       		.uleb128 0x18
+ 1786 013d 9742     		.uleb128 0x2117
+ 1787 013f 19       		.uleb128 0x19
+ 1788 0140 01       		.uleb128 0x1
+ 1789 0141 13       		.uleb128 0x13
+ 1790 0142 00       		.byte	0
+ 1791 0143 00       		.byte	0
+ 1792 0144 15       		.uleb128 0x15
+ 1793 0145 34       		.uleb128 0x34
+ 1794 0146 00       		.byte	0
+ 1795 0147 03       		.uleb128 0x3
+ 1796 0148 0E       		.uleb128 0xe
+ 1797 0149 3A       		.uleb128 0x3a
+ 1798 014a 0B       		.uleb128 0xb
+ 1799 014b 3B       		.uleb128 0x3b
+ 1800 014c 05       		.uleb128 0x5
+ 1801 014d 49       		.uleb128 0x49
+ 1802 014e 13       		.uleb128 0x13
+ 1803 014f 3F       		.uleb128 0x3f
+ 1804 0150 19       		.uleb128 0x19
+ 1805 0151 3C       		.uleb128 0x3c
+ 1806 0152 19       		.uleb128 0x19
+ 1807 0153 00       		.byte	0
+ 1808 0154 00       		.byte	0
+ 1809 0155 16       		.uleb128 0x16
+ 1810 0156 35       		.uleb128 0x35
+ 1811 0157 00       		.byte	0
+ 1812 0158 49       		.uleb128 0x49
+ 1813 0159 13       		.uleb128 0x13
+ 1814 015a 00       		.byte	0
+ 1815 015b 00       		.byte	0
+ 1816 015c 17       		.uleb128 0x17
+ 1817 015d 34       		.uleb128 0x34
+ 1818 015e 00       		.byte	0
+ 1819 015f 03       		.uleb128 0x3
+ 1820 0160 0E       		.uleb128 0xe
+ 1821 0161 3A       		.uleb128 0x3a
+ 1822 0162 0B       		.uleb128 0xb
+ 1823 0163 3B       		.uleb128 0x3b
+ 1824 0164 0B       		.uleb128 0xb
+ 1825 0165 49       		.uleb128 0x49
+ 1826 0166 13       		.uleb128 0x13
+ 1827 0167 3F       		.uleb128 0x3f
+ 1828 0168 19       		.uleb128 0x19
+ 1829 0169 02       		.uleb128 0x2
+ 1830 016a 18       		.uleb128 0x18
+ 1831 016b 00       		.byte	0
+ 1832 016c 00       		.byte	0
+ 1833 016d 18       		.uleb128 0x18
+ 1834 016e 2E       		.uleb128 0x2e
+ 1835 016f 00       		.byte	0
+ 1836 0170 3F       		.uleb128 0x3f
+ 1837 0171 19       		.uleb128 0x19
+ 1838 0172 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 38
+
+
+ 1839 0173 19       		.uleb128 0x19
+ 1840 0174 6E       		.uleb128 0x6e
+ 1841 0175 0E       		.uleb128 0xe
+ 1842 0176 03       		.uleb128 0x3
+ 1843 0177 0E       		.uleb128 0xe
+ 1844 0178 3A       		.uleb128 0x3a
+ 1845 0179 0B       		.uleb128 0xb
+ 1846 017a 3B       		.uleb128 0x3b
+ 1847 017b 0B       		.uleb128 0xb
+ 1848 017c 00       		.byte	0
+ 1849 017d 00       		.byte	0
+ 1850 017e 00       		.byte	0
+ 1851              		.section	.debug_loc,"",%progbits
+ 1852              	.Ldebug_loc0:
+ 1853              	.LLST0:
+ 1854 0000 00000000 		.4byte	.LVL0
+ 1855 0004 0A000000 		.4byte	.LVL2
+ 1856 0008 0100     		.2byte	0x1
+ 1857 000a 50       		.byte	0x50
+ 1858 000b 0A000000 		.4byte	.LVL2
+ 1859 000f 18000000 		.4byte	.LVL5
+ 1860 0013 0400     		.2byte	0x4
+ 1861 0015 F3       		.byte	0xf3
+ 1862 0016 01       		.uleb128 0x1
+ 1863 0017 50       		.byte	0x50
+ 1864 0018 9F       		.byte	0x9f
+ 1865 0019 18000000 		.4byte	.LVL5
+ 1866 001d 1A000000 		.4byte	.LVL6
+ 1867 0021 0100     		.2byte	0x1
+ 1868 0023 50       		.byte	0x50
+ 1869 0024 1A000000 		.4byte	.LVL6
+ 1870 0028 5A000000 		.4byte	.LFE63
+ 1871 002c 0400     		.2byte	0x4
+ 1872 002e F3       		.byte	0xf3
+ 1873 002f 01       		.uleb128 0x1
+ 1874 0030 50       		.byte	0x50
+ 1875 0031 9F       		.byte	0x9f
+ 1876 0032 00000000 		.4byte	0
+ 1877 0036 00000000 		.4byte	0
+ 1878              	.LLST1:
+ 1879 003a 00000000 		.4byte	.LVL0
+ 1880 003e 0F000000 		.4byte	.LVL3-1
+ 1881 0042 0100     		.2byte	0x1
+ 1882 0044 51       		.byte	0x51
+ 1883 0045 0F000000 		.4byte	.LVL3-1
+ 1884 0049 18000000 		.4byte	.LVL5
+ 1885 004d 0400     		.2byte	0x4
+ 1886 004f F3       		.byte	0xf3
+ 1887 0050 01       		.uleb128 0x1
+ 1888 0051 51       		.byte	0x51
+ 1889 0052 9F       		.byte	0x9f
+ 1890 0053 18000000 		.4byte	.LVL5
+ 1891 0057 1D000000 		.4byte	.LVL7-1
+ 1892 005b 0100     		.2byte	0x1
+ 1893 005d 51       		.byte	0x51
+ 1894 005e 1D000000 		.4byte	.LVL7-1
+ 1895 0062 5A000000 		.4byte	.LFE63
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 39
+
+
+ 1896 0066 0400     		.2byte	0x4
+ 1897 0068 F3       		.byte	0xf3
+ 1898 0069 01       		.uleb128 0x1
+ 1899 006a 51       		.byte	0x51
+ 1900 006b 9F       		.byte	0x9f
+ 1901 006c 00000000 		.4byte	0
+ 1902 0070 00000000 		.4byte	0
+ 1903              	.LLST2:
+ 1904 0074 04000000 		.4byte	.LVL1
+ 1905 0078 4C000000 		.4byte	.LVL13
+ 1906 007c 0200     		.2byte	0x2
+ 1907 007e 30       		.byte	0x30
+ 1908 007f 9F       		.byte	0x9f
+ 1909 0080 4C000000 		.4byte	.LVL13
+ 1910 0084 50000000 		.4byte	.LVL14
+ 1911 0088 0100     		.2byte	0x1
+ 1912 008a 50       		.byte	0x50
+ 1913 008b 52000000 		.4byte	.LVL15
+ 1914 008f 57000000 		.4byte	.LVL16-1
+ 1915 0093 0100     		.2byte	0x1
+ 1916 0095 50       		.byte	0x50
+ 1917 0096 00000000 		.4byte	0
+ 1918 009a 00000000 		.4byte	0
+ 1919              	.LLST3:
+ 1920 009e 00000000 		.4byte	.LVL17
+ 1921 00a2 16000000 		.4byte	.LVL22
+ 1922 00a6 0100     		.2byte	0x1
+ 1923 00a8 50       		.byte	0x50
+ 1924 00a9 16000000 		.4byte	.LVL22
+ 1925 00ad 1C000000 		.4byte	.LFE64
+ 1926 00b1 0400     		.2byte	0x4
+ 1927 00b3 F3       		.byte	0xf3
+ 1928 00b4 01       		.uleb128 0x1
+ 1929 00b5 50       		.byte	0x50
+ 1930 00b6 9F       		.byte	0x9f
+ 1931 00b7 00000000 		.4byte	0
+ 1932 00bb 00000000 		.4byte	0
+ 1933              	.LLST4:
+ 1934 00bf 00000000 		.4byte	.LVL17
+ 1935 00c3 08000000 		.4byte	.LVL19
+ 1936 00c7 0100     		.2byte	0x1
+ 1937 00c9 51       		.byte	0x51
+ 1938 00ca 08000000 		.4byte	.LVL19
+ 1939 00ce 1C000000 		.4byte	.LFE64
+ 1940 00d2 0400     		.2byte	0x4
+ 1941 00d4 F3       		.byte	0xf3
+ 1942 00d5 01       		.uleb128 0x1
+ 1943 00d6 51       		.byte	0x51
+ 1944 00d7 9F       		.byte	0x9f
+ 1945 00d8 00000000 		.4byte	0
+ 1946 00dc 00000000 		.4byte	0
+ 1947              	.LLST5:
+ 1948 00e0 10000000 		.4byte	.LVL20
+ 1949 00e4 19000000 		.4byte	.LVL23-1
+ 1950 00e8 0100     		.2byte	0x1
+ 1951 00ea 53       		.byte	0x53
+ 1952 00eb 00000000 		.4byte	0
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 40
+
+
+ 1953 00ef 00000000 		.4byte	0
+ 1954              	.LLST6:
+ 1955 00f3 12000000 		.4byte	.LVL21
+ 1956 00f7 19000000 		.4byte	.LVL23-1
+ 1957 00fb 0100     		.2byte	0x1
+ 1958 00fd 51       		.byte	0x51
+ 1959 00fe 00000000 		.4byte	0
+ 1960 0102 00000000 		.4byte	0
+ 1961              	.LLST7:
+ 1962 0106 00000000 		.4byte	.LVL24
+ 1963 010a 1C000000 		.4byte	.LVL25
+ 1964 010e 0100     		.2byte	0x1
+ 1965 0110 50       		.byte	0x50
+ 1966 0111 1C000000 		.4byte	.LVL25
+ 1967 0115 1E000000 		.4byte	.LVL26
+ 1968 0119 0400     		.2byte	0x4
+ 1969 011b F3       		.byte	0xf3
+ 1970 011c 01       		.uleb128 0x1
+ 1971 011d 50       		.byte	0x50
+ 1972 011e 9F       		.byte	0x9f
+ 1973 011f 1E000000 		.4byte	.LVL26
+ 1974 0123 20000000 		.4byte	.LVL27
+ 1975 0127 0100     		.2byte	0x1
+ 1976 0129 50       		.byte	0x50
+ 1977 012a 20000000 		.4byte	.LVL27
+ 1978 012e 22000000 		.4byte	.LVL28
+ 1979 0132 0400     		.2byte	0x4
+ 1980 0134 F3       		.byte	0xf3
+ 1981 0135 01       		.uleb128 0x1
+ 1982 0136 50       		.byte	0x50
+ 1983 0137 9F       		.byte	0x9f
+ 1984 0138 22000000 		.4byte	.LVL28
+ 1985 013c 24000000 		.4byte	.LVL29
+ 1986 0140 0100     		.2byte	0x1
+ 1987 0142 50       		.byte	0x50
+ 1988 0143 24000000 		.4byte	.LVL29
+ 1989 0147 26000000 		.4byte	.LVL30
+ 1990 014b 0400     		.2byte	0x4
+ 1991 014d F3       		.byte	0xf3
+ 1992 014e 01       		.uleb128 0x1
+ 1993 014f 50       		.byte	0x50
+ 1994 0150 9F       		.byte	0x9f
+ 1995 0151 26000000 		.4byte	.LVL30
+ 1996 0155 28000000 		.4byte	.LVL31
+ 1997 0159 0100     		.2byte	0x1
+ 1998 015b 50       		.byte	0x50
+ 1999 015c 28000000 		.4byte	.LVL31
+ 2000 0160 2A000000 		.4byte	.LVL32
+ 2001 0164 0400     		.2byte	0x4
+ 2002 0166 F3       		.byte	0xf3
+ 2003 0167 01       		.uleb128 0x1
+ 2004 0168 50       		.byte	0x50
+ 2005 0169 9F       		.byte	0x9f
+ 2006 016a 2A000000 		.4byte	.LVL32
+ 2007 016e 2C000000 		.4byte	.LVL33
+ 2008 0172 0100     		.2byte	0x1
+ 2009 0174 50       		.byte	0x50
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 41
+
+
+ 2010 0175 2C000000 		.4byte	.LVL33
+ 2011 0179 2E000000 		.4byte	.LVL34
+ 2012 017d 0400     		.2byte	0x4
+ 2013 017f F3       		.byte	0xf3
+ 2014 0180 01       		.uleb128 0x1
+ 2015 0181 50       		.byte	0x50
+ 2016 0182 9F       		.byte	0x9f
+ 2017 0183 2E000000 		.4byte	.LVL34
+ 2018 0187 30000000 		.4byte	.LVL35
+ 2019 018b 0100     		.2byte	0x1
+ 2020 018d 50       		.byte	0x50
+ 2021 018e 30000000 		.4byte	.LVL35
+ 2022 0192 32000000 		.4byte	.LFE65
+ 2023 0196 0400     		.2byte	0x4
+ 2024 0198 F3       		.byte	0xf3
+ 2025 0199 01       		.uleb128 0x1
+ 2026 019a 50       		.byte	0x50
+ 2027 019b 9F       		.byte	0x9f
+ 2028 019c 00000000 		.4byte	0
+ 2029 01a0 00000000 		.4byte	0
+ 2030              	.LLST8:
+ 2031 01a4 00000000 		.4byte	.LVL36
+ 2032 01a8 1E000000 		.4byte	.LVL38
+ 2033 01ac 0100     		.2byte	0x1
+ 2034 01ae 50       		.byte	0x50
+ 2035 01af 1E000000 		.4byte	.LVL38
+ 2036 01b3 20000000 		.4byte	.LVL39
+ 2037 01b7 0400     		.2byte	0x4
+ 2038 01b9 F3       		.byte	0xf3
+ 2039 01ba 01       		.uleb128 0x1
+ 2040 01bb 50       		.byte	0x50
+ 2041 01bc 9F       		.byte	0x9f
+ 2042 01bd 20000000 		.4byte	.LVL39
+ 2043 01c1 22000000 		.4byte	.LVL40
+ 2044 01c5 0100     		.2byte	0x1
+ 2045 01c7 50       		.byte	0x50
+ 2046 01c8 22000000 		.4byte	.LVL40
+ 2047 01cc 24000000 		.4byte	.LVL41
+ 2048 01d0 0400     		.2byte	0x4
+ 2049 01d2 F3       		.byte	0xf3
+ 2050 01d3 01       		.uleb128 0x1
+ 2051 01d4 50       		.byte	0x50
+ 2052 01d5 9F       		.byte	0x9f
+ 2053 01d6 24000000 		.4byte	.LVL41
+ 2054 01da 26000000 		.4byte	.LVL42
+ 2055 01de 0100     		.2byte	0x1
+ 2056 01e0 50       		.byte	0x50
+ 2057 01e1 26000000 		.4byte	.LVL42
+ 2058 01e5 28000000 		.4byte	.LVL43
+ 2059 01e9 0400     		.2byte	0x4
+ 2060 01eb F3       		.byte	0xf3
+ 2061 01ec 01       		.uleb128 0x1
+ 2062 01ed 50       		.byte	0x50
+ 2063 01ee 9F       		.byte	0x9f
+ 2064 01ef 28000000 		.4byte	.LVL43
+ 2065 01f3 2A000000 		.4byte	.LVL44
+ 2066 01f7 0100     		.2byte	0x1
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 42
+
+
+ 2067 01f9 50       		.byte	0x50
+ 2068 01fa 2A000000 		.4byte	.LVL44
+ 2069 01fe 2C000000 		.4byte	.LVL45
+ 2070 0202 0400     		.2byte	0x4
+ 2071 0204 F3       		.byte	0xf3
+ 2072 0205 01       		.uleb128 0x1
+ 2073 0206 50       		.byte	0x50
+ 2074 0207 9F       		.byte	0x9f
+ 2075 0208 2C000000 		.4byte	.LVL45
+ 2076 020c 2E000000 		.4byte	.LVL46
+ 2077 0210 0100     		.2byte	0x1
+ 2078 0212 50       		.byte	0x50
+ 2079 0213 2E000000 		.4byte	.LVL46
+ 2080 0217 30000000 		.4byte	.LVL47
+ 2081 021b 0400     		.2byte	0x4
+ 2082 021d F3       		.byte	0xf3
+ 2083 021e 01       		.uleb128 0x1
+ 2084 021f 50       		.byte	0x50
+ 2085 0220 9F       		.byte	0x9f
+ 2086 0221 30000000 		.4byte	.LVL47
+ 2087 0225 32000000 		.4byte	.LVL48
+ 2088 0229 0100     		.2byte	0x1
+ 2089 022b 50       		.byte	0x50
+ 2090 022c 32000000 		.4byte	.LVL48
+ 2091 0230 34000000 		.4byte	.LFE66
+ 2092 0234 0400     		.2byte	0x4
+ 2093 0236 F3       		.byte	0xf3
+ 2094 0237 01       		.uleb128 0x1
+ 2095 0238 50       		.byte	0x50
+ 2096 0239 9F       		.byte	0x9f
+ 2097 023a 00000000 		.4byte	0
+ 2098 023e 00000000 		.4byte	0
+ 2099              	.LLST9:
+ 2100 0242 00000000 		.4byte	.LVL36
+ 2101 0246 06000000 		.4byte	.LVL37
+ 2102 024a 0100     		.2byte	0x1
+ 2103 024c 51       		.byte	0x51
+ 2104 024d 06000000 		.4byte	.LVL37
+ 2105 0251 34000000 		.4byte	.LFE66
+ 2106 0255 0400     		.2byte	0x4
+ 2107 0257 F3       		.byte	0xf3
+ 2108 0258 01       		.uleb128 0x1
+ 2109 0259 51       		.byte	0x51
+ 2110 025a 9F       		.byte	0x9f
+ 2111 025b 00000000 		.4byte	0
+ 2112 025f 00000000 		.4byte	0
+ 2113              	.LLST10:
+ 2114 0263 00000000 		.4byte	.LVL49
+ 2115 0267 16000000 		.4byte	.LVL51
+ 2116 026b 0100     		.2byte	0x1
+ 2117 026d 50       		.byte	0x50
+ 2118 026e 16000000 		.4byte	.LVL51
+ 2119 0272 1C000000 		.4byte	.LVL53
+ 2120 0276 0400     		.2byte	0x4
+ 2121 0278 F3       		.byte	0xf3
+ 2122 0279 01       		.uleb128 0x1
+ 2123 027a 50       		.byte	0x50
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 43
+
+
+ 2124 027b 9F       		.byte	0x9f
+ 2125 027c 1C000000 		.4byte	.LVL53
+ 2126 0280 22000000 		.4byte	.LVL55
+ 2127 0284 0100     		.2byte	0x1
+ 2128 0286 50       		.byte	0x50
+ 2129 0287 22000000 		.4byte	.LVL55
+ 2130 028b 28000000 		.4byte	.LVL57
+ 2131 028f 0400     		.2byte	0x4
+ 2132 0291 F3       		.byte	0xf3
+ 2133 0292 01       		.uleb128 0x1
+ 2134 0293 50       		.byte	0x50
+ 2135 0294 9F       		.byte	0x9f
+ 2136 0295 28000000 		.4byte	.LVL57
+ 2137 0299 2C000000 		.4byte	.LVL59
+ 2138 029d 0100     		.2byte	0x1
+ 2139 029f 50       		.byte	0x50
+ 2140 02a0 2C000000 		.4byte	.LVL59
+ 2141 02a4 32000000 		.4byte	.LVL61
+ 2142 02a8 0400     		.2byte	0x4
+ 2143 02aa F3       		.byte	0xf3
+ 2144 02ab 01       		.uleb128 0x1
+ 2145 02ac 50       		.byte	0x50
+ 2146 02ad 9F       		.byte	0x9f
+ 2147 02ae 32000000 		.4byte	.LVL61
+ 2148 02b2 36000000 		.4byte	.LVL63
+ 2149 02b6 0100     		.2byte	0x1
+ 2150 02b8 50       		.byte	0x50
+ 2151 02b9 36000000 		.4byte	.LVL63
+ 2152 02bd 3C000000 		.4byte	.LVL65
+ 2153 02c1 0400     		.2byte	0x4
+ 2154 02c3 F3       		.byte	0xf3
+ 2155 02c4 01       		.uleb128 0x1
+ 2156 02c5 50       		.byte	0x50
+ 2157 02c6 9F       		.byte	0x9f
+ 2158 02c7 3C000000 		.4byte	.LVL65
+ 2159 02cb 40000000 		.4byte	.LVL67
+ 2160 02cf 0100     		.2byte	0x1
+ 2161 02d1 50       		.byte	0x50
+ 2162 02d2 40000000 		.4byte	.LVL67
+ 2163 02d6 46000000 		.4byte	.LVL69
+ 2164 02da 0400     		.2byte	0x4
+ 2165 02dc F3       		.byte	0xf3
+ 2166 02dd 01       		.uleb128 0x1
+ 2167 02de 50       		.byte	0x50
+ 2168 02df 9F       		.byte	0x9f
+ 2169 02e0 46000000 		.4byte	.LVL69
+ 2170 02e4 4A000000 		.4byte	.LVL71
+ 2171 02e8 0100     		.2byte	0x1
+ 2172 02ea 50       		.byte	0x50
+ 2173 02eb 4A000000 		.4byte	.LVL71
+ 2174 02ef 50000000 		.4byte	.LFE67
+ 2175 02f3 0400     		.2byte	0x4
+ 2176 02f5 F3       		.byte	0xf3
+ 2177 02f6 01       		.uleb128 0x1
+ 2178 02f7 50       		.byte	0x50
+ 2179 02f8 9F       		.byte	0x9f
+ 2180 02f9 00000000 		.4byte	0
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 44
+
+
+ 2181 02fd 00000000 		.4byte	0
+ 2182              	.LLST11:
+ 2183 0301 00000000 		.4byte	.LVL49
+ 2184 0305 14000000 		.4byte	.LVL50
+ 2185 0309 0100     		.2byte	0x1
+ 2186 030b 51       		.byte	0x51
+ 2187 030c 14000000 		.4byte	.LVL50
+ 2188 0310 1C000000 		.4byte	.LVL53
+ 2189 0314 0400     		.2byte	0x4
+ 2190 0316 F3       		.byte	0xf3
+ 2191 0317 01       		.uleb128 0x1
+ 2192 0318 51       		.byte	0x51
+ 2193 0319 9F       		.byte	0x9f
+ 2194 031a 1C000000 		.4byte	.LVL53
+ 2195 031e 20000000 		.4byte	.LVL54
+ 2196 0322 0100     		.2byte	0x1
+ 2197 0324 51       		.byte	0x51
+ 2198 0325 20000000 		.4byte	.LVL54
+ 2199 0329 28000000 		.4byte	.LVL57
+ 2200 032d 0400     		.2byte	0x4
+ 2201 032f F3       		.byte	0xf3
+ 2202 0330 01       		.uleb128 0x1
+ 2203 0331 51       		.byte	0x51
+ 2204 0332 9F       		.byte	0x9f
+ 2205 0333 28000000 		.4byte	.LVL57
+ 2206 0337 2A000000 		.4byte	.LVL58
+ 2207 033b 0100     		.2byte	0x1
+ 2208 033d 51       		.byte	0x51
+ 2209 033e 2A000000 		.4byte	.LVL58
+ 2210 0342 32000000 		.4byte	.LVL61
+ 2211 0346 0400     		.2byte	0x4
+ 2212 0348 F3       		.byte	0xf3
+ 2213 0349 01       		.uleb128 0x1
+ 2214 034a 51       		.byte	0x51
+ 2215 034b 9F       		.byte	0x9f
+ 2216 034c 32000000 		.4byte	.LVL61
+ 2217 0350 34000000 		.4byte	.LVL62
+ 2218 0354 0100     		.2byte	0x1
+ 2219 0356 51       		.byte	0x51
+ 2220 0357 34000000 		.4byte	.LVL62
+ 2221 035b 3C000000 		.4byte	.LVL65
+ 2222 035f 0400     		.2byte	0x4
+ 2223 0361 F3       		.byte	0xf3
+ 2224 0362 01       		.uleb128 0x1
+ 2225 0363 51       		.byte	0x51
+ 2226 0364 9F       		.byte	0x9f
+ 2227 0365 3C000000 		.4byte	.LVL65
+ 2228 0369 3E000000 		.4byte	.LVL66
+ 2229 036d 0100     		.2byte	0x1
+ 2230 036f 51       		.byte	0x51
+ 2231 0370 3E000000 		.4byte	.LVL66
+ 2232 0374 46000000 		.4byte	.LVL69
+ 2233 0378 0400     		.2byte	0x4
+ 2234 037a F3       		.byte	0xf3
+ 2235 037b 01       		.uleb128 0x1
+ 2236 037c 51       		.byte	0x51
+ 2237 037d 9F       		.byte	0x9f
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 45
+
+
+ 2238 037e 46000000 		.4byte	.LVL69
+ 2239 0382 48000000 		.4byte	.LVL70
+ 2240 0386 0100     		.2byte	0x1
+ 2241 0388 51       		.byte	0x51
+ 2242 0389 48000000 		.4byte	.LVL70
+ 2243 038d 50000000 		.4byte	.LFE67
+ 2244 0391 0400     		.2byte	0x4
+ 2245 0393 F3       		.byte	0xf3
+ 2246 0394 01       		.uleb128 0x1
+ 2247 0395 51       		.byte	0x51
+ 2248 0396 9F       		.byte	0x9f
+ 2249 0397 00000000 		.4byte	0
+ 2250 039b 00000000 		.4byte	0
+ 2251              	.LLST12:
+ 2252 039f 06000000 		.4byte	.LVL73
+ 2253 03a3 0C000000 		.4byte	.LVL74
+ 2254 03a7 0100     		.2byte	0x1
+ 2255 03a9 50       		.byte	0x50
+ 2256 03aa 00000000 		.4byte	0
+ 2257 03ae 00000000 		.4byte	0
+ 2258              	.LLST13:
+ 2259 03b2 06000000 		.4byte	.LVL75
+ 2260 03b6 0C000000 		.4byte	.LVL76
+ 2261 03ba 0100     		.2byte	0x1
+ 2262 03bc 50       		.byte	0x50
+ 2263 03bd 00000000 		.4byte	0
+ 2264 03c1 00000000 		.4byte	0
+ 2265              	.LLST14:
+ 2266 03c5 18000000 		.4byte	.LVL80
+ 2267 03c9 2C000000 		.4byte	.LVL84
+ 2268 03cd 0200     		.2byte	0x2
+ 2269 03cf 30       		.byte	0x30
+ 2270 03d0 9F       		.byte	0x9f
+ 2271 03d1 00000000 		.4byte	0
+ 2272 03d5 00000000 		.4byte	0
+ 2273              	.LLST15:
+ 2274 03d9 18000000 		.4byte	.LVL80
+ 2275 03dd 2C000000 		.4byte	.LVL84
+ 2276 03e1 0200     		.2byte	0x2
+ 2277 03e3 30       		.byte	0x30
+ 2278 03e4 9F       		.byte	0x9f
+ 2279 03e5 2C000000 		.4byte	.LVL84
+ 2280 03e9 6A000000 		.4byte	.LVL98
+ 2281 03ed 0100     		.2byte	0x1
+ 2282 03ef 56       		.byte	0x56
+ 2283 03f0 6A000000 		.4byte	.LVL98
+ 2284 03f4 A4000000 		.4byte	.LFE70
+ 2285 03f8 0100     		.2byte	0x1
+ 2286 03fa 55       		.byte	0x55
+ 2287 03fb 00000000 		.4byte	0
+ 2288 03ff 00000000 		.4byte	0
+ 2289              	.LLST16:
+ 2290 0403 18000000 		.4byte	.LVL80
+ 2291 0407 2C000000 		.4byte	.LVL84
+ 2292 040b 0200     		.2byte	0x2
+ 2293 040d 30       		.byte	0x30
+ 2294 040e 9F       		.byte	0x9f
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 46
+
+
+ 2295 040f 60000000 		.4byte	.LVL95
+ 2296 0413 76000000 		.4byte	.LVL100
+ 2297 0417 0100     		.2byte	0x1
+ 2298 0419 56       		.byte	0x56
+ 2299 041a 00000000 		.4byte	0
+ 2300 041e 00000000 		.4byte	0
+ 2301              	.LLST17:
+ 2302 0422 18000000 		.4byte	.LVL80
+ 2303 0426 2C000000 		.4byte	.LVL84
+ 2304 042a 0200     		.2byte	0x2
+ 2305 042c 34       		.byte	0x34
+ 2306 042d 9F       		.byte	0x9f
+ 2307 042e 2C000000 		.4byte	.LVL84
+ 2308 0432 4A000000 		.4byte	.LVL90
+ 2309 0436 0100     		.2byte	0x1
+ 2310 0438 57       		.byte	0x57
+ 2311 0439 4A000000 		.4byte	.LVL90
+ 2312 043d 58000000 		.4byte	.LVL93
+ 2313 0441 0100     		.2byte	0x1
+ 2314 0443 55       		.byte	0x55
+ 2315 0444 58000000 		.4byte	.LVL93
+ 2316 0448 A4000000 		.4byte	.LFE70
+ 2317 044c 0100     		.2byte	0x1
+ 2318 044e 57       		.byte	0x57
+ 2319 044f 00000000 		.4byte	0
+ 2320 0453 00000000 		.4byte	0
+ 2321              	.LLST18:
+ 2322 0457 18000000 		.4byte	.LVL80
+ 2323 045b 2C000000 		.4byte	.LVL84
+ 2324 045f 0200     		.2byte	0x2
+ 2325 0461 34       		.byte	0x34
+ 2326 0462 9F       		.byte	0x9f
+ 2327 0463 36000000 		.4byte	.LVL86
+ 2328 0467 58000000 		.4byte	.LVL93
+ 2329 046b 0100     		.2byte	0x1
+ 2330 046d 57       		.byte	0x57
+ 2331 046e 00000000 		.4byte	0
+ 2332 0472 00000000 		.4byte	0
+ 2333              	.LLST19:
+ 2334 0476 18000000 		.4byte	.LVL80
+ 2335 047a 2C000000 		.4byte	.LVL84
+ 2336 047e 0200     		.2byte	0x2
+ 2337 0480 34       		.byte	0x34
+ 2338 0481 9F       		.byte	0x9f
+ 2339 0482 50000000 		.4byte	.LVL91
+ 2340 0486 55000000 		.4byte	.LVL92-1
+ 2341 048a 0100     		.2byte	0x1
+ 2342 048c 50       		.byte	0x50
+ 2343 048d 00000000 		.4byte	0
+ 2344 0491 00000000 		.4byte	0
+ 2345              	.LLST20:
+ 2346 0495 18000000 		.4byte	.LVL80
+ 2347 0499 2C000000 		.4byte	.LVL84
+ 2348 049d 0300     		.2byte	0x3
+ 2349 049f 08       		.byte	0x8
+ 2350 04a0 64       		.byte	0x64
+ 2351 04a1 9F       		.byte	0x9f
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 47
+
+
+ 2352 04a2 2C000000 		.4byte	.LVL84
+ 2353 04a6 A4000000 		.4byte	.LFE70
+ 2354 04aa 0100     		.2byte	0x1
+ 2355 04ac 54       		.byte	0x54
+ 2356 04ad 00000000 		.4byte	0
+ 2357 04b1 00000000 		.4byte	0
+ 2358              		.section	.debug_aranges,"",%progbits
+ 2359 0000 54000000 		.4byte	0x54
+ 2360 0004 0200     		.2byte	0x2
+ 2361 0006 00000000 		.4byte	.Ldebug_info0
+ 2362 000a 04       		.byte	0x4
+ 2363 000b 00       		.byte	0
+ 2364 000c 0000     		.2byte	0
+ 2365 000e 0000     		.2byte	0
+ 2366 0010 00000000 		.4byte	.LFB63
+ 2367 0014 5A000000 		.4byte	.LFE63-.LFB63
+ 2368 0018 00000000 		.4byte	.LFB64
+ 2369 001c 1C000000 		.4byte	.LFE64-.LFB64
+ 2370 0020 00000000 		.4byte	.LFB65
+ 2371 0024 32000000 		.4byte	.LFE65-.LFB65
+ 2372 0028 00000000 		.4byte	.LFB66
+ 2373 002c 34000000 		.4byte	.LFE66-.LFB66
+ 2374 0030 00000000 		.4byte	.LFB67
+ 2375 0034 50000000 		.4byte	.LFE67-.LFB67
+ 2376 0038 00000000 		.4byte	.LFB68
+ 2377 003c 1C000000 		.4byte	.LFE68-.LFB68
+ 2378 0040 00000000 		.4byte	.LFB69
+ 2379 0044 20000000 		.4byte	.LFE69-.LFB69
+ 2380 0048 00000000 		.4byte	.LFB70
+ 2381 004c A4000000 		.4byte	.LFE70-.LFB70
+ 2382 0050 00000000 		.4byte	0
+ 2383 0054 00000000 		.4byte	0
+ 2384              		.section	.debug_ranges,"",%progbits
+ 2385              	.Ldebug_ranges0:
+ 2386 0000 00000000 		.4byte	.LFB63
+ 2387 0004 5A000000 		.4byte	.LFE63
+ 2388 0008 00000000 		.4byte	.LFB64
+ 2389 000c 1C000000 		.4byte	.LFE64
+ 2390 0010 00000000 		.4byte	.LFB65
+ 2391 0014 32000000 		.4byte	.LFE65
+ 2392 0018 00000000 		.4byte	.LFB66
+ 2393 001c 34000000 		.4byte	.LFE66
+ 2394 0020 00000000 		.4byte	.LFB67
+ 2395 0024 50000000 		.4byte	.LFE67
+ 2396 0028 00000000 		.4byte	.LFB68
+ 2397 002c 1C000000 		.4byte	.LFE68
+ 2398 0030 00000000 		.4byte	.LFB69
+ 2399 0034 20000000 		.4byte	.LFE69
+ 2400 0038 00000000 		.4byte	.LFB70
+ 2401 003c A4000000 		.4byte	.LFE70
+ 2402 0040 00000000 		.4byte	0
+ 2403 0044 00000000 		.4byte	0
+ 2404              		.section	.debug_line,"",%progbits
+ 2405              	.Ldebug_line0:
+ 2406 0000 15030000 		.section	.debug_str,"MS",%progbits,1
+ 2406      0200F701 
+ 2406      00000201 
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 48
+
+
+ 2406      FB0E0D00 
+ 2406      01010101 
+ 2407              	.LASF51:
+ 2408 0000 72657375 		.ascii	"result\000"
+ 2408      6C7400
+ 2409              	.LASF52:
+ 2410 0007 70726576 		.ascii	"prev_result\000"
+ 2410      5F726573 
+ 2410      756C7400 
+ 2411              	.LASF64:
+ 2412 0013 4144435F 		.ascii	"ADC_SAR_1_Start\000"
+ 2412      5341525F 
+ 2412      315F5374 
+ 2412      61727400 
+ 2413              	.LASF36:
+ 2414 0023 72696768 		.ascii	"right\000"
+ 2414      7400
+ 2415              	.LASF67:
+ 2416 0029 42544E5F 		.ascii	"BTN_Read\000"
+ 2416      52656164 
+ 2416      00
+ 2417              	.LASF58:
+ 2418 0032 52696768 		.ascii	"Right_Motor_DIR_Write\000"
+ 2418      745F4D6F 
+ 2418      746F725F 
+ 2418      4449525F 
+ 2418      57726974 
+ 2419              	.LASF46:
+ 2420 0048 65786563 		.ascii	"execute\000"
+ 2420      75746500 
+ 2421              	.LASF33:
+ 2422 0050 6E6F6E65 		.ascii	"none\000"
+ 2422      00
+ 2423              	.LASF22:
+ 2424 0055 73697A65 		.ascii	"sizetype\000"
+ 2424      74797065 
+ 2424      00
+ 2425              	.LASF45:
+ 2426 005e 70726576 		.ascii	"prevState\000"
+ 2426      53746174 
+ 2426      6500
+ 2427              	.LASF43:
+ 2428 0068 73657445 		.ascii	"setEvent\000"
+ 2428      76656E74 
+ 2428      00
+ 2429              	.LASF50:
+ 2430 0071 49735F47 		.ascii	"Is_Going\000"
+ 2430      6F696E67 
+ 2430      00
+ 2431              	.LASF78:
+ 2432 007a 6D61696E 		.ascii	"main\000"
+ 2432      00
+ 2433              	.LASF7:
+ 2434 007f 5F5F7569 		.ascii	"__uint32_t\000"
+ 2434      6E743332 
+ 2434      5F7400
+ 2435              	.LASF47:
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 49
+
+
+ 2436 008a 6576656E 		.ascii	"event\000"
+ 2436      7400
+ 2437              	.LASF40:
+ 2438 0090 7475726E 		.ascii	"turnrad\000"
+ 2438      72616400 
+ 2439              	.LASF2:
+ 2440 0098 73686F72 		.ascii	"short int\000"
+ 2440      7420696E 
+ 2440      7400
+ 2441              	.LASF65:
+ 2442 00a2 4C43445F 		.ascii	"LCD_Char_1_Start\000"
+ 2442      43686172 
+ 2442      5F315F53 
+ 2442      74617274 
+ 2442      00
+ 2443              	.LASF15:
+ 2444 00b3 75696E74 		.ascii	"uint16\000"
+ 2444      313600
+ 2445              	.LASF31:
+ 2446 00ba 7475726E 		.ascii	"turn_right\000"
+ 2446      5F726967 
+ 2446      687400
+ 2447              	.LASF12:
+ 2448 00c5 75696E74 		.ascii	"uint8_t\000"
+ 2448      385F7400 
+ 2449              	.LASF17:
+ 2450 00cd 696E7431 		.ascii	"int16\000"
+ 2450      3600
+ 2451              	.LASF57:
+ 2452 00d3 52696768 		.ascii	"Right_Motor_PWM_WriteCompare\000"
+ 2452      745F4D6F 
+ 2452      746F725F 
+ 2452      50574D5F 
+ 2452      57726974 
+ 2453              	.LASF71:
+ 2454 00f0 4144435F 		.ascii	"ADC_SAR_1_GetResult16\000"
+ 2454      5341525F 
+ 2454      315F4765 
+ 2454      74526573 
+ 2454      756C7431 
+ 2455              	.LASF0:
+ 2456 0106 7369676E 		.ascii	"signed char\000"
+ 2456      65642063 
+ 2456      68617200 
+ 2457              	.LASF18:
+ 2458 0112 666C6F61 		.ascii	"float\000"
+ 2458      7400
+ 2459              	.LASF9:
+ 2460 0118 6C6F6E67 		.ascii	"long long int\000"
+ 2460      206C6F6E 
+ 2460      6720696E 
+ 2460      7400
+ 2461              	.LASF28:
+ 2462 0126 73746174 		.ascii	"states\000"
+ 2462      657300
+ 2463              	.LASF27:
+ 2464 012d 69646C65 		.ascii	"idle\000"
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 50
+
+
+ 2464      00
+ 2465              	.LASF49:
+ 2466 0132 69736D79 		.ascii	"ismytimer2\000"
+ 2466      74696D65 
+ 2466      723200
+ 2467              	.LASF69:
+ 2468 013d 4952525F 		.ascii	"IRR_Read\000"
+ 2468      52656164 
+ 2468      00
+ 2469              	.LASF6:
+ 2470 0146 6C6F6E67 		.ascii	"long int\000"
+ 2470      20696E74 
+ 2470      00
+ 2471              	.LASF60:
+ 2472 014f 43795379 		.ascii	"CySysTickGetValue\000"
+ 2472      73546963 
+ 2472      6B476574 
+ 2472      56616C75 
+ 2472      6500
+ 2473              	.LASF68:
+ 2474 0161 49524C5F 		.ascii	"IRL_Read\000"
+ 2474      52656164 
+ 2474      00
+ 2475              	.LASF16:
+ 2476 016a 696E7438 		.ascii	"int8\000"
+ 2476      00
+ 2477              	.LASF48:
+ 2478 016f 69736D79 		.ascii	"ismytimer\000"
+ 2478      74696D65 
+ 2478      7200
+ 2479              	.LASF74:
+ 2480 0179 4C43445F 		.ascii	"LCD_Char_1_PrintU32Number\000"
+ 2480      43686172 
+ 2480      5F315F50 
+ 2480      72696E74 
+ 2480      5533324E 
+ 2481              	.LASF32:
+ 2482 0193 7365656B 		.ascii	"seek_line\000"
+ 2482      5F6C696E 
+ 2482      6500
+ 2483              	.LASF21:
+ 2484 019d 6C6F6E67 		.ascii	"long double\000"
+ 2484      20646F75 
+ 2484      626C6500 
+ 2485              	.LASF1:
+ 2486 01a9 756E7369 		.ascii	"unsigned char\000"
+ 2486      676E6564 
+ 2486      20636861 
+ 2486      7200
+ 2487              	.LASF42:
+ 2488 01b7 73657453 		.ascii	"setState\000"
+ 2488      74617465 
+ 2488      00
+ 2489              	.LASF73:
+ 2490 01c0 4C43445F 		.ascii	"LCD_Char_1_WriteControl\000"
+ 2490      43686172 
+ 2490      5F315F57 
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 51
+
+
+ 2490      72697465 
+ 2490      436F6E74 
+ 2491              	.LASF13:
+ 2492 01d8 696E7433 		.ascii	"int32_t\000"
+ 2492      325F7400 
+ 2493              	.LASF10:
+ 2494 01e0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2494      206C6F6E 
+ 2494      6720756E 
+ 2494      7369676E 
+ 2494      65642069 
+ 2495              	.LASF14:
+ 2496 01f7 75696E74 		.ascii	"uint32_t\000"
+ 2496      33325F74 
+ 2496      00
+ 2497              	.LASF11:
+ 2498 0200 756E7369 		.ascii	"unsigned int\000"
+ 2498      676E6564 
+ 2498      20696E74 
+ 2498      00
+ 2499              	.LASF26:
+ 2500 020d 4C696E65 		.ascii	"LineAtLeft\000"
+ 2500      41744C65 
+ 2500      667400
+ 2501              	.LASF8:
+ 2502 0218 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2502      20756E73 
+ 2502      69676E65 
+ 2502      6420696E 
+ 2502      7400
+ 2503              	.LASF39:
+ 2504 022a 73706565 		.ascii	"speed\000"
+ 2504      6400
+ 2505              	.LASF41:
+ 2506 0230 6B696C6C 		.ascii	"killControl\000"
+ 2506      436F6E74 
+ 2506      726F6C00 
+ 2507              	.LASF59:
+ 2508 023c 5265675F 		.ascii	"Reg_PWM_Enable_Write\000"
+ 2508      50574D5F 
+ 2508      456E6162 
+ 2508      6C655F57 
+ 2508      72697465 
+ 2509              	.LASF3:
+ 2510 0251 73686F72 		.ascii	"short unsigned int\000"
+ 2510      7420756E 
+ 2510      7369676E 
+ 2510      65642069 
+ 2510      6E7400
+ 2511              	.LASF77:
+ 2512 0264 433A5C55 		.ascii	"C:\\Users\\budai\\Documents\\github\\Beagyazott_ren"
+ 2512      73657273 
+ 2512      5C627564 
+ 2512      61695C44 
+ 2512      6F63756D 
+ 2513 0292 64737A65 		.ascii	"dszerek\\kicsikocsi\\Design01.cydsn\000"
+ 2513      72656B5C 
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 52
+
+
+ 2513      6B696373 
+ 2513      696B6F63 
+ 2513      73695C44 
+ 2514              	.LASF24:
+ 2515 02b4 4C696E65 		.ascii	"LineOn\000"
+ 2515      4F6E00
+ 2516              	.LASF20:
+ 2517 02bb 63686172 		.ascii	"char\000"
+ 2517      00
+ 2518              	.LASF66:
+ 2519 02c0 4C43445F 		.ascii	"LCD_Char_1_PrintString\000"
+ 2519      43686172 
+ 2519      5F315F50 
+ 2519      72696E74 
+ 2519      53747269 
+ 2520              	.LASF70:
+ 2521 02d7 4144435F 		.ascii	"ADC_SAR_1_StartConvert\000"
+ 2521      5341525F 
+ 2521      315F5374 
+ 2521      61727443 
+ 2521      6F6E7665 
+ 2522              	.LASF35:
+ 2523 02ee 6C656674 		.ascii	"left\000"
+ 2523      00
+ 2524              	.LASF62:
+ 2525 02f3 52696768 		.ascii	"Right_Motor_PWM_Start\000"
+ 2525      745F4D6F 
+ 2525      746F725F 
+ 2525      50574D5F 
+ 2525      53746172 
+ 2526              	.LASF44:
+ 2527 0309 63757253 		.ascii	"curState\000"
+ 2527      74617465 
+ 2527      00
+ 2528              	.LASF54:
+ 2529 0312 6C617374 		.ascii	"lasttime\000"
+ 2529      74696D65 
+ 2529      00
+ 2530              	.LASF37:
+ 2531 031b 73657453 		.ascii	"setSpeeds\000"
+ 2531      70656564 
+ 2531      7300
+ 2532              	.LASF76:
+ 2533 0325 6D61696E 		.ascii	"main.c\000"
+ 2533      2E6300
+ 2534              	.LASF72:
+ 2535 032c 4144435F 		.ascii	"ADC_SAR_1_StopConvert\000"
+ 2535      5341525F 
+ 2535      315F5374 
+ 2535      6F70436F 
+ 2535      6E766572 
+ 2536              	.LASF19:
+ 2537 0342 646F7562 		.ascii	"double\000"
+ 2537      6C6500
+ 2538              	.LASF56:
+ 2539 0349 4C656674 		.ascii	"Left_Motor_DIR_Write\000"
+ 2539      5F4D6F74 
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 53
+
+
+ 2539      6F725F44 
+ 2539      49525F57 
+ 2539      72697465 
+ 2540              	.LASF5:
+ 2541 035e 5F5F696E 		.ascii	"__int32_t\000"
+ 2541      7433325F 
+ 2541      7400
+ 2542              	.LASF63:
+ 2543 0368 43795379 		.ascii	"CySysTickStart\000"
+ 2543      73546963 
+ 2543      6B537461 
+ 2543      727400
+ 2544              	.LASF34:
+ 2545 0377 6576656E 		.ascii	"events\000"
+ 2545      747300
+ 2546              	.LASF25:
+ 2547 037e 4C696E65 		.ascii	"LineAtRight\000"
+ 2547      41745269 
+ 2547      67687400 
+ 2548              	.LASF38:
+ 2549 038a 63616C53 		.ascii	"calSpeed\000"
+ 2549      70656564 
+ 2549      00
+ 2550              	.LASF61:
+ 2551 0393 4C656674 		.ascii	"Left_Motor_PWM_Start\000"
+ 2551      5F4D6F74 
+ 2551      6F725F50 
+ 2551      574D5F53 
+ 2551      74617274 
+ 2552              	.LASF30:
+ 2553 03a8 7475726E 		.ascii	"turn_left\000"
+ 2553      5F6C6566 
+ 2553      7400
+ 2554              	.LASF29:
+ 2555 03b2 676F5F73 		.ascii	"go_straight\000"
+ 2555      74726169 
+ 2555      67687400 
+ 2556              	.LASF53:
+ 2557 03be 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2557      52784275 
+ 2557      66666572 
+ 2557      00
+ 2558              	.LASF75:
+ 2559 03cb 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2559      43313120 
+ 2559      352E342E 
+ 2559      31203230 
+ 2559      31363036 
+ 2560 03fe 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2560      20726576 
+ 2560      6973696F 
+ 2560      6E203233 
+ 2560      37373135 
+ 2561 0431 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2561      66756E63 
+ 2561      74696F6E 
+ 2561      2D736563 
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccorr0iM.s 			page 54
+
+
+ 2561      74696F6E 
+ 2562              	.LASF23:
+ 2563 0459 4C696E65 		.ascii	"LineNo\000"
+ 2563      4E6F00
+ 2564              	.LASF55:
+ 2565 0460 4C656674 		.ascii	"Left_Motor_PWM_WriteCompare\000"
+ 2565      5F4D6F74 
+ 2565      6F725F50 
+ 2565      574D5F57 
+ 2565      72697465 
+ 2566              	.LASF4:
+ 2567 047c 5F5F7569 		.ascii	"__uint8_t\000"
+ 2567      6E74385F 
+ 2567      7400
+ 2568              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

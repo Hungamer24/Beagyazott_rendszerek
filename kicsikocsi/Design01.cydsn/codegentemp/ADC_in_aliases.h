@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Start.h  
+* File Name: ADC_in.h  
 * Version 2.20
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_Start_ALIASES_H) /* Pins Start_ALIASES_H */
-#define CY_PINS_Start_ALIASES_H
+#if !defined(CY_PINS_ADC_in_ALIASES_H) /* Pins ADC_in_ALIASES_H */
+#define CY_PINS_ADC_in_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -25,12 +25,12 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define Start_0			(Start__0__PC)
-#define Start_0_INTR	((uint16)((uint16)0x0001u << Start__0__SHIFT))
+#define ADC_in_0			(ADC_in__0__PC)
+#define ADC_in_0_INTR	((uint16)((uint16)0x0001u << ADC_in__0__SHIFT))
 
-#define Start_INTR_ALL	 ((uint16)(Start_0_INTR))
+#define ADC_in_INTR_ALL	 ((uint16)(ADC_in_0_INTR))
 
-#endif /* End Pins Start_ALIASES_H */
+#endif /* End Pins ADC_in_ALIASES_H */
 
 
 /* [] END OF FILE */

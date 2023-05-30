@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="cy_constant_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Start" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Right_Motor_Control" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Left_Motor_PWM" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="vmIRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="vmCompare" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -64,8 +58,59 @@
     <register name="Left_Motor_PWM_PERIOD" address="0x40004F04" bitWidth="8" desc="TMRx.PER0 - Assigned Period" hidden="false" />
     <register name="Left_Motor_PWM_COMPARE" address="0x40004F06" bitWidth="8" desc="TMRx.CNT_CMP0 - Assigned Compare Value" hidden="false" />
   </block>
+  <block name="ADC_SAR_1" BASE="0x0" SIZE="0x0" desc="SAR ADC" visible="true" hidden="false">
+    <block name="theACLK" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_8" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ADC_SAR" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="Clock_VirtualMux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_7" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_6" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="vRef_Vdda_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="or_internalClock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_4" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="Bypass" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="noconnect" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_constant_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_3" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="ZeroTerminal_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="IRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="SAR_TR0" address="0x40004616" bitWidth="8" desc="SAR trim register" hidden="false" />
+    <register name="SAR_CSR0" address="0x40005908" bitWidth="8" desc="SAR status and control register 0" hidden="false" />
+    <register name="SAR_CSR1" address="0x40005909" bitWidth="8" desc="SAR status and control register 1" hidden="false" />
+    <register name="SAR_CSR2" address="0x4000590A" bitWidth="8" desc="SAR status and control register 2" hidden="false" />
+    <register name="SAR_CSR3" address="0x4000590B" bitWidth="8" desc="SAR status and control register 3" hidden="false" />
+    <register name="SAR_CSR4" address="0x4000590C" bitWidth="8" desc="SAR status and control register 4" hidden="false" />
+    <register name="SAR_CSR5" address="0x4000590D" bitWidth="8" desc="SAR status and control register 5" hidden="false" />
+    <register name="SAR_CSR6" address="0x4000590E" bitWidth="8" desc="SAR status and control register 6" hidden="false" />
+    <register name="SAR_SW0" address="0x40005B28" bitWidth="8" desc="SAR Analog Routing Register 0" hidden="false" />
+    <register name="SAR_SW2" address="0x40005B2A" bitWidth="8" desc="SAR Analog Routing Register 2" hidden="false" />
+    <register name="SAR_SW3" address="0x40005B2B" bitWidth="8" desc="SAR Analog Routing Register 3" hidden="false" />
+    <register name="SAR_SW4" address="0x40005B2C" bitWidth="8" desc="SAR Analog Routing Register 4" hidden="false" />
+    <register name="SAR_SW6" address="0x40005B2E" bitWidth="8" desc="SAR Analog Routing Register 6" hidden="false" />
+    <register name="SAR_CLK" address="0x40005B2F" bitWidth="8" desc="SAR Clock Selection Register" hidden="false" />
+    <register name="SAR_WRK" address="0x40005BA2" bitWidth="16" desc="SAR working register" hidden="false" />
+  </block>
+  <block name="cy_constant_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Clock_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="LCD_Char_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="LCDPort" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  </block>
+  <block name="ADC_in" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="BTN" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Right_Motor_DIR" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="IRL" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Reg_PWM_Enable" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <register name="Reg_PWM_Enable_CONTROL_REG" address="0x4000647B" bitWidth="8" desc="" hidden="false" />
+  </block>
   <block name="Right_Motor_PWM" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="vmIRQ" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="vmCompare" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -124,10 +169,9 @@
     <register name="Right_Motor_PWM_PERIOD" address="0x40004F10" bitWidth="8" desc="TMRx.PER0 - Assigned Period" hidden="false" />
     <register name="Right_Motor_PWM_COMPARE" address="0x40004F12" bitWidth="8" desc="TMRx.CNT_CMP0 - Assigned Compare Value" hidden="false" />
   </block>
-  <block name="Reg_PWM_Enable" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
-    <register name="Reg_PWM_Enable_CONTROL_REG" address="0x4000647B" bitWidth="8" desc="" hidden="false" />
-  </block>
+  <block name="IRL" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Left_Motor_Control" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Left_Motor_DIR" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Right_Motor_Control" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="IRR" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Left_Motor_DIR" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
 </blockRegMap>

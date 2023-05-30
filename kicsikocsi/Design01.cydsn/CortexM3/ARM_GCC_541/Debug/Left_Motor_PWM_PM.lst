@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
   28:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** *  Saves the current user configuration of the component.
   29:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** *
   30:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** * Parameters:
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 2
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 2
 
 
   31:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** *  None
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
   68:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** 
   69:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** 
   70:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** /*******************************************************************************
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 3
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 3
 
 
   71:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** * Function Name: Left_Motor_PWM_RestoreConfig
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  108:Generated_Source\PSoC5/Left_Motor_PWM_PM.c ****             #endif /* (Left_Motor_PWM_KillModeMinTime) */
  109:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** 
  110:Generated_Source\PSoC5/Left_Motor_PWM_PM.c ****             #if(Left_Motor_PWM_UseControl)
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 4
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 4
 
 
  111:Generated_Source\PSoC5/Left_Motor_PWM_PM.c ****                 Left_Motor_PWM_WriteControlRegister(Left_Motor_PWM_backup.PWMControlRegister);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  145:Generated_Source\PSoC5/Left_Motor_PWM_PM.c ****         {
  146:Generated_Source\PSoC5/Left_Motor_PWM_PM.c ****             /* Component is disabled */
  147:Generated_Source\PSoC5/Left_Motor_PWM_PM.c ****             Left_Motor_PWM_backup.PWMEnableState = 0u;
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 5
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 5
 
 
   82              		.loc 1 147 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  177:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** *******************************************************************************/
  178:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** void Left_Motor_PWM_Wakeup(void) 
  179:Generated_Source\PSoC5/Left_Motor_PWM_PM.c **** {
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 6
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 6
 
 
  107              		.loc 1 179 0
@@ -350,28 +350,28 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  146 0006 00000000 		.4byte	.Ldebug_abbrev0
  147 000a 04       		.byte	0x4
  148 000b 01       		.uleb128 0x1
- 149 000c B4000000 		.4byte	.LASF23
+ 149 000c 6B000000 		.4byte	.LASF23
  150 0010 0C       		.byte	0xc
- 151 0011 B0010000 		.4byte	.LASF24
- 152 0015 57000000 		.4byte	.LASF25
+ 151 0011 67010000 		.4byte	.LASF24
+ 152 0015 92010000 		.4byte	.LASF25
  153 0019 00000000 		.4byte	.Ldebug_ranges0+0
  154 001d 00000000 		.4byte	0
  155 0021 00000000 		.4byte	.Ldebug_line0
  156 0025 02       		.uleb128 0x2
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 7
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 7
 
 
  157 0026 01       		.byte	0x1
  158 0027 06       		.byte	0x6
- 159 0028 79020000 		.4byte	.LASF0
+ 159 0028 80020000 		.4byte	.LASF0
  160 002c 02       		.uleb128 0x2
  161 002d 01       		.byte	0x1
  162 002e 08       		.byte	0x8
- 163 002f 8D010000 		.4byte	.LASF1
+ 163 002f 44010000 		.4byte	.LASF1
  164 0033 02       		.uleb128 0x2
  165 0034 02       		.byte	0x2
  166 0035 05       		.byte	0x5
- 167 0036 4D020000 		.4byte	.LASF2
+ 167 0036 54020000 		.4byte	.LASF2
  168 003a 02       		.uleb128 0x2
  169 003b 02       		.byte	0x2
  170 003c 07       		.byte	0x7
@@ -379,11 +379,11 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  172 0041 02       		.uleb128 0x2
  173 0042 04       		.byte	0x4
  174 0043 05       		.byte	0x5
- 175 0044 A0010000 		.4byte	.LASF4
+ 175 0044 57010000 		.4byte	.LASF4
  176 0048 02       		.uleb128 0x2
  177 0049 04       		.byte	0x4
  178 004a 07       		.byte	0x7
- 179 004b 48010000 		.4byte	.LASF5
+ 179 004b FF000000 		.4byte	.LASF5
  180 004f 02       		.uleb128 0x2
  181 0050 08       		.byte	0x8
  182 0051 05       		.byte	0x5
@@ -391,7 +391,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  184 0056 02       		.uleb128 0x2
  185 0057 08       		.byte	0x8
  186 0058 07       		.byte	0x7
- 187 0059 5A010000 		.4byte	.LASF7
+ 187 0059 11010000 		.4byte	.LASF7
  188 005d 03       		.uleb128 0x3
  189 005e 04       		.byte	0x4
  190 005f 05       		.byte	0x5
@@ -401,27 +401,27 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  194 0066 07       		.byte	0x7
  195 0067 21000000 		.4byte	.LASF8
  196 006b 04       		.uleb128 0x4
- 197 006c 42010000 		.4byte	.LASF12
+ 197 006c F9000000 		.4byte	.LASF12
  198 0070 02       		.byte	0x2
  199 0071 E401     		.2byte	0x1e4
  200 0073 2C000000 		.4byte	0x2c
  201 0077 02       		.uleb128 0x2
  202 0078 04       		.byte	0x4
  203 0079 04       		.byte	0x4
- 204 007a 71010000 		.4byte	.LASF9
+ 204 007a 28010000 		.4byte	.LASF9
  205 007e 02       		.uleb128 0x2
  206 007f 08       		.byte	0x8
  207 0080 04       		.byte	0x4
- 208 0081 A9010000 		.4byte	.LASF10
+ 208 0081 60010000 		.4byte	.LASF10
  209 0085 02       		.uleb128 0x2
  210 0086 01       		.byte	0x1
  211 0087 08       		.byte	0x8
- 212 0088 9B010000 		.4byte	.LASF11
+ 212 0088 52010000 		.4byte	.LASF11
  213 008c 04       		.uleb128 0x4
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 8
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 8
 
 
- 214 008d 57020000 		.4byte	.LASF13
+ 214 008d 5E020000 		.4byte	.LASF13
  215 0091 02       		.byte	0x2
  216 0092 8E02     		.2byte	0x28e
  217 0094 98000000 		.4byte	0x98
@@ -430,11 +430,11 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  220 009d 02       		.uleb128 0x2
  221 009e 08       		.byte	0x8
  222 009f 04       		.byte	0x4
- 223 00a0 06020000 		.4byte	.LASF14
+ 223 00a0 0D020000 		.4byte	.LASF14
  224 00a4 02       		.uleb128 0x2
  225 00a5 04       		.byte	0x4
  226 00a6 07       		.byte	0x7
- 227 00a7 2E020000 		.4byte	.LASF15
+ 227 00a7 35020000 		.4byte	.LASF15
  228 00ab 06       		.uleb128 0x6
  229 00ac 01       		.byte	0x1
  230 00ad 03       		.byte	0x3
@@ -448,7 +448,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  238 00be 00       		.byte	0
  239 00bf 00       		.byte	0
  240 00c0 08       		.uleb128 0x8
- 241 00c1 12020000 		.4byte	.LASF16
+ 241 00c1 19020000 		.4byte	.LASF16
  242 00c5 03       		.byte	0x3
  243 00c6 8B       		.byte	0x8b
  244 00c7 AB000000 		.4byte	0xab
@@ -461,7 +461,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  251 00da 01       		.uleb128 0x1
  252 00db 9C       		.byte	0x9c
  253 00dc 09       		.uleb128 0x9
- 254 00dd 5C020000 		.4byte	.LASF18
+ 254 00dd 63020000 		.4byte	.LASF18
  255 00e1 01       		.byte	0x1
  256 00e2 58       		.byte	0x58
  257 00e3 00000000 		.4byte	.LFB1
@@ -469,7 +469,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  259 00eb 01       		.uleb128 0x1
  260 00ec 9C       		.byte	0x9c
  261 00ed 0A       		.uleb128 0xa
- 262 00ee F1010000 		.4byte	.LASF19
+ 262 00ee F8010000 		.4byte	.LASF19
  263 00f2 01       		.byte	0x1
  264 00f3 88       		.byte	0x88
  265 00f4 00000000 		.4byte	.LFB2
@@ -478,14 +478,14 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  268 00fd 9C       		.byte	0x9c
  269 00fe 0C010000 		.4byte	0x10c
  270 0102 0B       		.uleb128 0xb
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 9
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 9
 
 
  271 0103 1E000000 		.4byte	.LVL0
  272 0107 3C010000 		.4byte	0x13c
  273 010b 00       		.byte	0
  274 010c 0A       		.uleb128 0xa
- 275 010d DB010000 		.4byte	.LASF20
+ 275 010d E2010000 		.4byte	.LASF20
  276 0111 01       		.byte	0x1
  277 0112 B2       		.byte	0xb2
  278 0113 00000000 		.4byte	.LFB3
@@ -498,7 +498,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  285 0126 47010000 		.4byte	0x147
  286 012a 00       		.byte	0
  287 012b 0C       		.uleb128 0xc
- 288 012c 77010000 		.4byte	.LASF27
+ 288 012c 2E010000 		.4byte	.LASF27
  289 0130 01       		.byte	0x1
  290 0131 14       		.byte	0x14
  291 0132 C0000000 		.4byte	0xc0
@@ -506,13 +506,13 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  293 0137 03       		.byte	0x3
  294 0138 00000000 		.4byte	Left_Motor_PWM_backup
  295 013c 0D       		.uleb128 0xd
- 296 013d A0000000 		.4byte	.LASF21
- 297 0141 A0000000 		.4byte	.LASF21
+ 296 013d 57000000 		.4byte	.LASF21
+ 297 0141 57000000 		.4byte	.LASF21
  298 0145 03       		.byte	0x3
  299 0146 93       		.byte	0x93
  300 0147 0D       		.uleb128 0xd
- 301 0148 37020000 		.4byte	.LASF22
- 302 014c 37020000 		.4byte	.LASF22
+ 301 0148 3E020000 		.4byte	.LASF22
+ 302 014c 3E020000 		.4byte	.LASF22
  303 0150 03       		.byte	0x3
  304 0151 DB       		.byte	0xdb
  305 0152 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  325 0011 00       		.byte	0
  326 0012 00       		.byte	0
  327 0013 02       		.uleb128 0x2
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 10
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 10
 
 
  328 0014 24       		.uleb128 0x24
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  382 004a 07       		.uleb128 0x7
  383 004b 0D       		.uleb128 0xd
  384 004c 00       		.byte	0
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 11
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 11
 
 
  385 004d 03       		.uleb128 0x3
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  439 0084 0E       		.uleb128 0xe
  440 0085 3A       		.uleb128 0x3a
  441 0086 0B       		.uleb128 0xb
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 12
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 12
 
 
  442 0087 3B       		.uleb128 0x3b
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  496 00c0 0B       		.uleb128 0xb
  497 00c1 00       		.byte	0
  498 00c2 00       		.byte	0
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 13
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 13
 
 
  499 00c3 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  539              	.LASF26:
  540 002e 50574D45 		.ascii	"PWMEnableState\000"
  540      6E61626C 
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 14
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 14
 
 
  540      65537461 
@@ -789,116 +789,116 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  542      6F725F50 
  542      574D5F53 
  542      61766543 
- 543              	.LASF25:
- 544 0057 433A5C55 		.ascii	"C:\\Users\\budai\\Documents\\Beagyazott_rendszerek\\"
- 544      73657273 
- 544      5C627564 
- 544      61695C44 
- 544      6F63756D 
- 545 0086 6B696373 		.ascii	"kicsikocsi\\Design01.cydsn\000"
- 545      696B6F63 
- 545      73695C44 
- 545      65736967 
- 545      6E30312E 
- 546              	.LASF21:
- 547 00a0 4C656674 		.ascii	"Left_Motor_PWM_Stop\000"
- 547      5F4D6F74 
- 547      6F725F50 
- 547      574D5F53 
- 547      746F7000 
- 548              	.LASF23:
- 549 00b4 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 549      43313120 
- 549      352E342E 
- 549      31203230 
- 549      31363036 
- 550 00e7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 550      20726576 
- 550      6973696F 
- 550      6E203233 
- 550      37373135 
- 551 011a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 551      66756E63 
- 551      74696F6E 
- 551      2D736563 
- 551      74696F6E 
- 552              	.LASF12:
- 553 0142 75696E74 		.ascii	"uint8\000"
- 553      3800
- 554              	.LASF5:
- 555 0148 6C6F6E67 		.ascii	"long unsigned int\000"
- 555      20756E73 
- 555      69676E65 
- 555      6420696E 
- 555      7400
- 556              	.LASF7:
- 557 015a 6C6F6E67 		.ascii	"long long unsigned int\000"
- 557      206C6F6E 
- 557      6720756E 
- 557      7369676E 
- 557      65642069 
- 558              	.LASF9:
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 15
+ 543              	.LASF21:
+ 544 0057 4C656674 		.ascii	"Left_Motor_PWM_Stop\000"
+ 544      5F4D6F74 
+ 544      6F725F50 
+ 544      574D5F53 
+ 544      746F7000 
+ 545              	.LASF23:
+ 546 006b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 546      43313120 
+ 546      352E342E 
+ 546      31203230 
+ 546      31363036 
+ 547 009e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 547      20726576 
+ 547      6973696F 
+ 547      6E203233 
+ 547      37373135 
+ 548 00d1 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 548      66756E63 
+ 548      74696F6E 
+ 548      2D736563 
+ 548      74696F6E 
+ 549              	.LASF12:
+ 550 00f9 75696E74 		.ascii	"uint8\000"
+ 550      3800
+ 551              	.LASF5:
+ 552 00ff 6C6F6E67 		.ascii	"long unsigned int\000"
+ 552      20756E73 
+ 552      69676E65 
+ 552      6420696E 
+ 552      7400
+ 553              	.LASF7:
+ 554 0111 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 554      206C6F6E 
+ 554      6720756E 
+ 554      7369676E 
+ 554      65642069 
+ 555              	.LASF9:
+ 556 0128 666C6F61 		.ascii	"float\000"
+ 556      7400
+ 557              	.LASF27:
+ 558 012e 4C656674 		.ascii	"Left_Motor_PWM_backup\000"
+ 558      5F4D6F74 
+ 558      6F725F50 
+ 558      574D5F62 
+ 558      61636B75 
+ 559              	.LASF1:
+ 560 0144 756E7369 		.ascii	"unsigned char\000"
+ 560      676E6564 
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 15
 
 
- 559 0171 666C6F61 		.ascii	"float\000"
- 559      7400
- 560              	.LASF27:
- 561 0177 4C656674 		.ascii	"Left_Motor_PWM_backup\000"
- 561      5F4D6F74 
- 561      6F725F50 
- 561      574D5F62 
- 561      61636B75 
- 562              	.LASF1:
- 563 018d 756E7369 		.ascii	"unsigned char\000"
- 563      676E6564 
- 563      20636861 
- 563      7200
- 564              	.LASF11:
- 565 019b 63686172 		.ascii	"char\000"
- 565      00
- 566              	.LASF4:
- 567 01a0 6C6F6E67 		.ascii	"long int\000"
- 567      20696E74 
- 567      00
- 568              	.LASF10:
- 569 01a9 646F7562 		.ascii	"double\000"
- 569      6C6500
- 570              	.LASF24:
- 571 01b0 47656E65 		.ascii	"Generated_Source\\PSoC5\\Left_Motor_PWM_PM.c\000"
- 571      72617465 
- 571      645F536F 
- 571      75726365 
- 571      5C50536F 
+ 560      20636861 
+ 560      7200
+ 561              	.LASF11:
+ 562 0152 63686172 		.ascii	"char\000"
+ 562      00
+ 563              	.LASF4:
+ 564 0157 6C6F6E67 		.ascii	"long int\000"
+ 564      20696E74 
+ 564      00
+ 565              	.LASF10:
+ 566 0160 646F7562 		.ascii	"double\000"
+ 566      6C6500
+ 567              	.LASF24:
+ 568 0167 47656E65 		.ascii	"Generated_Source\\PSoC5\\Left_Motor_PWM_PM.c\000"
+ 568      72617465 
+ 568      645F536F 
+ 568      75726365 
+ 568      5C50536F 
+ 569              	.LASF25:
+ 570 0192 433A5C55 		.ascii	"C:\\Users\\budai\\Documents\\github\\Beagyazott_ren"
+ 570      73657273 
+ 570      5C627564 
+ 570      61695C44 
+ 570      6F63756D 
+ 571 01c0 64737A65 		.ascii	"dszerek\\kicsikocsi\\Design01.cydsn\000"
+ 571      72656B5C 
+ 571      6B696373 
+ 571      696B6F63 
+ 571      73695C44 
  572              	.LASF20:
- 573 01db 4C656674 		.ascii	"Left_Motor_PWM_Wakeup\000"
+ 573 01e2 4C656674 		.ascii	"Left_Motor_PWM_Wakeup\000"
  573      5F4D6F74 
  573      6F725F50 
  573      574D5F57 
  573      616B6575 
  574              	.LASF19:
- 575 01f1 4C656674 		.ascii	"Left_Motor_PWM_Sleep\000"
+ 575 01f8 4C656674 		.ascii	"Left_Motor_PWM_Sleep\000"
  575      5F4D6F74 
  575      6F725F50 
  575      574D5F53 
  575      6C656570 
  576              	.LASF14:
- 577 0206 6C6F6E67 		.ascii	"long double\000"
+ 577 020d 6C6F6E67 		.ascii	"long double\000"
  577      20646F75 
  577      626C6500 
  578              	.LASF16:
- 579 0212 4C656674 		.ascii	"Left_Motor_PWM_backupStruct\000"
+ 579 0219 4C656674 		.ascii	"Left_Motor_PWM_backupStruct\000"
  579      5F4D6F74 
  579      6F725F50 
  579      574D5F62 
  579      61636B75 
  580              	.LASF15:
- 581 022e 73697A65 		.ascii	"sizetype\000"
+ 581 0235 73697A65 		.ascii	"sizetype\000"
  581      74797065 
  581      00
  582              	.LASF22:
- 583 0237 4C656674 		.ascii	"Left_Motor_PWM_Enable\000"
-ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 16
+ 583 023e 4C656674 		.ascii	"Left_Motor_PWM_Enable\000"
+ARM GAS  C:\Users\budai\AppData\Local\Temp\ccaCbxpP.s 			page 16
 
 
  583      5F4D6F74 
@@ -906,20 +906,20 @@ ARM GAS  C:\Users\budai\AppData\Local\Temp\ccEBGzDF.s 			page 1
  583      574D5F45 
  583      6E61626C 
  584              	.LASF2:
- 585 024d 73686F72 		.ascii	"short int\000"
+ 585 0254 73686F72 		.ascii	"short int\000"
  585      7420696E 
  585      7400
  586              	.LASF13:
- 587 0257 72656738 		.ascii	"reg8\000"
+ 587 025e 72656738 		.ascii	"reg8\000"
  587      00
  588              	.LASF18:
- 589 025c 4C656674 		.ascii	"Left_Motor_PWM_RestoreConfig\000"
+ 589 0263 4C656674 		.ascii	"Left_Motor_PWM_RestoreConfig\000"
  589      5F4D6F74 
  589      6F725F50 
  589      574D5F52 
  589      6573746F 
  590              	.LASF0:
- 591 0279 7369676E 		.ascii	"signed char\000"
+ 591 0280 7369676E 		.ascii	"signed char\000"
  591      65642063 
  591      68617200 
  592              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

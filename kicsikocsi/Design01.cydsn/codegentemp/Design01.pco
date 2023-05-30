@@ -1,5 +1,5 @@
 # Design01
-# 2023-04-24 14:37:06Z
+# 2023-05-30 08:21:06Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -14,8 +14,19 @@ set_io "IRR(0)" iocell 5 7
 set_io "Left_Motor_DIR(0)" iocell 4 0
 set_io "Left_Motor_Control(0)" iocell 4 1
 set_io "Right_Motor_Control(0)" iocell 4 2
-set_io "Start(0)" iocell 6 1
+set_io "BTN(0)" iocell 6 1
+set_io "\ADC_SAR_1:Bypass(0)\" iocell 0 2
+set_io "\LCD_Char_1:LCDPort(0)\" iocell 2 0
+set_io "\LCD_Char_1:LCDPort(1)\" iocell 2 1
+set_io "\LCD_Char_1:LCDPort(2)\" iocell 2 2
+set_io "\LCD_Char_1:LCDPort(3)\" iocell 2 3
+set_io "\LCD_Char_1:LCDPort(4)\" iocell 2 4
+set_io "\LCD_Char_1:LCDPort(5)\" iocell 2 5
+set_io "\LCD_Char_1:LCDPort(6)\" iocell 2 6
+set_io "ADC_in(0)" iocell 6 5
 set_location "\Right_Motor_PWM:PWMHW\" timercell -1 -1 1
 set_location "__ONE__" 1 3 0 0
 set_location "\Reg_PWM_Enable:Sync:ctrl_reg\" 1 3 6
 set_location "\Left_Motor_PWM:PWMHW\" timercell -1 -1 0
+set_location "\ADC_SAR_1:IRQ\" interrupt -1 -1 0
+set_location "\ADC_SAR_1:ADC_SAR\" sarcell -1 -1 1
